@@ -1,13 +1,10 @@
 import React from "react";
 import Header from "../Header/Header";
-import { useLocation } from "react-router";
 
-function Layout({ children }) {
-  const loc = useLocation();
-
+function Layout({ area, children }) {
   return (
     <>
-      <Header page={loc.pathname} />
+      <Header area={area} />
       <main
         style={{ minHeight: "calc(100vh - 80px - 65px)" }}
       >

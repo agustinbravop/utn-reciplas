@@ -1,23 +1,54 @@
 import React from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import "./NavBar.css";
 
-/*
- 'links' es un arreglo de la forma {
-  "Materias Primas": "/materias",
-  "Productos Producidos": "/productos"
- };
-*/
-function NavBar({ links }) {
-  const navItems = links?.map((link) => {
+const areasToNavLinks = {
+  prod: {
+    "Materias Primas": "/prod/materias",
+    Productos: "/prod/productos",
+    Pedidos: "/prod/pedidos",
+  },
+  compras: {
+    Compras: "/compras/compras",
+    "Materias Primas": "/compras/materias",
+    Productos: "/compras/productos",
+  },
+  ventas: {
+    Clientes: "/ventas/clientes",
+    Proveedores: "/ventas/proveedores",
+    Pedidos: "/ventas/pedidos",
+  },
+  admin: {
+    Compras: "/admin/compras",
+    Ventas: "/admin/ventas",
+    Productos: "/admin/productos",
+  },
+};
+
+// area = 'prod' | 'compras' | 'ventas' | 'admin'
+function NavBar({ area }) {
+  const location = useLocation();
+
+  if (!area) {
+    return null;
+  }
+
+  const navItems = Object.entries(areasToNavLinks[area])?.map((link) => {
     return (
       <li>
-        <a href={link[1]}>{link[0]}</a>
+        <NavLink
+          to={link[1]}
+          className={location.pathname.includes(link[1]) && "current"}
+        >
+          {link[0]}
+        </NavLink>
       </li>
     );
   });
 
   return (
     <nav>
-      <ul>{navItems}</ul>
+      <ul className="nav-bar">{navItems}</ul>
     </nav>
   );
 }

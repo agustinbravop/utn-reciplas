@@ -1,0 +1,15 @@
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.nav-bar li {
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+
+.nav-bar .current {
+  background-color: #EBEBF0;
+}

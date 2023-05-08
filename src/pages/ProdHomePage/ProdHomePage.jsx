@@ -3,7 +3,7 @@ import Layout from "../../components/Layout/Layout";
 
 function ProdHomePage() {
   return (
-    <Layout>
+    <Layout area="prod">
       <div>ProdHomePage</div>
     </Layout>
   );
