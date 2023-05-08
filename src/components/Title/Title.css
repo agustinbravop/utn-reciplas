@@ -1,0 +1,6 @@
+.titulo {
+  font-size: var(--fsExtraLarge);
+  font-weight: 700;
+  margin: 40px auto;
+  text-align: center;
+}

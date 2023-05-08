@@ -1,0 +1,11 @@
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+
+  position: relative;
+  width: 150px;
+  height: 32px;
+}

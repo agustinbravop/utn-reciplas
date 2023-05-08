@@ -1,0 +1,11 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+  align-items: center;
+  width: 100%;
+  min-height: 80px;
+  top: 0;
+  background: var(--colorSecundario);
+  box-shadow: 0px 0.2px 4px rgba(0, 0, 0, 0.14);
+}

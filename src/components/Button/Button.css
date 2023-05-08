@@ -1,0 +1,28 @@
+.btn-primario {
+  background-color: var(--colorPrimario);
+  font-size: var(--fsMedium);
+  border: 2px solid var(--colorNegro);
+  margin: auto;
+  min-width: 1700px;
+}
+
+.btn-primario:hover,
+.btn-primario:focus-visible {
+  background-color: var(--colorPrimarioOscuro);
+}
+.btn-primario:active {
+  background-color: var(--colorPrimario);
+}
+
+.btn-secundario {
+  color: var(--colorUno);
+  border: 1px solid var(--colorUno);
+}
+.btn-secundario:hover {
+  color: var(--colorTres);
+  border-color: var(--colorTres);
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.08);
+}
+.btn-secundario:active {
+  background-color: var(--colorFondoOscuro);
+}

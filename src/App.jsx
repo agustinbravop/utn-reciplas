@@ -1,20 +1,13 @@
 import { createRoot } from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import LogInPage from "./pages/LogInPage/LogInPage";
+import "./styles.css";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div>
-        <h1>Hello World</h1>
-        <Link to="about">About Us</Link>
-      </div>
-    ),
+    element: <LogInPage />,
   },
   {
     path: "about",
@@ -27,5 +20,9 @@ createRoot(document.getElementById("root")).render(
 );
 
 export default function App() {
-  return <RouterProvider router={router} />
-};
+  return (
+    <ChakraProvider>
+      <RouterProvider router={router} />
+    </ChakraProvider>
+  );
+}
