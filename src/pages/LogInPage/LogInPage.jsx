@@ -4,14 +4,23 @@ import Input from "../../components/Input/Input";
 import Title from "../../components/Title/Title";
 import Button from "../../components/Button/Button";
 import "./LogInPage.css";
+import { useNavigate } from "react-router-dom";
 
 function LogInPage() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const navigate = useNavigate();
 
-  const handleClick = (e) => {
-    if (email.split("@")[0] === "produccion") {
-      
+  const handleSubmit = (e) => {
+    const userType = email.split("@")[0];
+    if (userType === "prod") {
+      navigate("/prod");
+    } else if (userType === "admin") {
+      navigate("/admin");
+    } else if (userType === "ventas") {
+      navigate("/ventas");
+    } else if (userType === "compras") {
+      navigate("/compras");
     }
   }
 
@@ -33,7 +42,7 @@ function LogInPage() {
           value={pass}
           onChange={(e) => setPass(e.target.value)}
         ></Input>
-        <Button onClick={handleClick}>Ingresar</Button>
+        <Button onClick={handleSubmit}>Ingresar</Button>
       </div>
     </Layout>
   );

@@ -2,19 +2,15 @@ import { Button as ChakraButton } from "@chakra-ui/react";
 import React from "react";
 import "./Button.css";
 
-function Button({ type, href, children }) {
+function Button({ type, href, ...props }) {
   if (type === "secondary") {
     return (
-      <ChakraButton variant="outlined" href={href} className="btn-secundario">
-        {children}
-      </ChakraButton>
+      <ChakraButton variant="outlined" className="btn-secundario" {...props} />
     );
   }
 
   return (
-    <ChakraButton variant="contained" href={href} className="btn-primario">
-      {children}
-    </ChakraButton>
+    <ChakraButton variant="contained" className="btn-primario" {...props} />
   );
 }
 
