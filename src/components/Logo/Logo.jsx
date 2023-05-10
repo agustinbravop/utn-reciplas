@@ -3,7 +3,7 @@ import "./Logo.css";
 
 function Logo() {
   return (
-    <h2 className="logo-empresa">RECIPLAS</h2>
+    <h2 className="logo-empresa"><a href="/">RECIPLAS</a></h2>
   )
 };
 
