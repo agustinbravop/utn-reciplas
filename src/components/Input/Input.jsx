@@ -1,12 +1,21 @@
-import { Input as ChakraInput } from '@chakra-ui/react'
+import { FormControl, FormLabel, Input as ChakraInput } from "@chakra-ui/react";
 import "./Input.css";
-import React from 'react'
+import React from "react";
 
-function Input({ name, label, placeholder, ...props }) {
-  return <div className="input-container">
-    <label htmlFor={name} className="input-label">{label}</label>
-    <ChakraInput placeholder={placeholder} size="md" id={name} className="input" {...props} />
-  </div>
+function Input({ name, label, placeholder, type = "text", ...props }) {
+  return (
+      <FormControl className="input-container">
+        <FormLabel className="input-label">{label}</FormLabel>
+        <ChakraInput
+          placeholder={placeholder}
+          size="md"
+          id={name}
+          className="input"
+          type={type}
+          {...props}
+        />
+      </FormControl>
+  );
 }
 
-export default Input
+export default Input;

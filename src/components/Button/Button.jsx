@@ -2,8 +2,8 @@ import { Button as ChakraButton } from "@chakra-ui/react";
 import React from "react";
 import "./Button.css";
 
-function Button({ type, href, ...props }) {
-  if (type === "secondary") {
+function Button({ variant, href, ...props }) {
+  if (variant === "secondary") {
     return (
       <ChakraButton variant="outlined" className="btn-secundario" {...props} />
     );

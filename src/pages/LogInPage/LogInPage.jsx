@@ -21,13 +21,15 @@ function LogInPage() {
       navigate("/ventas");
     } else if (userType === "compras") {
       navigate("/compras");
+    } else {
+      navigate("/404")
     }
   }
 
   return (
     <Layout>
       <Title text="Iniciar sesión" />
-      <div className="form-iniciar-sesion">
+      <form className="form-iniciar-sesion">
         <Input
           placeholder="Correo"
           label="Correo"
@@ -42,8 +44,8 @@ function LogInPage() {
           value={pass}
           onChange={(e) => setPass(e.target.value)}
         ></Input>
-        <Button onClick={handleSubmit}>Ingresar</Button>
-      </div>
+        <Button onClick={handleSubmit} type="submit">Ingresar</Button>
+      </form>
     </Layout>
   );
 }
