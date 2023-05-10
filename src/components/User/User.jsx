@@ -4,7 +4,7 @@ const areaToUserName = {
   prod: "Sr. Producción",
   compras: "Sr. Compras",
   ventas: "Sr. Ventas",
-  admin: "Sr. Administrador",
+  admin: "Sr. Admin",
 };
 export default function User({ area }) {
   if (!area) {
