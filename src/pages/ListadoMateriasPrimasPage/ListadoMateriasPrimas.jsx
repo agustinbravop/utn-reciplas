@@ -52,7 +52,7 @@ export default function ListadoMateriasPrimasPage() {
       <div className="listado-materias">
           <h1 className="titulo">Materias Primas</h1>
           <div className="search">
-          <Button rightIcon={<AddIcon color="black" />}>
+          <Button href="crear" rightIcon={<AddIcon color="black" />}>
             Agregar
           </Button>
           <Input
