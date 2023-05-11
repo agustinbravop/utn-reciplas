@@ -1,9 +1,9 @@
 import React from 'react';
 import "./Title.css";
 
-function Title({ text }) {
+function Title({ children }) {
   return (
-    <h1 className="titulo">{text}</h1>
+    <h1 className="titulo">{children}</h1>
   )
 };
 
