@@ -1,4 +1,5 @@
 import { Tr, Td } from "@chakra-ui/react";
+import { EditIcon } from '@chakra-ui/icons'
 
 export default function LineaMateriaPrima({
   id,
@@ -16,7 +17,7 @@ export default function LineaMateriaPrima({
       <Td>{deposito}</Td>
       <Td>{cantidad} kg</Td>
       <Td>{ultimoCambio}</Td>
-      <Td>ED</Td>
+      <Td><EditIcon></EditIcon></Td>
     </Tr>
   );
 }

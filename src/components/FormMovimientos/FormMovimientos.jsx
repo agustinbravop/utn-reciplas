@@ -1,14 +1,15 @@
 import React from "react";
 import Button from "../../components/Button/Button";
-import OptionRadio from "../../components/OptionRadio/OptionRadio"
-import Input from '../components/Input/Input'
+import Input from '../../components/Input/Input'
+import RadioGroup from "../RadioGroup/RadioGroup";
 
 export default function FormMovimientos() {
+    const options = ["Ingreso", "Egreso"];
     return (
     <div>
         <Input name='InputCantidad' label='Cantidad a Mover' placeholder='0...'></Input>
-        <OptionRadio option1='Ingreso' option2='Egreso'></OptionRadio>
-        <Button>Guardar Movimiento</Button>
+        <RadioGroup options={options} />
+        <Button href="../prod/materias/detalle">Crear Materia Prima</Button>
     </div>
    )
 }

@@ -11,6 +11,7 @@ import ListadoVentasPage from "./pages/ListadoVentasPage/ListadoVentasPage";
 import ListadoClientesPage from "./pages/ListadoClientesPage/ListadoClientesPage"
 import CrearNuevaMateriaPrimaPage from "./pages/CrearNuevaMateriaPrimaPage/CrearNuevaMateriaPrimaPage"
 import ListadoMateriasPrimasPage from './pages/ListadoMateriasPrimasPage/ListadoMateriasPrimas'
+import DetalleMateriaPage from './pages/DetalleMateriaPage/DetalleMateriaPage'
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: <NotFoundPage />,
+  },
+  {
+    path: "prod/materias/detalle",
+    element: <DetalleMateriaPage />,
   },
 ]);
 
