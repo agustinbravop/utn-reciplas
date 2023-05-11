@@ -10,11 +10,13 @@ export default function LineaMateriaPrima({
 }) {
   return (
     <Tr key={id}>
+      <Td>{id}</Td>
       <Td>{descripcion}</Td>
       <Td>{calidad}</Td>
       <Td>{deposito}</Td>
       <Td>{cantidad} kg</Td>
       <Td>{ultimoCambio}</Td>
+      <Td>ED</Td>
     </Tr>
   );
 }
