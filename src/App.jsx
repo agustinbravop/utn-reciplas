@@ -12,6 +12,7 @@ import ListadoClientesPage from "./pages/ListadoClientesPage/ListadoClientesPage
 import CrearNuevaMateriaPrimaPage from "./pages/CrearNuevaMateriaPrimaPage/CrearNuevaMateriaPrimaPage"
 import ListadoMateriasPrimasPage from './pages/ListadoMateriasPrimasPage/ListadoMateriasPrimas'
 import DetalleMateriaPage from './pages/DetalleMateriaPage/DetalleMateriaPage'
+import ListadoPedidosPendientesPage from "./pages/ListadoPedidosPendientesPage/ListadoPedidosPendientesPage";
 
 const router = createBrowserRouter([
   {
@@ -51,12 +52,16 @@ const router = createBrowserRouter([
     element: <CrearNuevaMateriaPrimaPage />,
   },
   {
-    path: "*",
-    element: <NotFoundPage />,
-  },
-  {
     path: "prod/materias/detalle",
     element: <DetalleMateriaPage />,
+  },
+  {
+    path: "prod/pendiente",
+    element: <ListadoPedidosPendientesPage />,
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]);
 
