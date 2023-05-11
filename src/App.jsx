@@ -10,6 +10,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import ListadoVentasPage from "./pages/ListadoVentasPage/ListadoVentasPage";
 import ListadoClientesPage from "./pages/ListadoClientesPage/ListadoClientesPage"
 import CrearNuevaMateriaPrimaPage from "./pages/CrearNuevaMateriaPrimaPage/CrearNuevaMateriaPrimaPage"
+import ListadoMateriasPrimasPage from './pages/ListadoMateriasPrimasPage/ListadoMateriasPrimas'
 
 const router = createBrowserRouter([
   {
@@ -41,17 +42,17 @@ const router = createBrowserRouter([
     element: <ListadoClientesPage />
   },
   {
-    path: "*",
-    element: <NotFoundPage />,
-  },
-  {
     path: "prod/ListaMateriasPrimas",
     element: <ListadoMateriasPrimasPage />,
   },
   {
     path: "prod/ListaMateriasPrimas/Crear",
     element: <CrearNuevaMateriaPrimaPage />,
-  }
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
+  },
 ]);
 
 export default function App() {

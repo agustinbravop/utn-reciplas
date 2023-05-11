@@ -1,17 +1,27 @@
-import React from 'react'
-import Button from '../../Button/Button'
-import Input from '../../Input/Input'
-import { OptionRadio3 } from '../OptionRadio/OptionRadio'
+import React from "react";
+import Button from "../Button/Button";
+import Input from "../Input/Input";
+import RadioGroup from "../RadioGroup/RadioGroup";
 
 function NuevaMateriaPrima() {
+  const options = ["Mala", "Buena", "Excelente"];
+
   return (
     <div>
-        <Input name='InputNombreMateriaPrima' label='Nombre' placeholder='Nombre...'></Input>
-        <Input name='InputDepositoMateriaPrima' label='Depósito' placeholder='Sector...' ></Input>
-        <OptionRadio3 option1='Mala' option2='Buena' option3='Excelente'></OptionRadio3>
-        <Button>Crear Materia Prima</Button>
+      <Input
+        name="InputNombreMateriaPrima"
+        label="Nombre"
+        placeholder="Nombre..."
+      ></Input>
+      <Input
+        name="InputDepositoMateriaPrima"
+        label="Depósito"
+        placeholder="Sector..."
+      ></Input>
+      <RadioGroup options={options} />
+      <Button>Crear Materia Prima</Button>
     </div>
-  )
+  );
 }
 
-export default NuevaMateriaPrima
+export default NuevaMateriaPrima;

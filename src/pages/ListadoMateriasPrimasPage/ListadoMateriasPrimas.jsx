@@ -1,8 +1,8 @@
 import Input from "../../components/Input/Input";
 import Layout from "../../components/Layout/Layout";
 import LineaMateriaPrima from "../../components/LineaMateriaPrima/LineaMateriaPrima";
-import "./ListadoMateriasPrimas.css";
-import { Table, Thead, Tbody, Tr, Th, TableContainer, Button } from "@chakra-ui/react";
+import "./ListadosMateriasPrimas.css";
+import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
 import Button from "../../components/Button/Button";
 import {React} from "react";
 

@@ -8,7 +8,7 @@ function CrearNuevaMateriaPrimaPage() {
     <Layout area='prod'>
         <div>
             <Title text='Crear Nueva Materia Prima'></Title>
-            <NuevaMateriaPrima></NuevaMateriaPrima>
+            <NuevaMateriaPrima />
         </div>
     </Layout>
   )

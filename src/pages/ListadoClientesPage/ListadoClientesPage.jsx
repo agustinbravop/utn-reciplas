@@ -2,7 +2,7 @@ import Layout from "../../components/Layout/Layout";
 import LineaCliente from "../../components/LineaCliente/LineaCliente";
 import "./ListadoClientesPage.css";
 import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
-import { AddIcon, SearchIcon } from "@chakra-ui/icons";
+import { AddIcon } from "@chakra-ui/icons";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
 
