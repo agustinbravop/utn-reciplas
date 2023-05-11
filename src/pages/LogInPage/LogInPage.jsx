@@ -28,7 +28,7 @@ function LogInPage() {
 
   return (
     <Layout>
-      <Title text="Iniciar sesión" />
+      <Title>Iniciar sesión</Title>
       <form className="form-iniciar-sesion">
         <Input
           placeholder="Correo"

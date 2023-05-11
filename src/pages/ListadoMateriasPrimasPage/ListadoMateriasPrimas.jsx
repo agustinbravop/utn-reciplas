@@ -1,10 +1,10 @@
 import Input from "../../components/Input/Input";
 import Layout from "../../components/Layout/Layout";
 import LineaMateriaPrima from "../../components/LineaMateriaPrima/LineaMateriaPrima";
-import "./ListadosMateriasPrimas.css";
-import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
+import "./ListadoMateriasPrimas.css";
+import { Table, Thead, Tbody, Tr, Th, TableContainer, Button } from "@chakra-ui/react";
 import Button from "../../components/Button/Button";
-import {React} from "react";
+import { React } from "react";
 
 const materiasPrimas = [
   {
@@ -13,7 +13,7 @@ const materiasPrimas = [
     calidad: "Excelente",
     deposito: "A2",
     cantidad: 125.1,
-    ultimoCambio: "30/12/2022 16:40"
+    ultimoCambio: "30/12/2022 16:40",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const materiasPrimas = [
     calidad: "Excelente",
     deposito: "A2",
     cantidad: 125.1,
-    ultimoCambio: "30/12/2022 16:40"
+    ultimoCambio: "30/12/2022 16:40",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const materiasPrimas = [
     calidad: "Excelente",
     deposito: "A2",
     cantidad: 125.1,
-    ultimoCambio: "30/12/2022 16:40"
+    ultimoCambio: "30/12/2022 16:40",
   },
   {
     id: 4,
@@ -37,32 +37,31 @@ const materiasPrimas = [
     calidad: "Excelente",
     deposito: "A2",
     cantidad: 125.1,
-    ultimoCambio: "30/12/2022 16:40"
+    ultimoCambio: "30/12/2022 16:40",
   },
 ];
 
 export default function ListadoMateriasPrimasPage() {
-  const lineasDeMateriaPrima = materiasPrimas.map((nombre) => {
-    return (
-      <LineaMateriaPrima
-        id={nombre.id}
-        descripcion={nombre.descripcion}
-        calidad={nombre.calidad}
-        deposito={nombre.deposito}
-        cantidad={nombre.cantidad}
-        ultimoCambio={nombre.ultimoCambio}
-      />
-    );
+  const lineasDeMateriaPrima = materiasPrimas.map((materia) => {
+    return <LineaMateriaPrima {...materia} />;
   });
 
   return (
     <Layout area="prod">
-      <div className="MateriasPrimas">
-        <div classname="row">
+      <div className="listado-materias">
           <h1 className="titulo">Materias Primas</h1>
-          <Button>Crear Nueva +</Button>
+          <div className="search">
+          <Button rightIcon={<AddIcon color="black" />}>
+            Agregar
+          </Button>
+          <Input
+            name="search"
+            label=''
+            placeholder="Buscar..."
+            width="50%"
+          />
         </div>
-        <Input name="buscarMateria" label=" " placeholder="Buscar..."></Input>
+
         <TableContainer>
           <Table variant="striped" colorScheme="gray" size="md">
             <Thead>
@@ -75,9 +74,7 @@ export default function ListadoMateriasPrimasPage() {
                 <Th>Último Cambio</Th>
               </Tr>
             </Thead>
-            <Tbody>
-              {lineasDeMateriaPrima}
-            </Tbody>
+            <Tbody>{lineasDeMateriaPrima}</Tbody>
           </Table>
         </TableContainer>
         <Button>Imprimir</Button>

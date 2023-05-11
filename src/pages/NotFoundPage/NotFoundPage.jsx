@@ -9,7 +9,7 @@ function NotFoundPage() {
 
   return (
     <Layout>
-      <Title text="404" />
+      <Title>404</Title>
     </Layout>
   );
 }
