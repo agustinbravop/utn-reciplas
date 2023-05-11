@@ -8,6 +8,7 @@ import ComprasHomePage from "./pages/ComprasHomePage/ComprasHomePage";
 import VentasHomePage from "./pages/VentasHomePage/VentasHomePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import ListadoVentasPage from "./pages/ListadoVentasPage/ListadoVentasPage";
+import ListadoClientesPage from "./pages/ListadoClientesPage/ListadoClientesPage"
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "admin/ventas",
     element: <ListadoVentasPage />,
+  },
+  {
+    path: "ventas/clientes",
+    element: <ListadoClientesPage />
   },
   {
     path: "*",
