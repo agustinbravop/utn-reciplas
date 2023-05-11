@@ -9,6 +9,7 @@ import VentasHomePage from "./pages/VentasHomePage/VentasHomePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import ListadoVentasPage from "./pages/ListadoVentasPage/ListadoVentasPage";
 import ListadoClientesPage from "./pages/ListadoClientesPage/ListadoClientesPage"
+import CrearNuevaMateriaPrimaPage from "./pages/CrearNuevaMateriaPrimaPage/CrearNuevaMateriaPrimaPage"
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,14 @@ const router = createBrowserRouter([
     path: "*",
     element: <NotFoundPage />,
   },
+  {
+    path: "prod/ListaMateriasPrimas",
+    element: <ListadoMateriasPrimasPage />,
+  },
+  {
+    path: "prod/ListaMateriasPrimas/Crear",
+    element: <CrearNuevaMateriaPrimaPage />,
+  }
 ]);
 
 export default function App() {
