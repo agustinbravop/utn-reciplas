@@ -1,7 +1,10 @@
+import Input from "../../components/Input/Input";
 import Layout from "../../components/Layout/Layout";
 import LineaMateriaPrima from "../../components/LineaMateriaPrima/LineaMateriaPrima";
 import "./ListadoMateriasPrimas.css";
-import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
+import { Table, Thead, Tbody, Tr, Th, TableContainer, Button } from "@chakra-ui/react";
+import Button from "../../components/Button/Button";
+import {React} from "react";
 
 const materiasPrimas = [
   {
@@ -39,7 +42,6 @@ const materiasPrimas = [
 ];
 
 export default function ListadoMateriasPrimasPage() {
-
   const lineasDeMateriaPrima = materiasPrimas.map((nombre) => {
     return (
       <LineaMateriaPrima
@@ -56,7 +58,11 @@ export default function ListadoMateriasPrimasPage() {
   return (
     <Layout area="prod">
       <div className="MateriasPrimas">
-        <h1 className="titulo">Listado de Materias Primas</h1>
+        <div classname="row">
+          <h1 className="titulo">Materias Primas</h1>
+          <Button>Crear Nueva +</Button>
+        </div>
+        <Input name="buscarMateria" label=" " placeholder="Buscar..."></Input>
         <TableContainer>
           <Table variant="striped" colorScheme="gray" size="md">
             <Thead>
@@ -74,6 +80,7 @@ export default function ListadoMateriasPrimasPage() {
             </Tbody>
           </Table>
         </TableContainer>
+        <Button>Imprimir</Button>
       </div>
     </Layout>
   );
