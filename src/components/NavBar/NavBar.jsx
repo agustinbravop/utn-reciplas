@@ -4,7 +4,7 @@ import "./NavBar.css";
 
 const areasToNavLinks = {
   prod: {
-    "Materias Primas": "/prod/materias",
+    "Materias Primas": "/prod/ListadoMateriasPrimas",
     Productos: "/prod/productos",
     Pedidos: "/prod/pedidos",
   },
