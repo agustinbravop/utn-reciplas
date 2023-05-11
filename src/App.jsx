@@ -46,11 +46,11 @@ const router = createBrowserRouter([
     element: <NotFoundPage />,
   },
   {
-    path: "prod/ListaMateriasPrimas",
+    path: "prod/materias",
     element: <ListadoMateriasPrimasPage />,
   },
   {
-    path: "prod/ListaMateriasPrimas/Crear",
+    path: "prod/materias/crear",
     element: <CrearNuevaMateriaPrimaPage />,
   }
 ]);

@@ -9,9 +9,9 @@ function ProdHomePage() {
       <div>
         <Title text="Bienvenido al Área de Producción"></Title>
         <div className="row">
-          <Button name="materiasPrimasProd" href="/prod/ListadoMateriasPrimas">Materias Primas</Button> 
-          <Button name="productosProd" href="">Productos</Button> 
-          <Button name="pedidosPendientesProd" href="">Pedidos Pendientes</Button> 
+          <Button href="/prod/materias">Materias Primas</Button>
+          <Button href="/prod/productos">Productos</Button>
+          <Button href="/prod/pedidos">Pedidos Pendientes</Button>
         </div>
       </div>
     </Layout>
