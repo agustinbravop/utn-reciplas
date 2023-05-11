@@ -56,7 +56,7 @@ const router = createBrowserRouter([
     element: <DetalleMateriaPage />,
   },
   {
-    path: "prod/pendiente",
+    path: "prod/pendientes",
     element: <ListadoPedidosPendientesPage />,
   },
   {

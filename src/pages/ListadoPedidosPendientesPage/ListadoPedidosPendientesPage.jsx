@@ -1,7 +1,7 @@
 import Input from "../../components/Input/Input";
 import Layout from "../../components/Layout/Layout";
 import LineaPedidoPendiente from "../../components/LineaPedidoPendiente/LineaPedidoPendiente";
-import "../ListadoPedidosPendientes/ListadoPedidosPendientes.css";
+import "../ListadoPedidosPendientesPage/ListadoPedidosPendientesPage.css";
 import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
 import {AddIcon} from '@chakra-ui/icons'
 import Button from "../../components/Button/Button";

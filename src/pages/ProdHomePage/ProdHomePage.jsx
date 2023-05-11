@@ -12,7 +12,7 @@ function ProdHomePage() {
         <div className="row">
           <Button href="/prod/materias">Materias Primas</Button>
           <Button href="/prod/productos">Productos</Button>
-          <Button href="/prod/pedidos">Pedidos Pendientes</Button>
+          <Button href="/prod/pendientes">Pedidos Pendientes</Button>
         </div>
       </div>
     </Layout>

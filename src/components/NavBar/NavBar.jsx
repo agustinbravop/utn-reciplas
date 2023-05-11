@@ -6,7 +6,7 @@ const areasToNavLinks = {
   prod: {
     "Materias Primas": "/prod/materias",
     Productos: "/prod/productos",
-    Pedidos: "/prod/pedidos",
+    Pedidos: "/prod/pendientes",
   },
   compras: {
     Compras: "/compras/compras",
