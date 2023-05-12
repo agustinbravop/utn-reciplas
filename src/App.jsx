@@ -57,7 +57,7 @@ const router = createBrowserRouter([
     element: <CrearNuevaMateriaPrimaPage />,
   },
   {
-    path: "prod/materias/detalle",
+    path: "prod/materias/:id",
     element: <DetalleMateriaPage />,
   },
   {

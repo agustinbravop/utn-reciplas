@@ -16,17 +16,18 @@ export default function ListadoMateriasPrimasPage() {
   });
 
   const url = useLocation();
-  const a = url.pathname === "/ventas/materias" ? "ventas" : "prod";
+  const area = url.pathname === "/ventas/materias" ? "ventas" : "prod";
   const mostrar =
-    a === "prod" ? (
+    area === "prod" ? (
       <Button href="crear" rightIcon={<AddIcon color="black" />}>
         Agregar
       </Button>
     ) : (
       ""
     );
+
   return (
-    <Layout area={a}>
+    <Layout area={area}>
       <div className="listado-materias">
         <h1 className="titulo">Materias Primas</h1>
         <div className="search">

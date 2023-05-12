@@ -10,15 +10,7 @@ import { findAllClientes } from "../../data/clientes";
 export default function ListadoClientesPage() {
   const clientes = findAllClientes();
   const listadoClientes = clientes.map((c) => {
-    return (
-      <LineaCliente
-        id={c.id}
-        name={c.name}
-        mail={c.mail}
-        cel={c.cel}
-        debt={c.debt}
-      />
-    );
+    return <LineaCliente {...c} />;
   });
 
   return (
