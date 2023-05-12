@@ -15,6 +15,7 @@ import DetalleMateriaPage from "./pages/DetalleMateriaPage/DetalleMateriaPage";
 import ListadoPedidosPendientesPage from "./pages/ListadoPedidosPendientesPage/ListadoPedidosPendientesPage";
 import ListadoProductosPage from "./pages/ListadoProductosPage/ListadoProductosPage";
 import DetalleCientePage from './pages/DetalleClientePage/DetalleClientePage'
+import AltaClientePage from "./pages/AltaClientePage/AltaClientePage";
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
   {
     path: "ventas/clientes/:id",
     element: <DetalleCientePage />,
+  },
+  {
+    path: "ventas/clientes/alta",
+    element: <AltaClientePage />,
   },
   {
     path: "prod/pendientes",
