@@ -1,4 +1,5 @@
 import Input from "../../components/Input/Input";
+import { useLocation } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
 import LineaMateriaPrima from "../../components/LineaMateriaPrima/LineaMateriaPrima";
 import "./ListadoMateriasPrimas.css";
@@ -14,14 +15,22 @@ export default function ListadoMateriasPrimasPage() {
     return <LineaMateriaPrima {...materia} />;
   });
 
+  const url = useLocation();
+  const a = url.pathname === "/ventas/materias" ? "ventas" : "prod";
+  const mostrar =
+    a === "prod" ? (
+      <Button href="crear" rightIcon={<AddIcon color="black" />}>
+        Agregar
+      </Button>
+    ) : (
+      ""
+    );
   return (
-    <Layout area="prod">
+    <Layout area={a}>
       <div className="listado-materias">
         <h1 className="titulo">Materias Primas</h1>
         <div className="search">
-          <Button href="crear" rightIcon={<AddIcon color="black" />}>
-            Agregar
-          </Button>
+          {mostrar}
           <Input name="search" label="" placeholder="Buscar..." width="50%" />
         </div>
 

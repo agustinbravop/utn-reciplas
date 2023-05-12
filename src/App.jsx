@@ -13,6 +13,7 @@ import CrearNuevaMateriaPrimaPage from "./pages/CrearNuevaMateriaPrimaPage/Crear
 import ListadoMateriasPrimasPage from "./pages/ListadoMateriasPrimasPage/ListadoMateriasPrimas";
 import DetalleMateriaPage from "./pages/DetalleMateriaPage/DetalleMateriaPage";
 import ListadoPedidosPendientesPage from "./pages/ListadoPedidosPendientesPage/ListadoPedidosPendientesPage";
+import ListadoProductosPage from "./pages/ListadoProductosPage/ListadoProductosPage";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
     element: <ListadoClientesPage />,
   },
   {
+    path: "ventas/productos",
+    element: <ListadoProductosPage />,
+  },
+  {
     path: "prod/materias",
     element: <ListadoMateriasPrimasPage />,
   },
@@ -55,6 +60,20 @@ const router = createBrowserRouter([
     path: "prod/materias/detalle",
     element: <DetalleMateriaPage />,
   },
+  {
+    path: "prod/productos",
+    element: <ListadoProductosPage />,
+  },
+  {
+    path: "ventas/materias",
+    element: <ListadoMateriasPrimasPage />,
+  },
+  /*
+  {
+    path: "prod/materias/detalle/1",
+    element: <DetalleMateriaPage id={1} />
+  },
+  */
   {
     path: "prod/pendientes",
     element: <ListadoPedidosPendientesPage />,

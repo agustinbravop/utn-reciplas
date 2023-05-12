@@ -18,7 +18,9 @@ export default function LineaMateriaPrima({
       <Td>{cantidad} kg</Td>
       <Td>{ultimoCambio}</Td>
       <Td>
-        <EditIcon></EditIcon>
+        <button> <EditIcon></EditIcon> </button>
+        
+        
       </Td>
     </Tr>
   );
