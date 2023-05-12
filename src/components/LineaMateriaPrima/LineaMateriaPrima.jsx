@@ -1,6 +1,6 @@
 import { Tr, Td } from "@chakra-ui/react";
 import { EditIcon } from "@chakra-ui/icons";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; 
 
 export default function LineaMateriaPrima({
   id,

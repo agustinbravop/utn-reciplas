@@ -23,6 +23,14 @@ const ventas = [
     type: "Mediano",
     unitCost: 285,
   },
+  {
+    id: 1,
+    client: "Jose Lopez",
+    product: "Plastico",
+    units: 15,
+    type: "Botellas",
+    unitCost: 1000,
+  },
 ];
 
 const findAllVentas = () => {
@@ -32,5 +40,6 @@ const findAllVentas = () => {
 const findVentaByID = (id) => {
   return ventas.find((c) => c.id === id);
 };
+
 
 export { findAllVentas, findVentaByID };
