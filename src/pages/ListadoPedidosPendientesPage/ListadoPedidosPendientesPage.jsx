@@ -3,64 +3,26 @@ import Layout from "../../components/Layout/Layout";
 import LineaPedidoPendiente from "../../components/LineaPedidoPendiente/LineaPedidoPendiente";
 import "../ListadoPedidosPendientesPage/ListadoPedidosPendientesPage.css";
 import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
-import {AddIcon} from '@chakra-ui/icons'
+import { AddIcon } from "@chakra-ui/icons";
 import Button from "../../components/Button/Button";
 import { React } from "react";
-
-const pedidosPendientes = [
-  {
-    id: 1,
-    descripcion: "Plástico ABC",
-    calidad: "Excelente",
-    deposito: "A2",
-    cantidad: 125.1,
-    ultimoCambio: "30/12/2022 16:40",
-  },
-  {
-    id: 2,
-    descripcion: "Plástico ABC",
-    calidad: "Excelente",
-    deposito: "A2",
-    cantidad: 125.1,
-    ultimoCambio: "30/12/2022 16:40",
-  },
-  {
-    id: 3,
-    descripcion: "Plástico ABC",
-    calidad: "Excelente",
-    deposito: "A2",
-    cantidad: 125.1,
-    ultimoCambio: "30/12/2022 16:40",
-  },
-  {
-    id: 4,
-    descripcion: "Plástico ABC",
-    calidad: "Excelente",
-    deposito: "A2",
-    cantidad: 125.1,
-    ultimoCambio: "30/12/2022 16:40",
-  },
-];
+import { findAllPedidosPendientes } from "../../data/pedidosPendientes";
 
 export default function ListadoPedidosPendientesPage() {
-  const lineaDePedidoPendiente= pedidosPendientes.map((pedidos) => {
+  const pedidosPendientes = findAllPedidosPendientes();
+  const lineaDePedidoPendiente = pedidosPendientes.map((pedidos) => {
     return <LineaPedidoPendiente {...pedidos} />;
   });
 
   return (
     <Layout area="prod">
       <div className="pedidos-pendientes">
-          <h1 className="titulo">Pedidos Pendientes</h1>
-          <div className="search">
+        <h1 className="titulo">Pedidos Pendientes</h1>
+        <div className="search">
           <Button href="agregar" rightIcon={<AddIcon color="black" />}>
             Agregar
           </Button>
-          <Input
-            name="search"
-            label=''
-            placeholder="Buscar..."
-            width="50%"
-          />
+          <Input name="search" label="" placeholder="Buscar..." width="50%" />
         </div>
 
         <TableContainer>
@@ -80,6 +42,6 @@ export default function ListadoPedidosPendientesPage() {
         </TableContainer>
         <Button>Imprimir</Button>
       </div>
-      </Layout>
+    </Layout>
   );
 }
