@@ -25,7 +25,6 @@ const ventas = [
   },
 ];
 
-
 const findAllVentas = () => {
   return ventas;
 };

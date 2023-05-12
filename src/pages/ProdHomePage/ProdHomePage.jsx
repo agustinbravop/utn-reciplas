@@ -7,7 +7,7 @@ import "../ProdHomePage/ProdHomePage.css";
 function ProdHomePage() {
   return (
     <Layout area="prod">
-      <div className="cuerpo"> 
+      <div className="cuerpo">
         <Title text="Bienvenido al Área de Producción"></Title>
         <div className="row">
           <Button href="/prod/materias">Materias Primas</Button>

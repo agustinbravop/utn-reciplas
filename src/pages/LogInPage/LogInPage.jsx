@@ -22,9 +22,9 @@ function LogInPage() {
     } else if (userType === "compras") {
       navigate("/compras");
     } else {
-      navigate("/404")
+      navigate("/404");
     }
-  }
+  };
 
   return (
     <Layout>
@@ -44,7 +44,9 @@ function LogInPage() {
           value={pass}
           onChange={(e) => setPass(e.target.value)}
         ></Input>
-        <Button onClick={handleSubmit} type="submit">Ingresar</Button>
+        <Button onClick={handleSubmit} type="submit">
+          Ingresar
+        </Button>
       </form>
     </Layout>
   );

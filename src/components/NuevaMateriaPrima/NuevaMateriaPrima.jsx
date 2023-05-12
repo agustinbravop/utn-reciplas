@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import RadioGroup from "../RadioGroup/RadioGroup";
-import "../NuevaMateriaPrima/NuevaMateriaPrima.css"
+import "../NuevaMateriaPrima/NuevaMateriaPrima.css";
 
 function NuevaMateriaPrima() {
   const options = ["Mala", "Buena", "Excelente"];

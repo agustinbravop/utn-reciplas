@@ -5,11 +5,7 @@ function Layout({ area, children }) {
   return (
     <>
       <Header area={area} />
-      <main
-        style={{ minHeight: "calc(100vh - 80px - 65px)" }}
-      >
-        {children}
-      </main>
+      <main style={{ minHeight: "calc(100vh - 80px - 65px)" }}>{children}</main>
     </>
   );
 }

@@ -6,7 +6,7 @@ export default function LineaVenta({
   product,
   units,
   type,
-  unitCost
+  unitCost,
 }) {
   return (
     <Tr key={id}>

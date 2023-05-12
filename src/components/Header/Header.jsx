@@ -10,5 +10,5 @@ export default function Header({ area }) {
       <NavBar area={area} />
       <User area={area} />
     </header>
-  )
+  );
 }

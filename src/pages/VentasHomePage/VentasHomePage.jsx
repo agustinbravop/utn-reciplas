@@ -4,9 +4,7 @@ import Layout from "../../components/Layout/Layout";
 function VentasHomePage() {
   return (
     <Layout area="ventas">
-      <div>
-        Soy el HomePage de ventas
-      </div>
+      <div>Soy el HomePage de ventas</div>
     </Layout>
   );
 }
