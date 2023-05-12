@@ -2,15 +2,16 @@ import React from "react";
 import FormMovimientos from "../../components/FormMovimientos/FormMovimientos";
 import Title from "../../components/Title/Title";
 import { findMateriaPrimaByID } from "../../data/materias";
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 import Layout from "../../components/Layout/Layout";
 
 function DetalleMateriaPage() {
   const { id } = useParams("id");
   const m = findMateriaPrimaByID(parseInt(id));
-
+  const url = useLocation();
+  const area = url.pathname === "/ventas/materias" ? "ventas" : "prod";
   return (
-    <Layout>
+    <Layout area={area}>
       <div className="cuerpo">
         <Title>{m.descripcion}</Title>
         <h2>ID: {m.id} </h2>
