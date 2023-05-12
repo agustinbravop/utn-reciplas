@@ -15,6 +15,10 @@ import DetalleMateriaPage from "./pages/DetalleMateriaPage/DetalleMateriaPage";
 import ListadoPedidosPendientesPage from "./pages/ListadoPedidosPendientesPage/ListadoPedidosPendientesPage";
 import ListadoProductosPage from "./pages/ListadoProductosPage/ListadoProductosPage";
 
+import ListadoDeEmpleados from "./pages/ListadoDeEmpleados/ListadoDeEmpleados";
+import ListadoDeProveedores from "./pages/ListadoDeProveedores/ListadoDeProveedores";
+import ListadoDeClientes from "./pages/ListadoDeClientes/ListadoDeClientes";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,6 +43,18 @@ const router = createBrowserRouter([
   {
     path: "admin/ventas",
     element: <ListadoVentasPage />,
+  },
+  {
+    path: "admin/empleados",
+    element: <ListadoDeEmpleados />,
+  },
+  {
+    path: "admin/reporteProveedores",
+    element: <ListadoDeProveedores />,
+  },
+  {
+    path: "admin/reporteClientes",
+    element: <ListadoDeClientes />,
   },
   {
     path: "ventas/clientes",
