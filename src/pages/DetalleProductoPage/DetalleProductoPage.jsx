@@ -1,21 +1,22 @@
 import React from "react";
 import FormMovimientos from "../../components/FormMovimientos/FormMovimientos";
 import Title from "../../components/Title/Title";
-import { findMateriaPrimaByID } from "../../data/materias";
-import { useLocation, useParams } from "react-router";
+import { useParams } from "react-router";
 import Layout from "../../components/Layout/Layout";
+import { findProductoByID } from "../../data/productos";
 
 function DetalleMateriaPage() {
   const { id } = useParams("id");
-  const m = findMateriaPrimaByID(parseInt(id));
-  const url = useLocation();
+  const prod = findProductoByID(parseInt(id));
   return (
     <Layout>
       <div className="cuerpo">
-        <Title>{m.descripcion}</Title>
-        <h2>ID: {m.id} </h2>
-        <h2>Depósito: {m.deposito} </h2>
-        <h2>Cantidad Actual: {m.cantidad} </h2>
+        <Title>{prod.descripcion}</Title>
+        <h2>ID: {prod.id}</h2>
+        <h2>Línea: {prod.linea}</h2>
+        <h2>Depósito: {prod.deposito} </h2>
+        <h2>Cantidad Actual: {prod.cantidad}</h2>
+        <br></br>
         <FormMovimientos></FormMovimientos>
         <br></br>
         <h2>Historial de Movimientos</h2>

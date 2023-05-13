@@ -12,6 +12,7 @@ import ListadoClientesPage from "./pages/ListadoClientesPage/ListadoClientesPage
 import CrearNuevaMateriaPrimaPage from "./pages/CrearNuevaMateriaPrimaPage/CrearNuevaMateriaPrimaPage";
 import ListadoMateriasPrimasPage from "./pages/ListadoMateriasPrimasPage/ListadoMateriasPrimas";
 import DetalleMateriaPage from "./pages/DetalleMateriaPage/DetalleMateriaPage";
+import DetalleProductoPage from "./pages/DetalleProductoPage/DetalleProductoPage";
 import ListadoPedidosPendientesPage from "./pages/ListadoPedidosPendientesPage/ListadoPedidosPendientesPage";
 import ListadoProductosPage from "./pages/ListadoProductosPage/ListadoProductosPage";
 import DetalleCientePage from './pages/DetalleClientePage/DetalleClientePage'
@@ -65,6 +66,9 @@ const router = createBrowserRouter([
   {
     path: "prod/productos",
     element: <ListadoProductosPage />,
+  },  {
+    path: "prod/productos/:id",
+    element: <DetalleProductoPage />,
   },
   {
     path: "ventas/materias",
