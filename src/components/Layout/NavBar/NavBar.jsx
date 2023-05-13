@@ -35,13 +35,8 @@ function NavBar({ area }) {
 
   const navItems = Object.entries(areasToNavLinks[area])?.map((link) => {
     return (
-      <li>
-        <NavLink
-          to={link[1]}
-          className={location.pathname.includes(link[1]) && "current"}
-        >
-          {link[0]}
-        </NavLink>
+      <li className={location.pathname.includes(link[1]) && "current"}>
+        <NavLink to={link[1]}>{link[0]}</NavLink>
       </li>
     );
   });

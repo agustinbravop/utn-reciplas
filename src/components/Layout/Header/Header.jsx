@@ -1,5 +1,5 @@
-import User from "../User/User";
-import Logo from "../Logo/Logo";
+import User from "../../User/User";
+import Logo from "../../Logo/Logo";
 import NavBar from "../NavBar/NavBar";
 import "./Header.css";
 
