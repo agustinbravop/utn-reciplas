@@ -1,13 +1,14 @@
 import React from "react";
 import FormMovimientos from "../../components/FormMovimientos/FormMovimientos";
 import Title from "../../components/Title/Title";
-import { findProductoByID } from "../../data/productos";
-import { useParams } from "react-router";
+import { findMateriaPrimaByID } from "../../data/materias";
+import { useLocation, useParams } from "react-router";
 import Layout from "../../components/Layout/Layout";
 
-function DetalleProductoPage() {
+function DetalleMateriaPage() {
   const { id } = useParams("id");
-  const m = findProductoByID(parseInt(id));
+  const m = findMateriaPrimaByID(parseInt(id));
+  const url = useLocation();
   return (
     <Layout>
       <div className="cuerpo">
@@ -24,4 +25,4 @@ function DetalleProductoPage() {
   );
 }
 
-export default DetalleProductoPage;
+export default DetalleMateriaPage;

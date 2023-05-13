@@ -11,7 +11,7 @@ export default function ListadoVentasPage() {
   });
 
   return (
-    <Layout area="admin">
+    <Layout>
       <div className="Ventas">
         <h1 className="titulo">Listado de Ventas Realizadas</h1>
         <TableContainer>

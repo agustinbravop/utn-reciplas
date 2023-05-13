@@ -1,7 +1,10 @@
 import React from "react";
 import Header from "./Header/Header";
+import { useLocation } from "react-router";
 
-function Layout({ area, children }) {
+function Layout({ children }) {
+  const url = useLocation();
+  const area = url.pathname.split("/")[1]
   return (
     <>
       <Header area={area} />

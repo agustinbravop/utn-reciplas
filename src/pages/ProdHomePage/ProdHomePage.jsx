@@ -6,7 +6,7 @@ import "../ProdHomePage/ProdHomePage.css";
 
 function ProdHomePage() {
   return (
-    <Layout area="prod">
+    <Layout>
       <div className="cuerpo">
         <Title text="Bienvenido al Área de Producción"></Title>
         <div className="row">

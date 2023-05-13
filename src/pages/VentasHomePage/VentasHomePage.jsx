@@ -5,7 +5,7 @@ import Title from '../../components/Title/Title'
 
 function VentasHomePage() {
   return (
-    <Layout area="ventas">
+    <Layout>
       <div className="cuerpo">
         <Title text="Bienvenido al Área de Ventas"></Title>
         <div className="row">

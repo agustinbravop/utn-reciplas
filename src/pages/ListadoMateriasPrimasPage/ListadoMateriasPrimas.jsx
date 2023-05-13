@@ -27,7 +27,7 @@ export default function ListadoMateriasPrimasPage() {
     );
 
   return (
-    <Layout area={area}>
+    <Layout>
       <div className="listado-materias">
         <h1 className="titulo">Materias Primas</h1>
         <div className="search">

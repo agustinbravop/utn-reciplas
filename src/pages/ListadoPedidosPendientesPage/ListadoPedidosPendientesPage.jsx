@@ -15,7 +15,7 @@ export default function ListadoPedidosPendientesPage() {
   });
 
   return (
-    <Layout area="prod">
+    <Layout>
       <div className="pedidos-pendientes">
         <h1 className="titulo">Pedidos Pendientes</h1>
         <div className="search">
