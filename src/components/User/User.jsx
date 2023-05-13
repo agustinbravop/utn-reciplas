@@ -1,17 +1,10 @@
 import "./User.css";
 
-const areaToUserName = {
-  prod: "Sr. Producción",
-  compras: "Sr. Compras",
-  ventas: "Sr. Ventas",
-  admin: "Sr. Admin",
-};
-export default function User({ area }) {
-  if (!area) {
+
+export default function User({ userName }) {
+  if (!userName) {
     return null;
   }
-
-  const userName = areaToUserName[area];
 
   return (
     <div className="user">

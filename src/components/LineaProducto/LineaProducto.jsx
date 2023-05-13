@@ -22,7 +22,7 @@ export default function LineaProducto({
       </Td>
       <Td>{linea}</Td>
       <Td>{deposito}</Td>
-      <Td>{cantidad} kg</Td>
+      <Td>{cantidad}</Td>
       <Td>{ultimoCambio}</Td>
       <Td>
         <Link to={`${id}`}>{edit}</Link>
