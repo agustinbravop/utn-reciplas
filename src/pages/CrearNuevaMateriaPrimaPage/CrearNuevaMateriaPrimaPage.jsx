@@ -5,7 +5,7 @@ import Title from "../../components/Title/Title";
 
 function CrearNuevaMateriaPrimaPage() {
   return (
-    <Layout area="prod">
+    <Layout>
       <div>
         <Title text="Crear Nueva Materia Prima"></Title>
         <NuevaMateriaPrima />

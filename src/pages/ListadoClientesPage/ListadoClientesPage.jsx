@@ -10,23 +10,15 @@ import { findAllClientes } from "../../data/clientes";
 export default function ListadoClientesPage() {
   const clientes = findAllClientes();
   const listadoClientes = clientes.map((c) => {
-    return (
-      <LineaCliente
-        id={c.id}
-        name={c.name}
-        mail={c.mail}
-        cel={c.cel}
-        debt={c.debt}
-      />
-    );
+    return <LineaCliente {...c} />;
   });
 
   return (
-    <Layout area="ventas">
+    <Layout>
       <div className="ClienteLista">
         <h1 className="titulo">Listado de Clientes</h1>
         <div className="search">
-          <Button rightIcon={<AddIcon color="black" />}>Agregar</Button>
+          <Button href='alta' rightIcon={<AddIcon color="black" />}>Agregar</Button>
           <Input name="search" label="" placeholder="Buscar..." width="50%" />
         </div>
 

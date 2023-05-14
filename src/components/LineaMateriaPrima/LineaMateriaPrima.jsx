@@ -1,5 +1,6 @@
 import { Tr, Td } from "@chakra-ui/react";
 import { EditIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 
 export default function LineaMateriaPrima({
   id,
@@ -12,15 +13,17 @@ export default function LineaMateriaPrima({
   return (
     <Tr key={id}>
       <Td>{id}</Td>
-      <Td>{descripcion}</Td>
+      <Td>
+        <Link to={`${id}`}>{descripcion}</Link>
+      </Td>
       <Td>{calidad}</Td>
       <Td>{deposito}</Td>
       <Td>{cantidad} kg</Td>
       <Td>{ultimoCambio}</Td>
       <Td>
-        <button> <EditIcon></EditIcon> </button>
-        
-        
+        <Link to={`${id}`}>
+          <EditIcon></EditIcon>
+        </Link>
       </Td>
     </Tr>
   );

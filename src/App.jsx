@@ -9,11 +9,17 @@ import VentasHomePage from "./pages/VentasHomePage/VentasHomePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import ListadoVentasPage from "./pages/ListadoVentasPage/ListadoVentasPage";
 import ListadoClientesPage from "./pages/ListadoClientesPage/ListadoClientesPage";
+import ListadoProveedoresPage from "./pages/ListadoProveedoresPage/ListadoProveedoresPage";
 import CrearNuevaMateriaPrimaPage from "./pages/CrearNuevaMateriaPrimaPage/CrearNuevaMateriaPrimaPage";
 import ListadoMateriasPrimasPage from "./pages/ListadoMateriasPrimasPage/ListadoMateriasPrimas";
 import DetalleMateriaPage from "./pages/DetalleMateriaPage/DetalleMateriaPage";
+import DetalleProductoPage from "./pages/DetalleProductoPage/DetalleProductoPage";
 import ListadoPedidosPendientesPage from "./pages/ListadoPedidosPendientesPage/ListadoPedidosPendientesPage";
 import ListadoProductosPage from "./pages/ListadoProductosPage/ListadoProductosPage";
+import DetalleCientePage from './pages/DetalleClientePage/DetalleClientePage'
+import AltaClientePage from "./pages/AltaClientePage/AltaClientePage";
+import AltaProveedorPage from "./pages/AltaProveedorPage/AltaProveedorPage";
+import DetalleProveedoresPage from './pages/DetalleProveedoresPage/DetalleProveedoresPage'
 
 import ListadoDeEmpleados from "./pages/ListadoDeEmpleados/ListadoDeEmpleados";
 import ListadoDeProveedores from "./pages/ListadoDeProveedores/ListadoDeProveedores";
@@ -61,6 +67,10 @@ const router = createBrowserRouter([
     element: <ListadoClientesPage />,
   },
   {
+    path: "ventas/proveedores",
+    element: <ListadoProveedoresPage />,
+  },
+  {
     path: "ventas/productos",
     element: <ListadoProductosPage />,
   },
@@ -73,23 +83,40 @@ const router = createBrowserRouter([
     element: <CrearNuevaMateriaPrimaPage />,
   },
   {
-    path: "prod/materias/detalle",
+    path: "prod/materias/:id",
     element: <DetalleMateriaPage />,
   },
   {
     path: "prod/productos",
     element: <ListadoProductosPage />,
+  },  {
+    path: "prod/productos/:id",
+    element: <DetalleProductoPage />,
   },
   {
     path: "ventas/materias",
     element: <ListadoMateriasPrimasPage />,
   },
-  /*
   {
-    path: "prod/materias/detalle/1",
-    element: <DetalleMateriaPage id={1} />
+    path: "ventas/clientes/:id",
+    element: <DetalleCientePage />,
   },
-  */
+  {
+    path: "ventas/proveedores/:id",
+    element: <DetalleProveedoresPage />,
+  },
+  {
+    path: "ventas/materias/:id",
+    element: <DetalleMateriaPage />,
+  },
+  {
+    path: "ventas/clientes/alta",
+    element: <AltaClientePage />,
+  },
+  {
+    path: "ventas/proveedores/alta",
+    element: <AltaProveedorPage />,
+  },
   {
     path: "prod/pendientes",
     element: <ListadoPedidosPendientesPage />,

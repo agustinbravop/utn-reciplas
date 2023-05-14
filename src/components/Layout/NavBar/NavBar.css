@@ -4,12 +4,12 @@
   gap: 5px;
 }
 
-.nav-bar li {
+.nav-bar a {
   background-color: #fff;
   padding: 5px 10px;
   border-radius: 2px;
 }
 
-.nav-bar .current {
-  background-color: #ebebf0;
+.nav-bar .current a {
+  background-color: #ebeff0;
 }

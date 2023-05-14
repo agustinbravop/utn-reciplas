@@ -27,7 +27,7 @@ export default function ListadoProductosPage() {
     );
     
   return (
-    <Layout area={a}>
+    <Layout>
       <div className="pedidos-pendientes">
         <h1 className="titulo">Productos Elaborados</h1>
         <div className="search">
