@@ -21,7 +21,7 @@ const productos = [
   },
   {
     id: 2,
-    descripcion: "Baso Mediano Normal",
+    descripcion: "Vaso Mediano",
     linea: "Plasticos",
     deposito: "E7",
     cantidad: 12,

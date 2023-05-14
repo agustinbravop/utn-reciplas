@@ -1,10 +1,13 @@
 import React from "react";
-import FormMovimientos from "../../components/FormMovimientos/FormMovimientos";
 import Title from "../../components/Title/Title";
 import { useParams } from "react-router";
 import Layout from "../../components/Layout/Layout";
 import { findProductoByID } from "../../data/productos";
 import User from "../../components/User/User";
+import RadioGroup from "../../components/RadioGroup/RadioGroup";
+import Input from "../../components/Input/Input";
+import Button from "../../components/Button/Button";
+import "./DetalleProductoPage.css"
 
 function Movimientos({ movimientos }) {
   const lineas = movimientos?.map((m) => {
@@ -23,6 +26,22 @@ function Movimientos({ movimientos }) {
     </>
   );
 }
+
+function FormMovimientos() {
+  const options = ["Ingreso", "Egreso"];
+  return (
+    <div className="producto-movimiento-form">
+      <Input
+        name="InputCantidad"
+        label="Cantidad a Mover"
+        placeholder="0..."
+      ></Input>
+      <RadioGroup options={options} />
+      <Button>Guardar Movimiento</Button>
+    </div>
+  );
+}
+
 function DetalleMateriaPage() {
   const { id } = useParams("id");
   const prod = findProductoByID(parseInt(id));
@@ -30,12 +49,20 @@ function DetalleMateriaPage() {
     <Layout>
       <div className="cuerpo">
         <Title>{prod.descripcion}</Title>
-        <h2>ID: {prod.id}</h2>
-        <h2>Línea: {prod.linea}</h2>
-        <h2>Depósito: {prod.deposito} </h2>
-        <h2>Unidades actuales: {prod.cantidad}</h2>
+        <h2>
+          <b>ID:</b> {prod.id}
+        </h2>
+        <h2>
+          <b>Línea:</b> {prod.linea}
+        </h2>
+        <h2>
+          <b>Depósito:</b> {prod.deposito}{" "}
+        </h2>
+        <h2>
+          <b>Unidades actuales:</b> {prod.cantidad}
+        </h2>
         <br></br>
-        <FormMovimientos></FormMovimientos>
+        <FormMovimientos />
         <br></br>
         <Movimientos movimientos={prod.movimientos}></Movimientos>
       </div>
