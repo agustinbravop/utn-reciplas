@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React from "react";
 import Layout from "../../components/Layout/Layout";
 import "./AdminHomePage.css";
@@ -26,17 +26,4 @@ function AdminHomePage() {
 }
 
 export default AdminHomePage;
-=======
-import React from "react";
-import Layout from "../../components/Layout/Layout";
 
-function AdminHomePage() {
-  return (
-    <Layout>
-      <div>AdminHomePage</div>
-    </Layout>
-  );
-}
-
-export default AdminHomePage;
->>>>>>> faeed98b5ce58ad3d141f5209990dd292ae10c69
