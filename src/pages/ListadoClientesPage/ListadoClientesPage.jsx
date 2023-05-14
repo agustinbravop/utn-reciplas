@@ -14,7 +14,7 @@ export default function ListadoClientesPage() {
   });
 
   return (
-    <Layout area="ventas">
+    <Layout>
       <div className="ClienteLista">
         <h1 className="titulo">Listado de Clientes</h1>
         <div className="search">

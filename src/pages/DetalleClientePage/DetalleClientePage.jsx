@@ -10,7 +10,7 @@ export default function DetalleClientePage() {
   const { id } = useParams("id");
   const m = findClienteByID(parseInt(id));
   return (
-    <Layout area="ventas">
+    <Layout>
       <div className="cuerpo">
         <Title>{m.name}</Title>
         <h2>ID: {m.id} </h2>

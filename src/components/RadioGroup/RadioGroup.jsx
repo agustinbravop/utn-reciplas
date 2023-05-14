@@ -2,13 +2,13 @@ import { Radio, RadioGroup as ChakraRadioGroup, Stack } from "@chakra-ui/react";
 import { useState } from "react";
 
 function RadioGroup({ options }) {
-  const [value, setValue] = useState("1");
+  const [value, setValue] = useState("0");
 
   return (
     <ChakraRadioGroup onChange={setValue} value={value}>
-      <Stack direction="row">
+      <Stack direction="row" justify="space-around">
         {options.map((opt, idx) => {
-          return <Radio value={idx}>{opt}</Radio>;
+          return <Radio value={`${idx}`}>{opt}</Radio>;
         })}
       </Stack>
     </ChakraRadioGroup>

@@ -5,7 +5,7 @@ import AltaCliente from '../../components/AltaCliente/AltaCiente'
 
 export default function AltaClientePage() {
   return (
-    <Layout area='ventas'>
+    <Layout>
         <div>
             <Title>Alta de Cliente</Title>
             <AltaCliente />
