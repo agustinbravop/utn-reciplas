@@ -42,7 +42,7 @@ function FormMovimientos() {
   );
 }
 
-function DetalleMateriaPage() {
+function DetalleProductoPage() {
   const { id } = useParams("id");
   const prod = findProductoByID(parseInt(id));
   return (
@@ -70,4 +70,4 @@ function DetalleMateriaPage() {
   );
 }
 
-export default DetalleMateriaPage;
+export default DetalleProductoPage;
