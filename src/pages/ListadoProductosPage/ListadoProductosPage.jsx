@@ -25,7 +25,7 @@ export default function ListadoProductosPage() {
     ) : (
       ""
     );
-    
+
   return (
     <Layout>
       <div className="pedidos-pendientes">

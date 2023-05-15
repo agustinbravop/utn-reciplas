@@ -1,6 +1,5 @@
 import "./User.css";
 
-
 export default function User({ userName }) {
   if (!userName) {
     return null;

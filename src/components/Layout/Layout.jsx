@@ -4,7 +4,7 @@ import { useLocation } from "react-router";
 
 function Layout({ children }) {
   const url = useLocation();
-  const area = url.pathname.split("/")[1]
+  const area = url.pathname.split("/")[1];
   return (
     <>
       <Header area={area} />

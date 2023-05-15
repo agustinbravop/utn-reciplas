@@ -7,7 +7,7 @@ import User from "../../components/User/User";
 import RadioGroup from "../../components/RadioGroup/RadioGroup";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
-import "./DetalleProductoPage.css"
+import "./DetalleProductoPage.css";
 
 function Movimientos({ movimientos }) {
   const lineas = movimientos?.map((m) => {
