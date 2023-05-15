@@ -1,6 +1,6 @@
 import Input from "../../components/Input/Input";
 import Layout from "../../components/Layout/Layout";
-import LineaPedidoPendiente from "../../components/LineaDeProveedores/LineaDeProveedores";
+import LineaDeProveedores from "../../components/LineaDeProveedores/LineaDeProveedores";
 import "../ListadoPedidosPendientesPage/ListadoPedidosPendientesPage.css";
 import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
 import {AddIcon} from '@chakra-ui/icons'
@@ -8,41 +8,36 @@ import Button from "../../components/Button/Button";
 import { React } from "react";
 import { color } from "framer-motion";
 
-const pedidosPendientes = [
+const proveedores = [
   {
-    nombre: "Plástico ABC",
-    correo: "Excelente",
-    telefono: "A2",
-    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.ejemplo.com">Enlace subrayado</a>,
-
+    nombre: "Roberto",
+    correo: "roberto@gmail.com",
+    telefono: "999999",
+    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.ejemplo.com">PERFIL</a>,
   },
   {
-    nombre: "Plástico ABC",
-    correo: "Excelente",
-    telefono: "A2",
-    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.google.com">Enlace subrayado</a>,
-
-
+    nombre: "Roberto",
+    correo: "roberto@gmail.com",
+    telefono: "999999",
+    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.ejemplo.com">PERFIL</a>,
   },
   {
-    nombre: "Plástico ABC",
-    correo: "Excelente",
-    telefono: "A2",
-    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.ejemplo.com">Enlace subrayado</a>,
-
+    nombre: "Roberto",
+    correo: "roberto@gmail.com",
+    telefono: "999999",
+    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.ejemplo.com">PERFIL</a>,
   },
   {
-    nombre: "Plástico ABC",
-    correo: "Excelente",
-    telefono: "A2",
-    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.ejemplo.com">Enlace subrayado</a>,
-
+    nombre: "Roberto",
+    correo: "roberto@gmail.com",
+    telefono: "999999",
+    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.ejemplo.com">PERFIL</a>,
   },
 ];
 
-export default function ListadoPedidosPendientesPage() {
-  const lineaDePedidoPendiente= pedidosPendientes.map((pedidos) => {
-    return <LineaPedidoPendiente {...pedidos} />;
+export default function ListadoDeProveedoresPage() {
+  const lineaDeProveedores= proveedores.map((pedidos) => {
+    return <LineaDeProveedores{...pedidos} />;
   });
 
   return (
@@ -71,7 +66,7 @@ export default function ListadoPedidosPendientesPage() {
                 <Th >PERFIL</Th>
               </Tr>
             </Thead>
-            <Tbody>{lineaDePedidoPendiente}</Tbody>
+            <Tbody>{lineaDeProveedores}</Tbody>
           </Table>
         </TableContainer>
         <Button>Imprimir</Button>

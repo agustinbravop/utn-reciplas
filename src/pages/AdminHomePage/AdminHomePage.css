@@ -1,3 +1,4 @@
+
 .title {
     position: absolute;
     width: 875px;
@@ -18,13 +19,11 @@
     
     color: #000000;
   }
-.row{
-
+.roww{
   display: flex;
   justify-content: center;
   gap: 10px;
   margin: 5px;
-  flex-wrap: wrap;
 
 }
 .container {

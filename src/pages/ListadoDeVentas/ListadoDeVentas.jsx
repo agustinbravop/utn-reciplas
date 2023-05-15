@@ -1,57 +1,61 @@
 import Input from "../../components/Input/Input";
 import Layout from "../../components/Layout/Layout";
-import LineaDeClientes from "../../components/LineaDeClientes/LineaDeClientes";
+import LineaDeVentas from "../../components/LineaDeVentas/LineaDeVentas";
 import "../ListadoPedidosPendientesPage/ListadoPedidosPendientesPage.css";
-import {  Table, Thead, Tbody, Tr, Th, TableContainer,Checkbox } from "@chakra-ui/react";
+import {Table, Thead, Tbody, Tr, Th, TableContainer,Checkbox} from "@chakra-ui/react";
 import {AddIcon} from '@chakra-ui/icons'
 import Button from "../../components/Button/Button";
 import { React } from "react";
 import { color } from "framer-motion";
 import { useState } from "react";
+import Calendar from "../../components/Calendar/Calendar";
 
-const clientes = [
+const ventas = [
   {
     id: 1,
+    nombre: "Robertito",
+    fecha: "11/08/200",
+    producto: "Mueble",
+    unidades: 5,
+    tipo: "A2",
+    total: 9999,
     isChecked: false,
-    nombre: "Roberto",
-    correo: "robertito@gmail.com",
-    telefono: "3624773377",
-    deuda:" $135415",
-    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.ejemplo.com">PERFIL</a>,
   },
-  { 
+  {
     id: 2,
+    nombre: "Robertito",
+    fecha: "11/08/200",
+    producto: "Mueble",
+    unidades: 5,
+    tipo: "A2",
+    total: 9999,
     isChecked: false,
-    nombre: "Roberto",
-    correo: "robertito@gmail.com",
-    telefono: "3624773377",
-    deuda:" $135415",
-    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.ejemplo.com">PERFIL</a>,
   },
-  { 
+  {
     id: 3,
+    nombre: "Robertito",
+    fecha: "11/08/200",
+    producto: "Mueble",
+    unidades: 5,
+    tipo: "A2",
+    total: 9999,
     isChecked: false,
-    nombre: "Roberto",
-    correo: "robertito@gmail.com",
-    telefono: "3624773377",
-    deuda:" $135415",
-    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.ejemplo.com">PERFIL</a>,
   },
-  { 
+  {
     id: 4,
+    nombre: "Robertito",
+    fecha: "11/08/200",
+    producto: "Mueble",
+    unidades: 5,
+    tipo: "A2",
+    total: 9999,
     isChecked: false,
-    nombre: "Roberto",
-    correo: "robertito@gmail.com",
-    telefono: "3624773377",
-    deuda:" $135415",
-    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.ejemplo.com">PERFIL</a>,
   },
 ];
 
-
-export default function ListadoClientesPage() {
+export default function ListadoPedidosPendientesPage() {
   const [allChecked, setAllChecked] = useState(false); // Estado para controlar la selección de todas las casillas
-  const [pedidosPendientes, setPedidosPendientes] = useState(clientes);
+  const [pedidosPendientes, setPedidosPendientes] = useState(ventas);
   
 
   const handleAllChecked = () => {
@@ -78,7 +82,7 @@ export default function ListadoClientesPage() {
   };
 
   const lineaDePedidoPendiente= pedidosPendientes.map((pedido) => {
-    return <LineaDeClientes
+    return <LineaDeVentas
     key={pedido.id}
       {...pedido}
       isChecked={pedido.isChecked}
@@ -88,8 +92,20 @@ export default function ListadoClientesPage() {
   return (
     <Layout area="admin">
       <div className="pedidos-pendientes">
-          <h1 className="titulo">CLIENTES</h1>
+          <h1 className="titulo">Ventas</h1>
+          <div style={{ display: 'inline-block' }}>
+              Inicio
+              <Calendar />
+            </div>
+            <div style={{ display: 'inline-block' }}>
+              Fin
+              <Calendar />
+            </div>
+          
           <div className="search">
+          <Button href="agregar" rightIcon={<AddIcon color="black" />}>
+            Agregar
+          </Button>
           <Input
             name="search"
             label=''
@@ -110,10 +126,11 @@ export default function ListadoClientesPage() {
               Seleccionar Todo
               </Checkbox>
                 <Th>NOMBRE</Th>
-                <Th>CORREO</Th>
-                <Th>TELEFONO</Th>
-                <Th>DEUDA</Th>
-                <Th ></Th>
+                <Th>FECHA</Th>
+                <Th>PRODUCTO</Th>
+                <Th>UNIDADES</Th>
+                <Th>TIPO</Th>
+                <Th >TOTAL</Th>
               </Tr>
             </Thead>
             <Tbody>{lineaDePedidoPendiente}</Tbody>
@@ -124,5 +141,3 @@ export default function ListadoClientesPage() {
       </Layout>
   );
 }
-
-

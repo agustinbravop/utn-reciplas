@@ -1,0 +1,10 @@
+.pedidos-pendientes {
+    padding: 1% 11%;
+  }
+  .titulo {
+    size: 3%;
+  }
+  .cajas{
+    margin-right: 10px; /* Mueve el elemento 10px hacia la derecha */
+    border: 1px solid black; /* Agrega un contorno de 1px de grosor y color negro */
+  }

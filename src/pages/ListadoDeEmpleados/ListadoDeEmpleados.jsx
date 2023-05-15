@@ -14,7 +14,7 @@ const pedidosPendientes = [
     nombre: "Plástico ABC",
     sector: "Excelente",
     telefono: "A2",
-    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.ejemplo.com">Enlace subrayado</a>,
+    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="/admin/empleado/perfil">PERFIL</a>,
 
   },
   {
@@ -22,7 +22,7 @@ const pedidosPendientes = [
     nombre: "Plástico ABC",
     sector: "Excelente",
     telefono: "A2",
-    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.google.com">Enlace subrayado</a>,
+    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="/admin/empleado/perfil">PERFIL</a>,
 
 
   },
@@ -31,7 +31,7 @@ const pedidosPendientes = [
     nombre: "Plástico ABC",
     sector: "Excelente",
     telefono: "A2",
-    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.ejemplo.com">Enlace subrayado</a>,
+    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="/admin/empleado/perfil">PERFIL</a>,
 
   },
   {
@@ -39,7 +39,7 @@ const pedidosPendientes = [
     nombre: "Plástico ABC",
     sector: "Excelente",
     telefono: "A2",
-    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.ejemplo.com">Enlace subrayado</a>,
+    perfil:<a style={{textDecoration:'underline',color:"blue"}} href="/admin/empleado/perfil">PERFIL</a>,
 
   },
 ];

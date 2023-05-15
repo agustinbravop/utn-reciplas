@@ -1,13 +1,14 @@
 import { Tr, Td,Checkbox } from "@chakra-ui/react";
 import { EditIcon } from '@chakra-ui/icons'
 
-export default function LineaDeClientes({
+export default function LineaMateriaPrima({
   id,
   nombre,
-  correo,
-  telefono,
-  deuda,
-  perfil,
+  fecha,
+  producto,
+  unidades,
+  tipo,
+  total,
   isChecked,
   onItemChecked,
 }) {
@@ -17,10 +18,12 @@ export default function LineaDeClientes({
         <Checkbox isChecked={isChecked} onChange={() => onItemChecked(id)} background={"green"} />
       </Td>
       <Td>{nombre}</Td>
-      <Td>{correo}</Td>
-      <Td>{telefono}</Td>
-      <Td>{deuda}</Td>
-      <Td>{ perfil} </Td>
+      <Td>{fecha}</Td>
+      <Td>{producto}</Td>
+      <Td>{unidades}</Td>
+      <Td>{tipo}</Td>
+      <Td>{total} </Td>
     </Tr>
   );
 }
+

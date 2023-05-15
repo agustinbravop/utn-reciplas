@@ -1,8 +1,8 @@
 import Input from "../../components/Input/Input";
 import Layout from "../../components/Layout/Layout";
-import LineaDeClientes from "../../components/LineaDeClientes/LineaDeClientes";
+import LineaDeDeudores from "../../components/LineaDeDeudores/LineaDeDeudores";
 import "../ListadoPedidosPendientesPage/ListadoPedidosPendientesPage.css";
-import {  Table, Thead, Tbody, Tr, Th, TableContainer,Checkbox } from "@chakra-ui/react";
+import { Table, Thead, Tbody, Tr, Th, TableContainer,Checkbox} from "@chakra-ui/react";
 import {AddIcon} from '@chakra-ui/icons'
 import Button from "../../components/Button/Button";
 import { React } from "react";
@@ -78,7 +78,7 @@ export default function ListadoClientesPage() {
   };
 
   const lineaDePedidoPendiente= pedidosPendientes.map((pedido) => {
-    return <LineaDeClientes
+    return <LineaDeDeudores
     key={pedido.id}
       {...pedido}
       isChecked={pedido.isChecked}
@@ -88,7 +88,7 @@ export default function ListadoClientesPage() {
   return (
     <Layout area="admin">
       <div className="pedidos-pendientes">
-          <h1 className="titulo">CLIENTES</h1>
+          <h1 className="titulo">DEUDORES</h1>
           <div className="search">
           <Input
             name="search"

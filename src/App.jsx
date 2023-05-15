@@ -21,9 +21,19 @@ import AltaClientePage from "./pages/AltaClientePage/AltaClientePage";
 import AltaProveedorPage from "./pages/AltaProveedorPage/AltaProveedorPage";
 import DetalleProveedoresPage from './pages/DetalleProveedoresPage/DetalleProveedoresPage'
 
+
 import ListadoDeEmpleados from "./pages/ListadoDeEmpleados/ListadoDeEmpleados";
 import ListadoDeProveedores from "./pages/ListadoDeProveedores/ListadoDeProveedores";
 import ListadoDeClientes from "./pages/ListadoDeClientes/ListadoDeClientes";
+import ListadoDeVentas from "./pages/ListadoDeVentas/ListadoDeVentas";
+import ListadoDeDeudores from "./pages/ListadoDeDeudores/ListadoDeDeudores";
+import ReporteDeCompras from "./pages/ReporteDeCompras/ReporteDeCompras";
+import ListadoDeMaterias from "./pages/ListadoDeMaterias/ListadoDeMaterias";
+import EmpleadoPerfil from "./pages/EmpleadoPerfil/EmpleadoPerfil";
+
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -47,10 +57,6 @@ const router = createBrowserRouter([
     element: <AdminHomePage />,
   },
   {
-    path: "admin/ventas",
-    element: <ListadoVentasPage />,
-  },
-  {
     path: "admin/empleados",
     element: <ListadoDeEmpleados />,
   },
@@ -61,6 +67,26 @@ const router = createBrowserRouter([
   {
     path: "admin/reporteClientes",
     element: <ListadoDeClientes />,
+  },
+  {
+    path: "admin/ventas",
+    element: <ListadoDeVentas />,
+  },
+  {
+    path: "admin/Compras",
+    element: <ReporteDeCompras />,
+  },
+  {
+    path: "admin/deudores",
+    element: <ListadoDeDeudores/>,
+  },
+  {
+    path: "admin/materias",
+    element: <ListadoDeMaterias/>,
+  },
+  {
+    path: "admin/empleado/perfil",
+    element: <EmpleadoPerfil/>,
   },
   {
     path: "ventas/clientes",
