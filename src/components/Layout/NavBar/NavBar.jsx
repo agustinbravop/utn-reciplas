@@ -17,12 +17,9 @@ const areasToNavLinks = {
     Clientes: "/ventas/clientes",
     Proveedores: "/ventas/proveedores",
     Pedidos: "/ventas/pedidos",
-  },
+  }, 
   admin: {
-    Compras: "/admin/compras",
-    Ventas: "/admin/ventas",
-    Productos: "/admin/productos",
-  },
+  }
 };
 
 // area = 'prod' | 'compras' | 'ventas' | 'admin'

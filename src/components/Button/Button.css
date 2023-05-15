@@ -26,3 +26,7 @@
 .btn-secundario:active {
   background-color: var(--colorFondoOscuro);
 }
+.sizes{
+  width:275px;
+  height:178px;
+}

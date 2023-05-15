@@ -9,6 +9,7 @@ import VentasHomePage from "./pages/VentasHomePage/VentasHomePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import ListadoVentasPage from "./pages/ListadoVentasPage/ListadoVentasPage";
 import ListadoClientesPage from "./pages/ListadoClientesPage/ListadoClientesPage";
+import ListadoProveedoresPage from "./pages/ListadoProveedoresPage/ListadoProveedoresPage";
 import CrearNuevaMateriaPrimaPage from "./pages/CrearNuevaMateriaPrimaPage/CrearNuevaMateriaPrimaPage";
 import ListadoMateriasPrimasPage from "./pages/ListadoMateriasPrimasPage/ListadoMateriasPrimas";
 import DetalleMateriaPage from "./pages/DetalleMateriaPage/DetalleMateriaPage";
@@ -17,6 +18,22 @@ import ListadoPedidosPendientesPage from "./pages/ListadoPedidosPendientesPage/L
 import ListadoProductosPage from "./pages/ListadoProductosPage/ListadoProductosPage";
 import DetalleCientePage from "./pages/DetalleClientePage/DetalleClientePage";
 import AltaClientePage from "./pages/AltaClientePage/AltaClientePage";
+import AltaProveedorPage from "./pages/AltaProveedorPage/AltaProveedorPage";
+import DetalleProveedoresPage from './pages/DetalleProveedoresPage/DetalleProveedoresPage'
+
+
+import ListadoDeEmpleados from "./pages/ListadoDeEmpleados/ListadoDeEmpleados";
+import ListadoDeProveedores from "./pages/ListadoDeProveedores/ListadoDeProveedores";
+import ListadoDeClientes from "./pages/ListadoDeClientes/ListadoDeClientes";
+import ListadoDeVentas from "./pages/ListadoDeVentas/ListadoDeVentas";
+import ListadoDeDeudores from "./pages/ListadoDeDeudores/ListadoDeDeudores";
+import ReporteDeCompras from "./pages/ReporteDeCompras/ReporteDeCompras";
+import ListadoDeMaterias from "./pages/ListadoDeMaterias/ListadoDeMaterias";
+import EmpleadoPerfil from "./pages/EmpleadoPerfil/EmpleadoPerfil";
+
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -40,12 +57,44 @@ const router = createBrowserRouter([
     element: <AdminHomePage />,
   },
   {
+    path: "admin/empleados",
+    element: <ListadoDeEmpleados />,
+  },
+  {
+    path: "admin/reporteProveedores",
+    element: <ListadoDeProveedores />,
+  },
+  {
+    path: "admin/reporteClientes",
+    element: <ListadoDeClientes />,
+  },
+  {
     path: "admin/ventas",
-    element: <ListadoVentasPage />,
+    element: <ListadoDeVentas />,
+  },
+  {
+    path: "admin/Compras",
+    element: <ReporteDeCompras />,
+  },
+  {
+    path: "admin/deudores",
+    element: <ListadoDeDeudores/>,
+  },
+  {
+    path: "admin/materias",
+    element: <ListadoDeMaterias/>,
+  },
+  {
+    path: "admin/empleado/perfil",
+    element: <EmpleadoPerfil/>,
   },
   {
     path: "ventas/clientes",
     element: <ListadoClientesPage />,
+  },
+  {
+    path: "ventas/proveedores",
+    element: <ListadoProveedoresPage />,
   },
   {
     path: "ventas/productos",
@@ -80,8 +129,20 @@ const router = createBrowserRouter([
     element: <DetalleCientePage />,
   },
   {
+    path: "ventas/proveedores/:id",
+    element: <DetalleProveedoresPage />,
+  },
+  {
+    path: "ventas/materias/:id",
+    element: <DetalleMateriaPage />,
+  },
+  {
     path: "ventas/clientes/alta",
     element: <AltaClientePage />,
+  },
+  {
+    path: "ventas/proveedores/alta",
+    element: <AltaProveedorPage />,
   },
   {
     path: "prod/pendientes",

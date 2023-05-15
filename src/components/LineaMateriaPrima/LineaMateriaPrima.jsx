@@ -21,7 +21,7 @@ export default function LineaMateriaPrima({
       <Td>{cantidad} kg</Td>
       <Td>{ultimoCambio}</Td>
       <Td>
-        <Link to={`${id}`}>
+        <Link to={`/ventas/materias/${id}`}>
           <EditIcon></EditIcon>
         </Link>
       </Td>
