@@ -4,12 +4,13 @@ import Title from "../../components/Title/Title";
 import Input from "../../components/Input/Input";
 import RadioGroup from "../../components/RadioGroup/RadioGroup";
 import Button from "../../components/Button/Button";
+import "./NuevaMateriaPage.css";
 
 function FormCrearMateriaPrima() {
   const options = ["Mala", "Buena", "Excelente"];
 
   return (
-    <form className="cuerpo">
+    <form className="nueva-materia-form">
       <Input
         name="InputNombreMateriaPrima"
         label="Nombre"
@@ -20,21 +21,20 @@ function FormCrearMateriaPrima() {
         label="Depósito"
         placeholder="Sector..."
       ></Input>
+      <p>Calidad</p>
       <RadioGroup options={options} />
-      <Button href="../prod/materias">Crear Materia Prima</Button>
+      <Button>Crear</Button>
     </form>
   );
 }
 
-function CrearNuevaMateriaPrimaPage() {
+function NuevaMateriaPage() {
   return (
     <Layout>
-      <div>
-        <Title>Crear Nueva Materia Prima</Title>
-        <FormCrearMateriaPrima />
-      </div>
+      <Title>Crear Nueva Materia Prima</Title>
+      <FormCrearMateriaPrima />
     </Layout>
   );
 }
 
-export default CrearNuevaMateriaPrimaPage;
+export default NuevaMateriaPage;

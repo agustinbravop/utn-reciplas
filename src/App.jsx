@@ -11,7 +11,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import ListadoVentasPage from "./pages/ListadoVentasPage/ListadoVentasPage";
 import ListadoClientesPage from "./pages/ListadoClientesPage/ListadoClientesPage";
 import ListadoProveedoresPage from "./pages/ListadoProveedoresPage/ListadoProveedoresPage";
-import CrearNuevaMateriaPrimaPage from "./pages/CrearNuevaMateriaPrimaPage/CrearNuevaMateriaPrimaPage";
+import CrearNuevaMateriaPrimaPage from "./pages/NuevaMateriaPage/NuevaMateriaPage";
 import ListadoMateriasPrimasPage from "./pages/ListadoMateriasPrimasPage/ListadoMateriasPrimas";
 import DetalleMateriaPage from "./pages/DetalleMateriaPage/DetalleMateriaPage";
 import DetalleProductoPage from "./pages/DetalleProductoPage/DetalleProductoPage";
