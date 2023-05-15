@@ -2,7 +2,6 @@
   background-color: var(--colorPrimario);
   font-size: var(--fsMedium);
   border: 2px solid var(--colorNegro);
-  min-width: 1700px;
 }
 
 .btn-primario:hover,

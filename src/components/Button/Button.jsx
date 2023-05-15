@@ -22,26 +22,30 @@ function Button({ variant, href, size, children, ...props }) {
       : {};
   if (variant === "secondary") {
     return (
-      <ChakraButton
-        variant="outlined"
-        className={`btn-secundario`}
-        {...props}
-        style={sizeStyles}
-      >
-        <ButtonContent href={href}>{children}</ButtonContent>
-      </ChakraButton>
+      <ButtonContent href={href}>
+        <ChakraButton
+          variant="outlined"
+          className={`btn-secundario`}
+          {...props}
+          style={sizeStyles}
+        >
+          {children}
+        </ChakraButton>
+      </ButtonContent>
     );
   }
 
   return (
-    <ChakraButton
-      variant="contained"
-      className={`btn-primario`}
-      style={sizeStyles}
-      {...props}
-    >
-      <ButtonContent href={href}>{children}</ButtonContent>
-    </ChakraButton>
+    <ButtonContent href={href}>
+      <ChakraButton
+        variant="contained"
+        className={`btn-primario`}
+        style={sizeStyles}
+        {...props}
+      >
+        {children}
+      </ChakraButton>
+    </ButtonContent>
   );
 }
 
