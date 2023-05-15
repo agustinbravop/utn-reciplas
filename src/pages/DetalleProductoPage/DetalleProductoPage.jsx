@@ -62,7 +62,10 @@ function DetalleProductoPage() {
           <b>Unidades actuales:</b> {prod.cantidad}
         </h2>
         <br></br>
-        <FormMovimientos />
+        <div className="imagen-form-container">
+          <FormMovimientos />
+          <img src={prod.img} alt="imagen del producto" />
+        </div>
         <br></br>
         <Movimientos movimientos={prod.movimientos}></Movimientos>
       </div>

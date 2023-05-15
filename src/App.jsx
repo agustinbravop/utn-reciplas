@@ -3,6 +3,7 @@ import LogInPage from "./pages/LogInPage/LogInPage";
 import "./styles.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import ProdHomePage from "./pages/ProdHomePage/ProdHomePage";
+import NuevoProductoPage from "./pages/NuevoProductoPage/NuevoProductoPage";
 import AdminHomePage from "./pages/AdminHomePage/AdminHomePage";
 import ComprasHomePage from "./pages/ComprasHomePage/ComprasHomePage";
 import VentasHomePage from "./pages/VentasHomePage/VentasHomePage";
@@ -19,8 +20,7 @@ import ListadoProductosPage from "./pages/ListadoProductosPage/ListadoProductosP
 import DetalleCientePage from "./pages/DetalleClientePage/DetalleClientePage";
 import AltaClientePage from "./pages/AltaClientePage/AltaClientePage";
 import AltaProveedorPage from "./pages/AltaProveedorPage/AltaProveedorPage";
-import DetalleProveedoresPage from './pages/DetalleProveedoresPage/DetalleProveedoresPage'
-
+import DetalleProveedoresPage from "./pages/DetalleProveedoresPage/DetalleProveedoresPage";
 
 import ListadoDeEmpleados from "./pages/ListadoDeEmpleados/ListadoDeEmpleados";
 import ListadoDeProveedores from "./pages/ListadoDeProveedores/ListadoDeProveedores";
@@ -28,12 +28,7 @@ import ListadoDeClientes from "./pages/ListadoDeClientes/ListadoDeClientes";
 import ListadoDeVentas from "./pages/ListadoDeVentas/ListadoDeVentas";
 import ListadoDeDeudores from "./pages/ListadoDeDeudores/ListadoDeDeudores";
 import ReporteDeCompras from "./pages/ReporteDeCompras/ReporteDeCompras";
-import ListadoDeMaterias from "./pages/ListadoDeMaterias/ListadoDeMaterias";
 import EmpleadoPerfil from "./pages/EmpleadoPerfil/EmpleadoPerfil";
-
-
-
-
 
 const router = createBrowserRouter([
   {
@@ -78,15 +73,15 @@ const router = createBrowserRouter([
   },
   {
     path: "admin/deudores",
-    element: <ListadoDeDeudores/>,
+    element: <ListadoDeDeudores />,
   },
   {
     path: "admin/materias",
-    element: <ListadoDeMaterias/>,
+    element: <ListadoMateriasPrimasPage />,
   },
   {
     path: "admin/empleado/perfil",
-    element: <EmpleadoPerfil/>,
+    element: <EmpleadoPerfil />,
   },
   {
     path: "ventas/clientes",
@@ -119,6 +114,10 @@ const router = createBrowserRouter([
   {
     path: "prod/productos/:id",
     element: <DetalleProductoPage />,
+  },
+  {
+    path: "prod/productos/crear",
+    element: <NuevoProductoPage />,
   },
   {
     path: "ventas/materias",

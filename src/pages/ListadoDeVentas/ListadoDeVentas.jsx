@@ -6,7 +6,6 @@ import {Table, Thead, Tbody, Tr, Th, TableContainer,Checkbox} from "@chakra-ui/r
 import {AddIcon} from '@chakra-ui/icons'
 import Button from "../../components/Button/Button";
 import { React } from "react";
-import { color } from "framer-motion";
 import { useState } from "react";
 import Calendar from "../../components/Calendar/Calendar";
 
