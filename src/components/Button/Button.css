@@ -2,7 +2,6 @@
   background-color: var(--colorPrimario);
   font-size: var(--fsMedium);
   border: 2px solid var(--colorNegro);
-  margin: auto;
   min-width: 1700px;
 }
 
@@ -15,8 +14,8 @@
 }
 
 .btn-secundario {
-  color: var(--colorUno);
-  border: 1px solid var(--colorUno);
+  color: var(--colorNegro);
+  border: 2px solid var(--colorPrimario);
 }
 .btn-secundario:hover {
   color: var(--colorTres);
@@ -25,8 +24,4 @@
 }
 .btn-secundario:active {
   background-color: var(--colorFondoOscuro);
-}
-.sizes{
-  width:275px;
-  height:178px;
 }

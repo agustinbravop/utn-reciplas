@@ -8,11 +8,11 @@ function ProdHomePage() {
   return (
     <Layout>
       <div className="cuerpo">
-        <Title text="Bienvenido al Área de Producción"></Title>
-        <div className="row">
-          <Button href="/prod/materias">Materias Primas</Button>
-          <Button href="/prod/productos">Productos</Button>
-          <Button href="/prod/pendientes">Pedidos Pendientes</Button>
+        <Title text="Bienvenido al Área de Producción">Bienvenido a Producción</Title>
+        <div className="botones">
+          <Button size="lg" href="/prod/materias">Materias Primas</Button>
+          <Button size="lg" href="/prod/productos">Productos</Button>
+          <Button size="lg" href="/prod/pendientes">Pedidos Pendientes</Button>
         </div>
       </div>
     </Layout>

@@ -7,8 +7,8 @@ function VentasHomePage() {
   return (
     <Layout>
       <div className="cuerpo">
-        <Title text="Bienvenido al Área de Ventas"></Title>
-        <div className="row">
+        <Title>Bienvenido a Ventas</Title>
+        <div className="botones">
           <Button href="/ventas/clientes">Clientes</Button>
           <Button href="/ventas/productos">Productos</Button>
           <Button href="/ventas/proveedores">Proveedores</Button>

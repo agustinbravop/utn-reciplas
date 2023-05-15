@@ -11,17 +11,35 @@ function ButtonContent({ href, children }) {
   }
 }
 
-function Button({ variant, href, children, ...props }) {
+function Button({ variant, href, size, children, ...props }) {
+  const sizeStyles =
+    size === "lg"
+      ? {
+          width: "280px",
+          height: "128px",
+          fontSize: "30px",
+        }
+      : {};
   if (variant === "secondary") {
     return (
-      <ChakraButton variant="outlined" className="btn-secundario" {...props}>
+      <ChakraButton
+        variant="outlined"
+        className={`btn-secundario`}
+        {...props}
+        style={sizeStyles}
+      >
         <ButtonContent href={href}>{children}</ButtonContent>
       </ChakraButton>
     );
   }
 
   return (
-    <ChakraButton variant="contained" className="btn-primario" {...props}>
+    <ChakraButton
+      variant="contained"
+      className={`btn-primario`}
+      style={sizeStyles}
+      {...props}
+    >
       <ButtonContent href={href}>{children}</ButtonContent>
     </ChakraButton>
   );

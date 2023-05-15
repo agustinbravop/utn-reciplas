@@ -19,6 +19,9 @@ const areasToNavLinks = {
     Pedidos: "/ventas/pedidos",
   }, 
   admin: {
+    Compras: "/compras/compras",
+    "Materias Primas": "/compras/materias",
+    Productos: "/compras/productos",
   }
 };
 

@@ -1,6 +1,12 @@
-.cuerpo {
-  padding: 1% 11%;
-}
 .titulo {
   size: 3%;
+}
+
+.botones {
+  display: flex;
+  direction: row;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: auto;
+  justify-content: center;
 }

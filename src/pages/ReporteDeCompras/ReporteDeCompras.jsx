@@ -3,10 +3,8 @@ import Layout from "../../components/Layout/Layout";
 import LineaDeCompras from "../../components/ReporteCompras/ReporteCompras";
 import "../ListadoPedidosPendientesPage/ListadoPedidosPendientesPage.css";
 import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
-import {AddIcon} from '@chakra-ui/icons'
 import Button from "../../components/Button/Button";
 import { React } from "react";
-import { color } from "framer-motion";
 import 'react-datepicker/dist/react-datepicker.css'
 import Calendar from "../../components/Calendar/Calendar";
 
