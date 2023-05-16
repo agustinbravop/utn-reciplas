@@ -1,13 +1,40 @@
 import Input from "../../components/Input/Input";
 import Layout from "../../components/Layout/Layout";
-import LineaProducto from "../../components/LineaProducto/LineaProducto";
 import "../ListadoProductosPage/ListadoProductosPage.css";
-import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
-import { AddIcon } from "@chakra-ui/icons";
+import { Table, Thead, Tbody, Tr, Th, TableContainer, Td } from "@chakra-ui/react";
+import { AddIcon, EditIcon } from "@chakra-ui/icons";
 import Button from "../../components/Button/Button";
 import { React } from "react";
 import { findAllProductos } from "../../data/productos";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+function LineaProducto({
+  id,
+  descripcion,
+  linea,
+  deposito,
+  unidades,
+  ultimoCambio,
+}) {
+  const url = useLocation();
+  const edit = url.pathname === "/prod/productos" ? <EditIcon></EditIcon> : "";
+
+  return (
+    <Tr key={id} className={unidades === 0.0 && "linea-agotado"}>
+      <Td>{id}</Td>
+      <Td>
+        <Link to={`${id}`}>{descripcion}</Link>
+      </Td>
+      <Td>{linea}</Td>
+      <Td>{deposito}</Td>
+      <Td>{unidades}</Td>
+      <Td>{ultimoCambio}</Td>
+      <Td>
+        <Link to={`${id}`}>{edit}</Link>
+      </Td>
+    </Tr>
+  );
+}
 
 export default function ListadoProductosPage() {
   const productos = findAllProductos();
@@ -43,7 +70,7 @@ export default function ListadoProductosPage() {
                 <Th>Descripción</Th>
                 <Th>Calidad</Th>
                 <Th>Depósito</Th>
-                <Th>Cantidad</Th>
+                <Th>Unidades</Th>
                 <Th>Último Cambio</Th>
               </Tr>
             </Thead>

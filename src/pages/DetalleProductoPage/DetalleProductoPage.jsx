@@ -59,7 +59,7 @@ function DetalleProductoPage() {
           <b>Depósito:</b> {prod.deposito}{" "}
         </h2>
         <h2>
-          <b>Unidades actuales:</b> {prod.cantidad}
+          <b>Unidades actuales:</b> {prod.unidades}
         </h2>
         <br></br>
         <div className="imagen-form-container">

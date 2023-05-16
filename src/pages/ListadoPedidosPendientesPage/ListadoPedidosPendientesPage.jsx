@@ -6,7 +6,7 @@ import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
 import Button from "../../components/Button/Button";
 import { React } from "react";
-import { findAllPedidosPendientes } from "../../data/pedidosPendientes";
+import { findAllPedidosPendientes } from "../../data/pedidos";
 
 export default function ListadoPedidosPendientesPage() {
   const pedidosPendientes = findAllPedidosPendientes();

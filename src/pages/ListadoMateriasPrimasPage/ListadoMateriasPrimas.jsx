@@ -1,13 +1,47 @@
 import Input from "../../components/Input/Input";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
-import LineaMateriaPrima from "../../components/LineaMateriaPrima/LineaMateriaPrima";
 import "./ListadoMateriasPrimas.css";
-import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
-import { AddIcon } from "@chakra-ui/icons";
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  TableContainer,
+  Td,
+} from "@chakra-ui/react";
+import { AddIcon, EditIcon } from "@chakra-ui/icons";
 import Button from "../../components/Button/Button";
 import { React } from "react";
 import { findAllMateriasPrimas } from "../../data/materias";
+
+function LineaMateriaPrima({
+  id,
+  descripcion,
+  calidad,
+  deposito,
+  cantidad,
+  ultimoCambio,
+}) {
+  return (
+    <Tr key={id} className={cantidad === 0.0 && "linea-agotado"}>
+      <Td>{id}</Td>
+      <Td>
+        <Link to={`${id}`}>{descripcion}</Link>
+      </Td>
+      <Td>{calidad}</Td>
+      <Td>{deposito}</Td>
+      <Td>{cantidad} kg</Td>
+      <Td>{ultimoCambio}</Td>
+      <Td>
+        <Link to={`/ventas/materias/${id}`}>
+          <EditIcon></EditIcon>
+        </Link>
+      </Td>
+    </Tr>
+  );
+}
 
 export default function ListadoMateriasPrimasPage() {
   const materiasPrimas = findAllMateriasPrimas();
