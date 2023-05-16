@@ -6,7 +6,7 @@
   --colorSecundario: #9dd9d2;
   --colorNegro: #000000;
 
-  --colorLink: #4285f4;
+  --colorLink: #4235f4;
   --colorError: #ea3943;
   --colorFondo: #f5f5f5;
 
@@ -31,4 +31,8 @@
 
 body {
   min-height: calc(100vh - 80px);
+}
+
+.link {
+  color: var(--colorLink);
 }

@@ -23,7 +23,7 @@ function LineaProducto({
     <Tr key={id} className={unidades === 0.0 && "linea-agotado"}>
       <Td>{id}</Td>
       <Td>
-        <Link to={`${id}`}>{descripcion}</Link>
+        <Link to={`${id}`} className="link">{descripcion}</Link>
       </Td>
       <Td>{linea}</Td>
       <Td>{deposito}</Td>

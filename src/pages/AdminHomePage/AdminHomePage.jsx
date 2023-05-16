@@ -12,7 +12,7 @@ function AdminHomePage() {
           <Button size="lg" href="/admin/productos">
             Productos
           </Button>
-          <Button size="lg" href="/admin/Compras">
+          <Button size="lg" href="/admin/compras">
             Compras
           </Button>
           <Button size="lg" href="/admin/ventas">
@@ -24,10 +24,10 @@ function AdminHomePage() {
           <Button size="lg" href="/admin/empleados">
             Empleados
           </Button>
-          <Button size="lg" href="/admin/reporteClientes">
+          <Button size="lg" href="/admin/clientes">
             Clientes
           </Button>
-          <Button size="lg" href="/admin/reporteProveedores">
+          <Button size="lg" href="/admin/proveedores">
             Proveedores
           </Button>
           <Button size="lg" href="/admin/materias">

@@ -1,12 +1,34 @@
 import Input from "../../components/Input/Input";
 import Layout from "../../components/Layout/Layout";
-import LineaPedidoPendiente from "../../components/LineaPedidoPendiente/LineaPedidoPendiente";
 import "../ListadoPedidosPendientesPage/ListadoPedidosPendientesPage.css";
-import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
-import { AddIcon } from "@chakra-ui/icons";
+import { Table, Thead, Tbody, Tr, Th, TableContainer, Td } from "@chakra-ui/react";
+import { AddIcon, EditIcon } from "@chakra-ui/icons";
 import Button from "../../components/Button/Button";
 import { React } from "react";
 import { findAllPedidosPendientes } from "../../data/pedidos";
+
+function LineaPedidoPendiente({
+  id,
+  descripcion,
+  calidad,
+  deposito,
+  cantidad,
+  ultimoCambio,
+}) {
+  return (
+    <Tr key={id}>
+      <Td>{id}</Td>
+      <Td>{descripcion}</Td>
+      <Td>{calidad}</Td>
+      <Td>{deposito}</Td>
+      <Td>{cantidad} kg</Td>
+      <Td>{ultimoCambio}</Td>
+      <Td>
+        <EditIcon></EditIcon>
+      </Td>
+    </Tr>
+  );
+}
 
 export default function ListadoPedidosPendientesPage() {
   const pedidosPendientes = findAllPedidosPendientes();

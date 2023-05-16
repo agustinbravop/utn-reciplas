@@ -28,7 +28,9 @@ function LineaMateriaPrima({
     <Tr key={id} className={cantidad === 0.0 && "linea-agotado"}>
       <Td>{id}</Td>
       <Td>
-        <Link to={`${id}`}>{descripcion}</Link>
+        <Link to={`${id}`} className="link">
+          {descripcion}
+        </Link>
       </Td>
       <Td>{calidad}</Td>
       <Td>{deposito}</Td>

@@ -1,8 +1,28 @@
 import Layout from "../../components/Layout/Layout";
-import LineaVenta from "../../components/VentaItem/LineaVenta";
 import "./ListadoVentasPage.css";
-import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  TableContainer,
+  Td,
+} from "@chakra-ui/react";
 import { findAllVentas } from "../../data/ventas";
+
+function LineaVenta({ id, client, product, units, type, unitCost }) {
+  return (
+    <Tr key={id}>
+      <Td>{client}</Td>
+      <Td>{product}</Td>
+      <Td>{type}</Td>
+      <Td>{units}</Td>
+      <Td>$ {unitCost}</Td>
+      <Td>$ {unitCost * units}</Td>
+    </Tr>
+  );
+}
 
 export default function ListadoVentasPage() {
   const ventas = findAllVentas();

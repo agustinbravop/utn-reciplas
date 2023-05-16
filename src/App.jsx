@@ -21,13 +21,11 @@ import DetalleCientePage from "./pages/DetalleClientePage/DetalleClientePage";
 import NuevoClientePage from "./pages/NuevoClientePage/NuevoClientePage";
 import NuevoProveedorPage from "./pages/NuevoProveedorPage/NuevoProveedorPage";
 import DetalleProveedorPage from "./pages/DetalleProveedorPage/DetalleProveedorPage";
-import ListadoDeEmpleados from "./pages/ListadoDeEmpleados/ListadoDeEmpleados";
-import ListadoDeProveedores from "./pages/ListadoDeProveedores/ListadoDeProveedores";
-import ListadoDeClientes from "./pages/ListadoDeClientes/ListadoDeClientes";
-import ListadoDeVentas from "./pages/ListadoDeVentas/ListadoDeVentas";
+import ListadoEmpleadosPage from "./pages/ListadoEmpleadosPage/ListadoEmpleadosPage";
 import ListadoDeDeudores from "./pages/ListadoDeDeudores/ListadoDeDeudores";
 import ReporteDeCompras from "./pages/ReporteDeCompras/ReporteDeCompras";
-import EmpleadoPerfil from "./pages/EmpleadoPerfil/EmpleadoPerfil";
+import DetalleEmpleadoPage from "./pages/DetalleEmpleadoPage/DetalleEmpleadoPage";
+import NuevoEmpleadoPage from "./pages/NuevoEmpleadoPage/NuevoEmpleadoPage";
 
 const router = createBrowserRouter([
   {
@@ -115,20 +113,28 @@ const router = createBrowserRouter([
     element: <AdminHomePage />,
   },
   {
-    path: "admin/empleados",
-    element: <ListadoDeEmpleados />,
+    path: "admin/empleados/",
+    element: <ListadoEmpleadosPage />,
   },
   {
-    path: "admin/reporteProveedores",
-    element: <ListadoDeProveedores />,
+    path: "admin/empleados/:id",
+    element: <DetalleEmpleadoPage />,
   },
   {
-    path: "admin/reporteClientes",
-    element: <ListadoDeClientes />,
+    path: "admin/empleados/crear",
+    element: <NuevoEmpleadoPage />,
+  },
+  {
+    path: "admin/proveedores",
+    element: <ListadoProveedoresPage />,
+  },
+  {
+    path: "admin/clientes",
+    element: <ListadoClientesPage />,
   },
   {
     path: "admin/ventas",
-    element: <ListadoDeVentas />,
+    element: <ListadoVentasPage />,
   },
   {
     path: "admin/compras",
@@ -144,7 +150,7 @@ const router = createBrowserRouter([
   },
   {
     path: "admin/empleado/perfil",
-    element: <EmpleadoPerfil />,
+    element: <DetalleEmpleadoPage />,
   },
   {
     path: "*",

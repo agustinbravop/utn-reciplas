@@ -1,27 +1,24 @@
 import React from "react";
 import Title from "../../components/Title/Title";
-import { findProveedorByID } from "../../data/proveedores";
+import { findEmpleadoByID } from "../../data/empleados";
 import { useParams } from "react-router";
 import Layout from "../../components/Layout/Layout";
 
-export default function DetalleProveedorPage() {
+export default function DetalleEmpleadoPage() {
   const { id } = useParams("id");
-  const p = findProveedorByID(parseInt(id));
+  const p = findEmpleadoByID(parseInt(id));
   return (
-    <Layout area="ventas">
+    <Layout>
       <div className="cuerpo">
-        <Title>{p.name}</Title>
+        <Title>{p.nombre}</Title>
         <h2>
           <b>ID:</b> {p.id}{" "}
         </h2>
         <h2>
-          <b>Tipo de Proveedor:</b> {p.tipo}{" "}
+          <b>Sector:</b> {p.sector}{" "}
         </h2>
         <h2>
-          <b>Celular:</b> {p.cel}{" "}
-        </h2>
-        <h2>
-          <b>Correo:</b> {p.mail}{" "}
+          <b>Telefono:</b> {p.telefono}{" "}
         </h2>
         <br></br>
       </div>

@@ -1,11 +1,41 @@
 import Layout from "../../components/Layout/Layout";
-import LineaCliente from "../../components/LineaCliente/LineaCliente";
 import "./ListadoClientesPage.css";
-import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
-import { AddIcon } from "@chakra-ui/icons";
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  TableContainer,
+  Td,
+} from "@chakra-ui/react";
+import { AddIcon, EditIcon } from "@chakra-ui/icons";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
 import { findAllClientes } from "../../data/clientes";
+import { Link } from "react-router-dom";
+
+function LineaCliente({ id, name, mail, cel, debt }) {
+  return (
+    <Tr key={id}>
+      <Td>{id}</Td>
+      <Td>
+        <Link to={`${id}`} className="link">
+          {name}
+        </Link>
+      </Td>
+      <Td>{mail}</Td>
+      <Td>{cel}</Td>
+      <Td>{debt}</Td>
+      <Td>
+        <button>
+          {" "}
+          <EditIcon></EditIcon>{" "}
+        </button>
+      </Td>
+    </Tr>
+  );
+}
 
 export default function ListadoClientesPage() {
   const clientes = findAllClientes();

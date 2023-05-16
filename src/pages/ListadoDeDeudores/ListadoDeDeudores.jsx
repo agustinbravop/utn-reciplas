@@ -19,7 +19,7 @@ const clientes = [
     deuda:" $135415",
     perfil:<a style={{textDecoration:'underline',color:"blue"}} href="https://www.ejemplo.com">PERFIL</a>,
   },
-  { 
+  {
     id: 2,
     isChecked: false,
     nombre: "Roberto",
