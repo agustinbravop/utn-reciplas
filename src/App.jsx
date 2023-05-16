@@ -18,10 +18,9 @@ import DetalleProductoPage from "./pages/DetalleProductoPage/DetalleProductoPage
 import ListadoPedidosPendientesPage from "./pages/ListadoPedidosPendientesPage/ListadoPedidosPendientesPage";
 import ListadoProductosPage from "./pages/ListadoProductosPage/ListadoProductosPage";
 import DetalleCientePage from "./pages/DetalleClientePage/DetalleClientePage";
-import AltaClientePage from "./pages/AltaClientePage/AltaClientePage";
-import AltaProveedorPage from "./pages/AltaProveedorPage/AltaProveedorPage";
-import DetalleProveedoresPage from "./pages/DetalleProveedoresPage/DetalleProveedoresPage";
-
+import NuevoClientePage from "./pages/NuevoClientePage/NuevoClientePage";
+import NuevoProveedorPage from "./pages/NuevoProveedorPage/NuevoProveedorPage";
+import DetalleProveedorPage from "./pages/DetalleProveedorPage/DetalleProveedorPage";
 import ListadoDeEmpleados from "./pages/ListadoDeEmpleados/ListadoDeEmpleados";
 import ListadoDeProveedores from "./pages/ListadoDeProveedores/ListadoDeProveedores";
 import ListadoDeClientes from "./pages/ListadoDeClientes/ListadoDeClientes";
@@ -38,62 +37,6 @@ const router = createBrowserRouter([
   {
     path: "prod",
     element: <ProdHomePage />,
-  },
-  {
-    path: "compras",
-    element: <ComprasHomePage />,
-  },
-  {
-    path: "ventas",
-    element: <VentasHomePage />,
-  },
-  {
-    path: "admin",
-    element: <AdminHomePage />,
-  },
-  {
-    path: "admin/empleados",
-    element: <ListadoDeEmpleados />,
-  },
-  {
-    path: "admin/reporteProveedores",
-    element: <ListadoDeProveedores />,
-  },
-  {
-    path: "admin/reporteClientes",
-    element: <ListadoDeClientes />,
-  },
-  {
-    path: "admin/ventas",
-    element: <ListadoDeVentas />,
-  },
-  {
-    path: "admin/Compras",
-    element: <ReporteDeCompras />,
-  },
-  {
-    path: "admin/deudores",
-    element: <ListadoDeDeudores />,
-  },
-  {
-    path: "admin/materias",
-    element: <ListadoMateriasPrimasPage />,
-  },
-  {
-    path: "admin/empleado/perfil",
-    element: <EmpleadoPerfil />,
-  },
-  {
-    path: "ventas/clientes",
-    element: <ListadoClientesPage />,
-  },
-  {
-    path: "ventas/proveedores",
-    element: <ListadoProveedoresPage />,
-  },
-  {
-    path: "ventas/productos",
-    element: <ListadoProductosPage />,
   },
   {
     path: "prod/materias",
@@ -120,6 +63,30 @@ const router = createBrowserRouter([
     element: <NuevoProductoPage />,
   },
   {
+    path: "prod/pendientes",
+    element: <ListadoPedidosPendientesPage />,
+  },
+  {
+    path: "compras",
+    element: <ComprasHomePage />,
+  },
+  {
+    path: "ventas",
+    element: <VentasHomePage />,
+  },
+  {
+    path: "ventas/clientes",
+    element: <ListadoClientesPage />,
+  },
+  {
+    path: "ventas/proveedores",
+    element: <ListadoProveedoresPage />,
+  },
+  {
+    path: "ventas/productos",
+    element: <ListadoProductosPage />,
+  },
+  {
     path: "ventas/materias",
     element: <ListadoMateriasPrimasPage />,
   },
@@ -129,23 +96,55 @@ const router = createBrowserRouter([
   },
   {
     path: "ventas/proveedores/:id",
-    element: <DetalleProveedoresPage />,
+    element: <DetalleProveedorPage />,
   },
   {
     path: "ventas/materias/:id",
     element: <DetalleMateriaPage />,
   },
   {
-    path: "ventas/clientes/alta",
-    element: <AltaClientePage />,
+    path: "ventas/clientes/crear",
+    element: <NuevoClientePage />,
   },
   {
-    path: "ventas/proveedores/alta",
-    element: <AltaProveedorPage />,
+    path: "ventas/proveedores/crear",
+    element: <NuevoProveedorPage />,
   },
   {
-    path: "prod/pendientes",
-    element: <ListadoPedidosPendientesPage />,
+    path: "admin",
+    element: <AdminHomePage />,
+  },
+  {
+    path: "admin/empleados",
+    element: <ListadoDeEmpleados />,
+  },
+  {
+    path: "admin/reporteProveedores",
+    element: <ListadoDeProveedores />,
+  },
+  {
+    path: "admin/reporteClientes",
+    element: <ListadoDeClientes />,
+  },
+  {
+    path: "admin/ventas",
+    element: <ListadoDeVentas />,
+  },
+  {
+    path: "admin/compras",
+    element: <ReporteDeCompras />,
+  },
+  {
+    path: "admin/deudores",
+    element: <ListadoDeDeudores />,
+  },
+  {
+    path: "admin/materias",
+    element: <ListadoMateriasPrimasPage />,
+  },
+  {
+    path: "admin/empleado/perfil",
+    element: <EmpleadoPerfil />,
   },
   {
     path: "*",

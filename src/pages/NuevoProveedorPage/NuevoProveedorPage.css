@@ -1,0 +1,9 @@
+.nuevo-proveedor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0 25%;
+  padding: 35px 55px;
+  border: 2px solid #000;
+  border-radius: 15px;
+}

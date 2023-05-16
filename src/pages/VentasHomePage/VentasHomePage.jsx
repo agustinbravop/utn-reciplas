@@ -9,10 +9,10 @@ function VentasHomePage() {
       <div className="cuerpo">
         <Title>Bienvenido a Ventas</Title>
         <div className="botones">
-          <Button href="/ventas/clientes">Clientes</Button>
-          <Button href="/ventas/productos">Productos</Button>
-          <Button href="/ventas/proveedores">Proveedores</Button>
-          <Button href="/ventas/materias">Materias Primas</Button>
+          <Button size="lg" href="/ventas/clientes">Clientes</Button>
+          <Button size="lg" href="/ventas/productos">Productos</Button>
+          <Button size="lg" href="/ventas/proveedores">Proveedores</Button>
+          <Button size="lg" href="/ventas/materias">Materias Primas</Button>
         </div>
       </div>
     </Layout>
