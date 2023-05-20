@@ -41,5 +41,4 @@ const findVentaByID = (id) => {
   return ventas.find((c) => c.id === id);
 };
 
-
 export { findAllVentas, findVentaByID };

@@ -9,3 +9,9 @@
   background: var(--colorSecundario);
   box-shadow: 0px 0.2px 4px rgba(0, 0, 0, 0.14);
 }
+
+.header-user {
+  display: flex;
+  direction: row;
+  align-items: center;
+}

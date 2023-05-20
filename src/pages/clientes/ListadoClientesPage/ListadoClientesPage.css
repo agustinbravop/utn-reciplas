@@ -1,0 +1,11 @@
+.ClienteLista {
+  padding: 1% 10%;
+}
+.titulo {
+  size: 3%;
+}
+.search {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}

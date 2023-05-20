@@ -11,14 +11,14 @@ const proveedores = [
     name: "Esteban",
     mail: "estebanEm@gmail.com",
     cel: "13456789",
-    tipo: "Madera",
+    tipo: "Maderas",
   },
   {
     id: 3,
     name: "Anahi Villabuena",
     mail: "anaV@gmail.com",
     cel: "13456789",
-    tipo: "Pallets",
+    tipo: "Plásticos",
   },
 ];
 

@@ -24,3 +24,11 @@
 .btn-secundario:active {
   background-color: var(--colorFondoOscuro);
 }
+
+.btn-deshabilitado {
+  border: 2px solid grey;
+  color: grey;
+}
+.btn-deshabilitado:hover {
+  cursor: not-allowed;
+}

@@ -12,4 +12,5 @@
 
 .nav-bar .current a {
   background-color: #ebeff0;
+  border: 1px solid grey;
 }

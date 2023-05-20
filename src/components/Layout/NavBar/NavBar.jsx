@@ -4,25 +4,30 @@ import "./NavBar.css";
 
 const areasToNavLinks = {
   prod: {
-    "Materias Primas": "/prod/materias",
+    Pedidos: "/prod/pedidos",
     Productos: "/prod/productos",
-    Pedidos: "/prod/pendientes",
+    "Materias Primas": "/prod/materias",
   },
   compras: {
     Compras: "/compras/compras",
-    "Materias Primas": "/compras/materias",
     Productos: "/compras/productos",
+    "Materias Primas": "/compras/materias",
   },
   ventas: {
+    Pedidos: "/ventas/pedidos",
     Clientes: "/ventas/clientes",
     Proveedores: "/ventas/proveedores",
-    Pedidos: "/ventas/pedidos",
-  }, 
+    Productos: "/ventas/productos",
+    "Materias Primas": "/ventas/materias",
+  },
   admin: {
-    Compras: "/compras/compras",
-    "Materias Primas": "/compras/materias",
-    Productos: "/compras/productos",
-  }
+    Compras: "/admin/compras",
+    Clientes: "/admin/clientes",
+    Proveedores: "/admin/proveedores",
+    Empleados: "/admin/empleados",
+    Productos: "/admin/productos",
+    "Materias Primas": "/admin/materias",
+  },
 };
 
 // area = 'prod' | 'compras' | 'ventas' | 'admin'

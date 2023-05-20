@@ -5,8 +5,8 @@ const clientes = [
     mail: "joselop@gmail.com",
     cel: "123456789",
     tipo: "Empresa",
-    regDate: "01/01/01",
-    debt: 154.89,
+    regDate: "01/01/2011",
+    debt: 0.0,
   },
   {
     id: 2,
@@ -14,8 +14,8 @@ const clientes = [
     mail: "estRam@gmail.com",
     cel: "987654321",
     tipo: "Particular", //El otro tipo es Empresa
-    regDate: "01/01/01",
-    debt: 2894.5,
+    regDate: "01/01/2009",
+    debt: 0.0,
   },
   {
     id: 3,
@@ -23,8 +23,8 @@ const clientes = [
     mail: "marpgonza@gmail.com",
     cel: "456387432",
     tipo: "Particular",
-    regDate: "01/01/01",
-    debt: 1532,
+    regDate: "01/01/2012",
+    debt: 1532.4,
   },
 ];
 

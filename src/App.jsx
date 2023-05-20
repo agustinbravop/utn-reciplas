@@ -3,29 +3,28 @@ import LogInPage from "./pages/LogInPage/LogInPage";
 import "./styles.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import ProdHomePage from "./pages/ProdHomePage/ProdHomePage";
-import NuevoProductoPage from "./pages/NuevoProductoPage/NuevoProductoPage";
+import NuevoProductoPage from "./pages/productos/NuevoProductoPage/NuevoProductoPage";
 import AdminHomePage from "./pages/AdminHomePage/AdminHomePage";
 import ComprasHomePage from "./pages/ComprasHomePage/ComprasHomePage";
 import VentasHomePage from "./pages/VentasHomePage/VentasHomePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import ListadoVentasPage from "./pages/ListadoVentasPage/ListadoVentasPage";
-import ListadoClientesPage from "./pages/ListadoClientesPage/ListadoClientesPage";
-import ListadoProveedoresPage from "./pages/ListadoProveedoresPage/ListadoProveedoresPage";
-import CrearNuevaMateriaPrimaPage from "./pages/NuevaMateriaPage/NuevaMateriaPage";
-import ListadoMateriasPrimasPage from "./pages/ListadoMateriasPrimasPage/ListadoMateriasPrimas";
-import DetalleMateriaPage from "./pages/DetalleMateriaPage/DetalleMateriaPage";
-import DetalleProductoPage from "./pages/DetalleProductoPage/DetalleProductoPage";
-import ListadoPedidosPendientesPage from "./pages/ListadoPedidosPendientesPage/ListadoPedidosPendientesPage";
-import ListadoProductosPage from "./pages/ListadoProductosPage/ListadoProductosPage";
-import DetalleCientePage from "./pages/DetalleClientePage/DetalleClientePage";
-import NuevoClientePage from "./pages/NuevoClientePage/NuevoClientePage";
-import NuevoProveedorPage from "./pages/NuevoProveedorPage/NuevoProveedorPage";
-import DetalleProveedorPage from "./pages/DetalleProveedorPage/DetalleProveedorPage";
-import ListadoEmpleadosPage from "./pages/ListadoEmpleadosPage/ListadoEmpleadosPage";
-import ListadoDeDeudores from "./pages/ListadoDeDeudores/ListadoDeDeudores";
-import ReporteDeCompras from "./pages/ReporteDeCompras/ReporteDeCompras";
-import DetalleEmpleadoPage from "./pages/DetalleEmpleadoPage/DetalleEmpleadoPage";
-import NuevoEmpleadoPage from "./pages/NuevoEmpleadoPage/NuevoEmpleadoPage";
+import ListadoVentasPage from "./pages/ventas/ListadoVentasPage/ListadoVentasPage";
+import ListadoClientesPage from "./pages/clientes/ListadoClientesPage/ListadoClientesPage";
+import ListadoProveedoresPage from "./pages/proveedores/ListadoProveedoresPage/ListadoProveedoresPage";
+import CrearNuevaMateriaPrimaPage from "./pages/materias/NuevaMateriaPage/NuevaMateriaPage";
+import ListadoMateriasPrimasPage from "./pages/materias/ListadoMateriasPrimasPage/ListadoMateriasPrimas";
+import DetalleMateriaPage from "./pages/materias/DetalleMateriaPage/DetalleMateriaPage";
+import DetalleProductoPage from "./pages/productos/DetalleProductoPage/DetalleProductoPage";
+import ListadoProductosPage from "./pages/productos/ListadoProductosPage/ListadoProductosPage";
+import DetalleCientePage from "./pages/clientes/DetalleClientePage/DetalleClientePage";
+import NuevoClientePage from "./pages/clientes/NuevoClientePage/NuevoClientePage";
+import NuevoProveedorPage from "./pages/proveedores/NuevoProveedorPage/NuevoProveedorPage";
+import DetalleProveedorPage from "./pages/proveedores/DetalleProveedorPage/DetalleProveedorPage";
+import ListadoEmpleadosPage from "./pages/empleados/ListadoEmpleadosPage/ListadoEmpleadosPage";
+import ListadoComprasPage from "./pages/compras/ListadoComprasPage/ListadoComprasPage";
+import DetalleEmpleadoPage from "./pages/empleados/DetalleEmpleadoPage/DetalleEmpleadoPage";
+import NuevoEmpleadoPage from "./pages/empleados/NuevoEmpleadoPage/NuevoEmpleadoPage";
+import NuevaMateriaPage from "./pages/materias/NuevaMateriaPage/NuevaMateriaPage";
 
 const router = createBrowserRouter([
   {
@@ -41,12 +40,12 @@ const router = createBrowserRouter([
     element: <ListadoMateriasPrimasPage />,
   },
   {
-    path: "prod/materias/crear",
-    element: <CrearNuevaMateriaPrimaPage />,
-  },
-  {
     path: "prod/materias/:id",
     element: <DetalleMateriaPage />,
+  },
+  {
+    path: "prod/materias/crear",
+    element: <CrearNuevaMateriaPrimaPage />,
   },
   {
     path: "prod/productos",
@@ -61,12 +60,44 @@ const router = createBrowserRouter([
     element: <NuevoProductoPage />,
   },
   {
-    path: "prod/pendientes",
-    element: <ListadoPedidosPendientesPage />,
+    path: "prod/pedidos",
+    element: {},
+  },
+  {
+    path: "prod/pedidos/:id",
+    element: {},
+  },
+  {
+    path: "prod/ingresos",
+    element: {},
   },
   {
     path: "compras",
     element: <ComprasHomePage />,
+  },
+  {
+    path: "compras/materias",
+    element: <ListadoMateriasPrimasPage />,
+  },
+  {
+    path: "compras/productos",
+    element: <ListadoProductosPage />,
+  },
+  {
+    path: "compras/compras",
+    element: {},
+  },
+  {
+    path: "compras/compras/:id",
+    element: {},
+  },
+  {
+    path: "compras/proveedores",
+    element: <ListadoProveedoresPage />,
+  },
+  {
+    path: "compras/proveedores/:id",
+    element: <DetalleProveedorPage />,
   },
   {
     path: "ventas",
@@ -77,8 +108,24 @@ const router = createBrowserRouter([
     element: <ListadoClientesPage />,
   },
   {
+    path: "ventas/clientes/:id",
+    element: <DetalleCientePage />,
+  },
+  {
+    path: "ventas/clientes/crear",
+    element: <NuevoClientePage />,
+  },
+  {
     path: "ventas/proveedores",
     element: <ListadoProveedoresPage />,
+  },
+  {
+    path: "ventas/proveedores/:id",
+    element: <DetalleProveedorPage />,
+  },
+  {
+    path: "ventas/proveedores/crear",
+    element: <NuevoProveedorPage />,
   },
   {
     path: "ventas/productos",
@@ -89,31 +136,11 @@ const router = createBrowserRouter([
     element: <ListadoMateriasPrimasPage />,
   },
   {
-    path: "ventas/clientes/:id",
-    element: <DetalleCientePage />,
-  },
-  {
-    path: "ventas/proveedores/:id",
-    element: <DetalleProveedorPage />,
-  },
-  {
-    path: "ventas/materias/:id",
-    element: <DetalleMateriaPage />,
-  },
-  {
-    path: "ventas/clientes/crear",
-    element: <NuevoClientePage />,
-  },
-  {
-    path: "ventas/proveedores/crear",
-    element: <NuevoProveedorPage />,
-  },
-  {
     path: "admin",
     element: <AdminHomePage />,
   },
   {
-    path: "admin/empleados/",
+    path: "admin/empleados",
     element: <ListadoEmpleadosPage />,
   },
   {
@@ -129,8 +156,16 @@ const router = createBrowserRouter([
     element: <ListadoProveedoresPage />,
   },
   {
+    path: "admin/proveedores/:id",
+    element: <DetalleProveedorPage />,
+  },
+  {
     path: "admin/clientes",
     element: <ListadoClientesPage />,
+  },
+  {
+    path: "admin/clientes/:id",
+    element: <DetalleCientePage />,
   },
   {
     path: "admin/ventas",
@@ -138,19 +173,23 @@ const router = createBrowserRouter([
   },
   {
     path: "admin/compras",
-    element: <ReporteDeCompras />,
-  },
-  {
-    path: "admin/deudores",
-    element: <ListadoDeDeudores />,
+    element: <ListadoComprasPage />,
   },
   {
     path: "admin/materias",
     element: <ListadoMateriasPrimasPage />,
   },
   {
-    path: "admin/empleado/perfil",
-    element: <DetalleEmpleadoPage />,
+    path: "admin/materias/crear",
+    element: <NuevaMateriaPage />,
+  },
+  {
+    path: "admin/productos",
+    element: <ListadoProductosPage />,
+  },
+  {
+    path: "admin/productos/crear",
+    element: <NuevoProductoPage />,
   },
   {
     path: "*",

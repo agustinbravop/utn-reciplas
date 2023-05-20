@@ -1,0 +1,9 @@
+.linea-agotado > td,
+.linea-agotado > td > a {
+  color: red;
+  opacity: 0.8;
+}
+
+.listado-productos {
+  padding: 1% 11%;
+}

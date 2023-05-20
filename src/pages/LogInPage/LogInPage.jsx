@@ -34,6 +34,7 @@ function LogInPage() {
           placeholder="Correo"
           label="Correo"
           name="email"
+          helper="Solo 'admin', 'prod', 'compras' o 'ventas'."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         ></Input>

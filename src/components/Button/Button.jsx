@@ -35,6 +35,21 @@ function Button({ variant, href, size, children, ...props }) {
     );
   }
 
+  if (variant === "disabled") {
+    return (
+      <ButtonContent>
+        <ChakraButton
+          variant="solid"
+          className={`btn-deshabilitado`}
+          {...props}
+          style={sizeStyles}
+        >
+          {children}
+        </ChakraButton>
+      </ButtonContent>
+    );
+  }
+
   return (
     <ButtonContent href={href}>
       <ChakraButton

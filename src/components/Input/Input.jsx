@@ -1,8 +1,13 @@
-import { FormControl, FormLabel, Input as ChakraInput } from "@chakra-ui/react";
+import {
+  FormControl,
+  FormLabel,
+  Input as ChakraInput,
+  FormHelperText,
+} from "@chakra-ui/react";
 import "./Input.css";
 import React from "react";
 
-function Input({ name, label, placeholder, type = "text", ...props }) {
+function Input({ name, label, placeholder, helper, type = "text", ...props }) {
   return (
     <FormControl className="input-container">
       <FormLabel className="input-label">{label}</FormLabel>
@@ -14,6 +19,7 @@ function Input({ name, label, placeholder, type = "text", ...props }) {
         type={type}
         {...props}
       />
+      {helper && <FormHelperText>{helper}</FormHelperText>}
     </FormControl>
   );
 }
