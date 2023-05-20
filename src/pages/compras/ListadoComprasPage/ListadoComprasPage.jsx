@@ -16,6 +16,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Title from "../../../components/Title/Title";
 import { findAllCompras } from "../../../data/compras";
 import { findProveedorByID } from "../../../data/proveedores";
+import { Link } from "react-router-dom";
 
 function LineaCompra({ id, idProveedor, materias, fecha, estado }) {
   console.log(id, idProveedor, materias);
@@ -24,7 +25,11 @@ function LineaCompra({ id, idProveedor, materias, fecha, estado }) {
   return (
     <Tr key={id}>
       <Td>{id}</Td>
-      <Td>{proveedor.name}</Td>
+      <Td>
+        <Link to={`${id}`} className="link">
+          {proveedor.name}
+        </Link>
+      </Td>
       <Td>$ {precio}</Td>
       <Td>{fecha}</Td>
       <Td>{estado}</Td>

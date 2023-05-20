@@ -1,5 +1,5 @@
 import React from "react";
-import { findEmpleadoByID } from "../../../data/empleados";
+import { findCompraByID } from "../../../data/compras";
 import { useParams } from "react-router";
 import Layout from "../../../components/Layout/Layout";
 import {
@@ -13,9 +13,9 @@ import {
   StackDivider,
 } from "@chakra-ui/react";
 
-export default function DetalleEmpleadoPage() {
+export default function DetalleCompraPage() {
   const { id } = useParams("id");
-  const m = findEmpleadoByID(parseInt(id));
+  const m = findCompraByID(parseInt(id));
   return (
     <Layout>
       <div className="cuerpo">
