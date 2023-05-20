@@ -9,47 +9,46 @@ import {
   Th,
   TableContainer,
   Td,
-  Checkbox,
 } from "@chakra-ui/react";
 import Button from "../../../components/Button/Button";
 import { React } from "react";
 import "react-datepicker/dist/react-datepicker.css";
-import DateInput from "../../../components/DateInput/DateInput";
 import Title from "../../../components/Title/Title";
 import { findAllCompras } from "../../../data/compras";
+import { findProveedorByID } from "../../../data/proveedores";
 
-function LineaCompra({ id, units, product, price }) {
+function LineaCompra({ id, idProveedor, materias, fecha }) {
+  console.log(id, idProveedor, materias);
+  const proveedor = findProveedorByID(idProveedor);
+  const precio = materias.reduce((acum, m) => acum + m.precio, 0);
   return (
     <Tr key={id}>
       <Td>{id}</Td>
-      <Td>{units}</Td>
-      <Td>{product}</Td>
-      <Td>{price}</Td>
-      <Td>{price * units}</Td>
-      <Td>
-        <Checkbox />
-      </Td>
+      <Td>{proveedor.name}</Td>
+      <Td>$ {precio}</Td>
+      <Td>{fecha}</Td>
     </Tr>
   );
 }
 
 export default function ListadoComprasPage() {
   const compras = findAllCompras();
-  const lineasCompras = compras.map((compras) => {
-    return <LineaCompra {...compras} />;
+  const lineasCompras = compras.map((compra) => {
+    return <LineaCompra {...compra} />;
   });
 
   return (
     <Layout>
       <div className="listado-compras">
         <Title>Compras</Title>
-        <Button>Todos</Button>
-        <div className="search">
+        <div className="search-date">
           <div>
-            Inicio <DateInput></DateInput>
+            Desde:
+            <input type="date" />
           </div>
           <div>
-            Fin <DateInput></DateInput>
+            Hasta:
+            <input type="date" />
           </div>
           <Input name="search" label="" placeholder="Buscar..." width="50%" />
         </div>
@@ -59,10 +58,9 @@ export default function ListadoComprasPage() {
             <Thead>
               <Tr>
                 <Th>ID</Th>
+                <Th>PROVEEDOR</Th>
+                <Th>PRECIO</Th>
                 <Th>FECHA</Th>
-                <Th>PRODUCTO</Th>
-                <Th>CANTIDAD</Th>
-                <Th>TOTAL</Th>
               </Tr>
             </Thead>
             <Tbody>{lineasCompras}</Tbody>

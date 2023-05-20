@@ -7,7 +7,7 @@ const proveedores = [
     tipo: "Insumos varios",
   },
   {
-    id: 1,
+    id: 2,
     name: "Esteban",
     mail: "estebanEm@gmail.com",
     cel: "13456789",

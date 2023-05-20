@@ -9,14 +9,6 @@ const materiasPrimas = [
   },
   {
     id: 2,
-    descripcion: "Aserrín",
-    calidad: "Mala",
-    deposito: "A1",
-    cantidad: 798.2,
-    ultimoCambio: "30/12/2022 16:40",
-  },
-  {
-    id: 3,
     descripcion: "Tuercas y tornillos",
     calidad: "Buena",
     deposito: "C8",
@@ -24,8 +16,16 @@ const materiasPrimas = [
     ultimoCambio: "30/12/2022 16:40",
   },
   {
+    id: 3,
+    descripcion: "Aserrín",
+    calidad: "Mala",
+    deposito: "A1",
+    cantidad: 798.2,
+    ultimoCambio: "30/12/2022 16:40",
+  },
+  {
     id: 4,
-    descripcion: "Chapa metálica 20x25cm",
+    descripcion: "Chapa hierro 20x25cm",
     calidad: "Excelente",
     deposito: "B3",
     cantidad: 0,

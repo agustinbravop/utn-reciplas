@@ -1,27 +1,71 @@
 const compras = [
   {
     id: 1,
-    product: "Herramientas",
-    units: 18,
-    price: 9860,
+    idProveedor: 1,
+    fecha: "30/12/2022 16:40",
+    materias: [
+      {
+        idMateria: 1,
+        precio: 390,
+        cantidad: 2.6,
+      },
+      {
+        idMateria: 2,
+        precio: 4400,
+        cantidad: 1.2,
+      },
+    ],
   },
   {
     id: 2,
-    product: "Madera",
-    units: 10,
-    price: 4500,
+    idProveedor: 2,
+    fecha: "31/12/2022 07:40",
+    materias: [
+      {
+        idMateria: 1,
+        precio: 390,
+        cantidad: 2.6,
+      },
+      {
+        idMateria: 2,
+        precio: 4400,
+        cantidad: 1.2,
+      },
+    ],
   },
   {
     id: 3,
-    product: "Insumos de limpieza",
-    units: 20,
-    price: 800,
+    idProveedor: 2,
+    fecha: "30/12/2022 18:30",
+    materias: [
+      {
+        idMateria: 4,
+        precio: 990,
+        cantidad: 0.6,
+      },
+      {
+        idMateria: 2,
+        precio: 2090,
+        cantidad: 0.4,
+      },
+    ],
   },
   {
     id: 4,
-    product: "Plástico",
-    units: 45,
-    price: 10800,
+    idProveedor: 3,
+    fecha: "01/01/2023 09:13",
+    materias: [
+      {
+        idMateria: 1,
+        precio: 390,
+        cantidad: 2.6,
+      },
+      {
+        idMateria: 2,
+        precio: 4400,
+        cantidad: 1.2,
+      },
+    ],
   },
 ];
 

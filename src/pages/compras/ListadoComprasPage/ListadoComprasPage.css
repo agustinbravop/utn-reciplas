@@ -1,3 +1,14 @@
 .listado-compras {
   padding: 1% 11%;
 }
+
+.search-date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-date input[type="date"] {
+  border: 1px solid black;
+  border-radius: 5px;
+}
