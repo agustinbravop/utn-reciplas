@@ -28,4 +28,3 @@ export default function DetalleProveedorPage() {
     </Layout>
   );
 }
-//Mejorar  historial de compras
