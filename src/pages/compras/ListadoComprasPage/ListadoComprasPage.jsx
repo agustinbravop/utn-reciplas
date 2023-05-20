@@ -17,7 +17,7 @@ import Title from "../../../components/Title/Title";
 import { findAllCompras } from "../../../data/compras";
 import { findProveedorByID } from "../../../data/proveedores";
 
-function LineaCompra({ id, idProveedor, materias, fecha }) {
+function LineaCompra({ id, idProveedor, materias, fecha, estado }) {
   console.log(id, idProveedor, materias);
   const proveedor = findProveedorByID(idProveedor);
   const precio = materias.reduce((acum, m) => acum + m.precio, 0);
@@ -27,6 +27,7 @@ function LineaCompra({ id, idProveedor, materias, fecha }) {
       <Td>{proveedor.name}</Td>
       <Td>$ {precio}</Td>
       <Td>{fecha}</Td>
+      <Td>{estado}</Td>
     </Tr>
   );
 }
@@ -50,7 +51,7 @@ export default function ListadoComprasPage() {
             Hasta:
             <input type="date" />
           </div>
-          <Input name="search" label="" placeholder="Buscar..." width="50%" />
+          <Input name="search" placeholder="Buscar..." width="50%" />
         </div>
 
         <TableContainer>
@@ -61,6 +62,7 @@ export default function ListadoComprasPage() {
                 <Th>PROVEEDOR</Th>
                 <Th>PRECIO</Th>
                 <Th>FECHA</Th>
+                <Th>ESTADO</Th>
               </Tr>
             </Thead>
             <Tbody>{lineasCompras}</Tbody>

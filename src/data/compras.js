@@ -3,6 +3,7 @@ const compras = [
     id: 1,
     idProveedor: 1,
     fecha: "30/12/2022 16:40",
+    estado: "Recibida y pagada",
     materias: [
       {
         idMateria: 1,
@@ -20,6 +21,7 @@ const compras = [
     id: 2,
     idProveedor: 2,
     fecha: "31/12/2022 07:40",
+    estado: "Recibida sin pagar",
     materias: [
       {
         idMateria: 1,
@@ -37,6 +39,7 @@ const compras = [
     id: 3,
     idProveedor: 2,
     fecha: "30/12/2022 18:30",
+    estado: "Pendiente",
     materias: [
       {
         idMateria: 4,
@@ -54,6 +57,7 @@ const compras = [
     id: 4,
     idProveedor: 3,
     fecha: "01/01/2023 09:13",
+    estado: "Recibida y pagada",
     materias: [
       {
         idMateria: 1,
