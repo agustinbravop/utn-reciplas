@@ -16,7 +16,7 @@ import ListadoMateriasPrimasPage from "./pages/materias/ListadoMateriasPrimasPag
 import DetalleMateriaPage from "./pages/materias/DetalleMateriaPage/DetalleMateriaPage";
 import DetalleProductoPage from "./pages/productos/DetalleProductoPage/DetalleProductoPage";
 import ListadoProductosPage from "./pages/productos/ListadoProductosPage/ListadoProductosPage";
-import DetalleCientePage from "./pages/clientes/DetalleClientePage/DetalleClientePage";
+import DetalleClientePage from "./pages/clientes/DetalleClientePage/DetalleClientePage";
 import NuevoClientePage from "./pages/clientes/NuevoClientePage/NuevoClientePage";
 import NuevoProveedorPage from "./pages/proveedores/NuevoProveedorPage/NuevoProveedorPage";
 import DetalleProveedorPage from "./pages/proveedores/DetalleProveedorPage/DetalleProveedorPage";
@@ -25,6 +25,7 @@ import ListadoComprasPage from "./pages/compras/ListadoComprasPage/ListadoCompra
 import DetalleEmpleadoPage from "./pages/empleados/DetalleEmpleadoPage/DetalleEmpleadoPage";
 import NuevoEmpleadoPage from "./pages/empleados/NuevoEmpleadoPage/NuevoEmpleadoPage";
 import NuevaMateriaPage from "./pages/materias/NuevaMateriaPage/NuevaMateriaPage";
+import DetalleCompraPage from "./pages/compras/DetalleCompraPage/DetalleCompraPage";
 
 const router = createBrowserRouter([
   {
@@ -85,11 +86,11 @@ const router = createBrowserRouter([
   },
   {
     path: "compras/compras",
-    element: {},
+    element: <ListadoComprasPage />,
   },
   {
     path: "compras/compras/:id",
-    element: {},
+    element: <DetalleCompraPage />,
   },
   {
     path: "compras/proveedores",
@@ -109,7 +110,7 @@ const router = createBrowserRouter([
   },
   {
     path: "ventas/clientes/:id",
-    element: <DetalleCientePage />,
+    element: <DetalleClientePage />,
   },
   {
     path: "ventas/clientes/crear",
@@ -165,7 +166,7 @@ const router = createBrowserRouter([
   },
   {
     path: "admin/clientes/:id",
-    element: <DetalleCientePage />,
+    element: <DetalleClientePage />,
   },
   {
     path: "admin/ventas",

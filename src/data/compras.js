@@ -77,8 +77,8 @@ const findAllCompras = () => {
   return compras;
 };
 
-const findComprasByID = (id) => {
+const findCompraByID = (id) => {
   return compras.find((c) => c.id === id);
 };
 
-export { findAllCompras, findComprasByID };
+export { findAllCompras, findCompraByID };
