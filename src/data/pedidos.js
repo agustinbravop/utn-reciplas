@@ -1,35 +1,55 @@
 const pedidosPendientes = [
   {
     id: 1,
-    descripcion: "Plástico ABC",
-    calidad: "Excelente",
-    deposito: "A2",
-    cantidad: 125.1,
-    ultimoCambio: "30/12/2022 16:40",
+    idClient: 1,
+    state: "En proceso",
+    deadline: "30/12/2022 16:40",
+    content : [
+      {
+        idProd: 1,
+        amount: 4
+      }
+    ]
   },
   {
     id: 2,
-    descripcion: "Plástico ABC",
-    calidad: "Excelente",
-    deposito: "A2",
-    cantidad: 125.1,
-    ultimoCambio: "30/12/2022 16:40",
+    idClient: 2,
+    state: "En proceso",
+    deadline: "30/12/2022 16:40",
+    content : [
+      {
+        idProd: 2,
+        amount: 3
+      },
+      {
+        idProd: 1,
+        amount: 5
+      },
+    ]
   },
   {
     id: 3,
-    descripcion: "Plástico ABC",
-    calidad: "Excelente",
-    deposito: "A2",
-    cantidad: 125.1,
-    ultimoCambio: "30/12/2022 16:40",
+    idClient: 3,
+    state: "En proceso",
+    deadline: "30/12/2022 16:40",
+    content : [
+      {
+        idProd: 3,
+        amount: 10
+      },
+    ]
   },
   {
     id: 4,
-    descripcion: "Plástico ABC",
-    calidad: "Excelente",
-    deposito: "A2",
-    cantidad: 125.1,
-    ultimoCambio: "30/12/2022 16:40",
+    idClient: 2,
+    state: "En proceso",
+    deadline: "30/12/2022 16:40",
+    content : [
+      {
+        idProd: 3,
+        amount: 1
+      },
+    ]
   },
 ];
 
