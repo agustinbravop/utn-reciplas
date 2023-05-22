@@ -50,6 +50,21 @@ function Button({ variant, href, size, children, ...props }) {
     );
   }
 
+  if (variant === "danger") {
+    return (
+      <ButtonContent>
+        <ChakraButton
+          variant="solid"
+          className={`btn-peligro`}
+          {...props}
+          style={sizeStyles}
+        >
+          {children}
+        </ChakraButton>
+      </ButtonContent>
+    );
+  }
+
   return (
     <ButtonContent href={href}>
       <ChakraButton

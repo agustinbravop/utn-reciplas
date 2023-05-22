@@ -17,25 +17,21 @@ import {
   findAllClientes,
   findAllClientesDeudores,
 } from "../../../data/clientes";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 function LineaCliente({ id, name, mail, cel, debt }) {
+  const navigate = useNavigate();
   return (
-    <Tr key={id}>
+    <Tr key={id} onClick={() => navigate(`${id}`)}>
       <Td>{id}</Td>
-      <Td>
-        <Link to={`${id}`}>
-          {name}
-        </Link>
-      </Td>
+      <Td>{name}</Td>
       <Td>{mail}</Td>
       <Td>{cel}</Td>
       <Td>{debt}</Td>
       <Td>
         <button>
-          {" "}
-          <EditIcon></EditIcon>{" "}
+          <EditIcon></EditIcon>
         </button>
       </Td>
     </Tr>
@@ -62,10 +58,7 @@ export default function ListadoClientesPage() {
             Agregar
           </Button>
           <Input name="search" label="" placeholder="Buscar..." width="50%" />
-          <Checkbox
-            width="250px"
-            onChange={onFilterChange}
-          >
+          <Checkbox width="250px" onChange={onFilterChange}>
             ¿Sólo Deudores?
           </Checkbox>
         </div>

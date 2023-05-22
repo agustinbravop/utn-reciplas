@@ -32,3 +32,7 @@
 .btn-deshabilitado:hover {
   cursor: not-allowed;
 }
+
+.btn-peligro {
+  background-color: var(--colorError);
+}

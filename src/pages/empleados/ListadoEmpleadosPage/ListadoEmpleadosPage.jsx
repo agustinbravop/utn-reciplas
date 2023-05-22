@@ -14,16 +14,15 @@ import { AddIcon } from "@chakra-ui/icons";
 import Button from "../../../components/Button/Button";
 import { React } from "react";
 import { findAllEmpleados } from "../../../data/empleados";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function LineaEmpleado({ id, nombre, sector, telefono, perfil }) {
+  const navigate = useNavigate();
   return (
-    <Tr key={id}>
+    <Tr key={id} onClick={() => navigate(`${id}`)}>
       <Td>{id}</Td>
       <Td>
-        <Link to={`${id}`}>
-          {nombre}
-        </Link>
+        <Link to={`${id}`}>{nombre}</Link>
       </Td>
       <Td>{sector}</Td>
       <Td>{telefono}</Td>

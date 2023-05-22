@@ -1,5 +1,5 @@
 import Input from "../../../components/Input/Input";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Layout from "../../../components/Layout/Layout";
 import "./ListadoMateriasPrimas.css";
 import {
@@ -25,14 +25,15 @@ function LineaMateriaPrima({
   cantidad,
   ultimoCambio,
 }) {
+  const navigate = useNavigate();
   return (
-    <Tr key={id} className={cantidad === 0.0 && "linea-agotado"}>
+    <Tr
+      onClick={() => navigate(`${id}`)}
+      key={id}
+      className={cantidad === 0.0 && "linea-agotado"}
+    >
       <Td>{id}</Td>
-      <Td>
-        <Link to={`${id}`}>
-          {descripcion}
-        </Link>
-      </Td>
+      <Td>{descripcion}</Td>
       <Td>{calidad}</Td>
       <Td>{cantidad} kg</Td>
       <Td>{deposito}</Td>

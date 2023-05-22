@@ -16,20 +16,19 @@ import "react-datepicker/dist/react-datepicker.css";
 import Title from "../../../components/Title/Title";
 import { findAllCompras } from "../../../data/compras";
 import { findProveedorByID } from "../../../data/proveedores";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AddIcon } from "@chakra-ui/icons";
 
 function LineaCompra({ id, idProveedor, materias, fecha, estado }) {
-  console.log(id, idProveedor, materias);
+  const navigate = useNavigate();
   const proveedor = findProveedorByID(idProveedor);
   const precio = materias.reduce((acum, m) => acum + m.precio, 0);
+
   return (
-    <Tr key={id}>
+    <Tr onClick={() => navigate(`${id}`)} key={id}>
       <Td>{id}</Td>
       <Td>
-        <Link to={`${id}`}>
-          {proveedor.name}
-        </Link>
+        <Link to={`${id}`}>{proveedor.name}</Link>
       </Td>
       <Td>$ {precio}</Td>
       <Td>{fecha}</Td>

@@ -14,7 +14,7 @@ import { AddIcon, EditIcon } from "@chakra-ui/icons";
 import Button from "../../../components/Button/Button";
 import { React } from "react";
 import { findAllProductos } from "../../../data/productos";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Title from "../../../components/Title/Title";
 
 function LineaProducto({
@@ -26,14 +26,17 @@ function LineaProducto({
   ultimoCambio,
 }) {
   const url = useLocation();
+  const navigate = useNavigate();
   const edit = url.pathname === "/prod/productos" ? <EditIcon></EditIcon> : "";
 
   return (
-    <Tr key={id} className={unidades === 0.0 && "linea-agotado"}>
+    <Tr
+      onClick={() => navigate(`${id}`)}
+      key={id}
+      className={unidades === 0.0 && "linea-agotado"}
+    >
       <Td>{id}</Td>
-      <Td>
-        <Link to={`${id}`}>{descripcion}</Link>
-      </Td>
+      <Td>{descripcion}</Td>
       <Td>{linea}</Td>
       <Td>{deposito}</Td>
       <Td>{unidades}</Td>

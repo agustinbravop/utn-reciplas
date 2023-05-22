@@ -13,26 +13,24 @@ import { AddIcon, EditIcon } from "@chakra-ui/icons";
 import Button from "../../../components/Button/Button";
 import Input from "../../../components/Input/Input";
 import { findAllProveedores } from "../../../data/proveedores";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Title from "../../../components/Title/Title";
 
 function LineaProveedor({ id, name, mail, cel, tipo }) {
+  const navigate = useNavigate();
   return (
-    <Tr key={id}>
-      <Td>{id}</Td>
-      <Td>
-        <Link to={`${id}`}>{name}</Link>
-      </Td>
-      <Td>{mail}</Td>
-      <Td>{cel}</Td>
-      <Td>{tipo}</Td>
-      <Td>
-        <button>
-          {" "}
-          <EditIcon></EditIcon>{" "}
-        </button>
-      </Td>
-    </Tr>
+      <Tr key={id}onClick={() => navigate(`${id}`)}>
+        <Td>{id}</Td>
+        <Td>{name}</Td>
+        <Td>{mail}</Td>
+        <Td>{cel}</Td>
+        <Td>{tipo}</Td>
+        <Td>
+          <button>
+            <EditIcon></EditIcon>
+          </button>
+        </Td>
+      </Tr>
   );
 }
 
