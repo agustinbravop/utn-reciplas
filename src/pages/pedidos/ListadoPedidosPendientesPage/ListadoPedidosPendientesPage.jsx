@@ -40,7 +40,7 @@ export default function ListadoPedidosPendientesPage() {
 
   return (
     <Layout>
-      <div className="listado-pedidos">
+      <div className="listado-materias">
         <Title>Pedidos Pendientes</Title>
         <Input name="search" placeholder="Buscar..." width="50%" />
         <TableContainer>
