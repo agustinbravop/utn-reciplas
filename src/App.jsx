@@ -26,6 +26,8 @@ import DetalleEmpleadoPage from "./pages/empleados/DetalleEmpleadoPage/DetalleEm
 import NuevoEmpleadoPage from "./pages/empleados/NuevoEmpleadoPage/NuevoEmpleadoPage";
 import NuevaMateriaPage from "./pages/materias/NuevaMateriaPage/NuevaMateriaPage";
 import DetalleCompraPage from "./pages/compras/DetalleCompraPage/DetalleCompraPage";
+import ListadoPedidosPendientesPage from './pages/pedidos/ListadoPedidosPendientesPage/ListadoPedidosPendientesPage'
+import DetallePedidoPendientePage from './pages/pedidos/DetallePedidoPendientePage/DetallePedidoPendientePage'
 
 const router = createBrowserRouter([
   {
@@ -62,11 +64,11 @@ const router = createBrowserRouter([
   },
   {
     path: "prod/pedidos",
-    element: {},
+    element: <ListadoPedidosPendientesPage />,
   },
   {
     path: "prod/pedidos/:id",
-    element: {},
+    element: <DetallePedidoPendientePage />,
   },
   {
     path: "prod/ingresos",

@@ -18,7 +18,7 @@ function ProdHomePage() {
           <Button size="lg" href="/prod/productos">
             Productos
           </Button>
-          <Button size="lg" href="/prod/pedios">
+          <Button size="lg" href="/prod/pedidos">
             Pedidos Pendientes
           </Button>
         </div>
