@@ -1,4 +1,8 @@
-.link-a-cliente:hover {
+.atributo-link:not(*) {
+  text-decoration: underline var(--colorLink);
+}
+
+.atributo-link:hover {
   cursor: pointer;
   color: var(--colorLink);
 }

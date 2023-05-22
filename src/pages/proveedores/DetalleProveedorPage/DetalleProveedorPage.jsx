@@ -9,9 +9,9 @@ import {
   Box,
   Heading,
   Stack,
-  Text,
   StackDivider,
 } from "@chakra-ui/react";
+import EditableText from "../../../components/EditableText/EditableText";
 
 export default function DetalleProveedorPage() {
   const { id } = useParams("id");
@@ -19,35 +19,23 @@ export default function DetalleProveedorPage() {
   return (
     <Layout area="ventas">
       <div className="cuerpo">
-      <Card>
+        <Card>
           <CardHeader>
-            <Heading size="md">{m.name}</Heading>
+            <Heading size="md">Proveedor: {m.name}</Heading>
           </CardHeader>
           <CardBody>
             <Stack divider={<StackDivider />} spacing="3">
               <Box>
-                <Heading size="xs" textTransform="uppercase">
-                  Correo
-                </Heading>
-                <Text pt="2" fontSize="sm">
-                  {m.mail}
-                </Text>
+                <Heading size="xs">Correo</Heading>
+                <EditableText defaultValue={m.mail} />
               </Box>
               <Box>
-                <Heading size="xs" textTransform="uppercase">
-                  Celular
-                </Heading>
-                <Text pt="2" fontSize="sm">
-                  {m.cel}
-                </Text>
+                <Heading size="xs">Celular</Heading>
+                <EditableText defaultValue={m.cel} />
               </Box>
               <Box>
-                <Heading size="xs" textTransform="uppercase">
-                  Tipo
-                </Heading>
-                <Text pt="2" fontSize="sm">
-                  {m.tipo}
-                </Text>
+                <Heading size="xs">Tipo</Heading>
+                <EditableText defaultValue={m.tipo} />
               </Box>
             </Stack>
           </CardBody>

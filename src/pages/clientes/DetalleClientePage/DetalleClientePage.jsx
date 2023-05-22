@@ -22,6 +22,7 @@ import "./DetalleClientePage.css";
 import Title from "../../../components/Title/Title";
 import { findAllPedidosByClientID } from "../../../data/pedidos";
 import { findProductoByID } from "../../../data/productos";
+import EditableText from "../../../components/EditableText/EditableText";
 
 function LineaCompra({ id, date, content }) {
   const navigate = useNavigate();
@@ -80,44 +81,24 @@ export default function DetalleClientePage() {
           <CardBody>
             <Stack divider={<StackDivider />} spacing="3">
               <Box>
-                <Heading size="xs" textTransform="uppercase">
-                  Correo
-                </Heading>
-                <Text pt="2" fontSize="sm">
-                  {cliente.mail}
-                </Text>
+                <Heading size="xs">Correo</Heading>
+                <EditableText defaultValue={cliente.mail} />
               </Box>
               <Box>
-                <Heading size="xs" textTransform="uppercase">
-                  Celular
-                </Heading>
-                <Text pt="2" fontSize="sm">
-                  {cliente.cel}
-                </Text>
+                <Heading size="xs">Celular</Heading>
+                <EditableText defaultValue={cliente.cel} />
               </Box>
               <Box>
-                <Heading size="xs" textTransform="uppercase">
-                  Tipo
-                </Heading>
-                <Text pt="2" fontSize="sm">
-                  {cliente.tipo}
-                </Text>
+                <Heading size="xs">Tipo</Heading>
+                <EditableText defaultValue={cliente.tipo} />
               </Box>
               <Box>
-                <Heading size="xs" textTransform="uppercase">
-                  Fecha de Registro
-                </Heading>
-                <Text pt="2" fontSize="sm">
-                  {cliente.regDate}
-                </Text>
+                <Heading size="xs">Fecha de Registro</Heading>
+                <EditableText defaultValue={cliente.regDate} />
               </Box>
               <Box>
-                <Heading size="xs" textTransform="uppercase">
-                  Deuda Actual
-                </Heading>
-                <Text pt="2" fontSize="sm">
-                  {cliente.debt}
-                </Text>
+                <Heading size="xs">Deuda Actual</Heading>
+                <EditableText defaultValue={cliente.debt} />
               </Box>
             </Stack>
           </CardBody>

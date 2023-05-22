@@ -12,34 +12,27 @@ import {
   Text,
   StackDivider,
 } from "@chakra-ui/react";
+import EditableText from "../../../components/EditableText/EditableText";
 
 export default function DetalleEmpleadoPage() {
   const { id } = useParams("id");
-  const m = findEmpleadoByID(parseInt(id));
+  const empl = findEmpleadoByID(parseInt(id));
   return (
     <Layout>
       <div className="cuerpo">
         <Card>
           <CardHeader>
-            <Heading size="md">{m.nombre}</Heading>
+            <Heading size="md">Empleado: {empl.nombre}</Heading>
           </CardHeader>
           <CardBody>
             <Stack divider={<StackDivider />} spacing="3">
               <Box>
-                <Heading size="xs" textTransform="uppercase">
-                  Sector
-                </Heading>
-                <Text pt="2" fontSize="sm">
-                  {m.sector}
-                </Text>
+                <Heading size="xs">Sector</Heading>
+                <EditableText defaultValue={empl.sector} />
               </Box>
               <Box>
-                <Heading size="xs" textTransform="uppercase">
-                  Celular
-                </Heading>
-                <Text pt="2" fontSize="sm">
-                  {m.telefono}
-                </Text>
+                <Heading size="xs">Celular</Heading>
+                <EditableText defaultValue={empl.telefono} />
               </Box>
             </Stack>
           </CardBody>

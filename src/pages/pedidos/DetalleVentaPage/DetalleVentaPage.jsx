@@ -70,7 +70,8 @@ function DetalleVentaPage() {
         <h2>
           <b>Fecha de Entrega:</b> {pedido.deadline}
         </h2>
-        <h2 className="link-a-cliente"
+        <h2
+          className="atributo-link"
           onClick={() =>
             navigate(`../../clientes/${cliente.id}`, {
               relative: "path",
@@ -79,7 +80,14 @@ function DetalleVentaPage() {
         >
           <b>Cliente:</b> {cliente.name}
         </h2>
-        <h2>
+        <h2
+          className="atributo-link"
+          onClick={() =>
+            navigate(`../../empleados/${vendedor.id}`, {
+              relative: "path",
+            })
+          }
+        >
           <b>Vendedor:</b> {vendedor.nombre}
         </h2>
         <h2>
