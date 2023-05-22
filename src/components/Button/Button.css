@@ -35,4 +35,8 @@
 
 .btn-peligro {
   background-color: var(--colorError);
+  border: 2px solid var(--colorNegro);
+}
+.btn-peligro:hover {
+  box-shadow: 0px 2px 0px 2px grey;
 }

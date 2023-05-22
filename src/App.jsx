@@ -26,8 +26,8 @@ import DetalleEmpleadoPage from "./pages/empleados/DetalleEmpleadoPage/DetalleEm
 import NuevoEmpleadoPage from "./pages/empleados/NuevoEmpleadoPage/NuevoEmpleadoPage";
 import NuevaMateriaPage from "./pages/materias/NuevaMateriaPage/NuevaMateriaPage";
 import DetalleCompraPage from "./pages/compras/DetalleCompraPage/DetalleCompraPage";
-import ListadoPedidosPendientesPage from './pages/pedidos/ListadoPedidosPendientesPage/ListadoPedidosPendientesPage'
-import DetallePedidoPendientePage from './pages/pedidos/DetallePedidoPendientePage/DetallePedidoPendientePage'
+import ListadoPedidosPendientesPage from "./pages/pedidos/ListadoPedidosPendientesPage/ListadoPedidosPendientesPage";
+import DetallePedidoPendientePage from "./pages/pedidos/DetallePedidoPendientePage/DetallePedidoPendientePage";
 import DetalleVentaPage from "./pages/pedidos/DetalleVentaPage/DetalleVentaPage";
 
 const router = createBrowserRouter([

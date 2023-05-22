@@ -15,7 +15,15 @@ import { findClienteByID } from "../../../data/clientes";
 import { useNavigate } from "react-router-dom";
 import { findEmpleadoByID } from "../../../data/empleados";
 
-function LineaVenta({ id, idClient, idSeller, date, state, deadline, content }) {
+function LineaVenta({
+  id,
+  idClient,
+  idSeller,
+  date,
+  state,
+  deadline,
+  content,
+}) {
   const precioTotal = content.reduce((acum, c) => acum + c.price * c.amount, 0);
   const client = findClienteByID(idClient);
   const seller = findEmpleadoByID(idSeller);
@@ -23,12 +31,12 @@ function LineaVenta({ id, idClient, idSeller, date, state, deadline, content }) 
 
   return (
     <Tr onClick={() => navigate(`${id}`)} key={id}>
-        <Td>{date}</Td>
-        <Td>{client.name}</Td>
-        <Td>{seller.nombre}</Td>
-        <Td>{state}</Td>
-        <Td>{deadline}</Td>
-        <Td isNumeric>{precioTotal.toFixed(2)} $</Td>
+      <Td>{date}</Td>
+      <Td>{client.name}</Td>
+      <Td>{seller.nombre}</Td>
+      <Td>{state}</Td>
+      <Td>{deadline}</Td>
+      <Td isNumeric>{precioTotal.toFixed(2)} $</Td>
     </Tr>
   );
 }

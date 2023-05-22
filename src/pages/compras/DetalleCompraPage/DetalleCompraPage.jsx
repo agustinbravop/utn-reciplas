@@ -78,7 +78,7 @@ export default function DetalleCompraPage() {
   const precio = c.materias.reduce((acum, m) => acum + m.precio, 0);
 
   return (
-    <Layout area="ventas">
+    <Layout>
       <div className="cuerpo">
         <Title>Compra N° {c.id}</Title>
         <h2>
@@ -90,7 +90,7 @@ export default function DetalleCompraPage() {
         <h2>
           <b>Estado actual:</b> {c.estado}
         </h2>
-        
+
         {c.estado !== "Recibida y pagada" && <FormPago precio={precio} />}
 
         <Card>

@@ -54,7 +54,7 @@ function Button({ variant, href, size, children, ...props }) {
     return (
       <ButtonContent>
         <ChakraButton
-          variant="solid"
+          variant="contained"
           className={`btn-peligro`}
           {...props}
           style={sizeStyles}

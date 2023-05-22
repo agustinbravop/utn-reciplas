@@ -23,7 +23,7 @@ function NuevoProveedor() {
 
 export default function NuevoProveedorPage() {
   return (
-    <Layout area="ventas">
+    <Layout>
       <div>
         <Title>Alta de Proveedor</Title>
         <NuevoProveedor />

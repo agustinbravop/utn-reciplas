@@ -38,7 +38,7 @@ export default function ListadoEmpleadosPage() {
   });
 
   return (
-    <Layout area="admin">
+    <Layout>
       <div className="listado-empleados">
         <h1 className="titulo">Empleados</h1>
         <div className="search">

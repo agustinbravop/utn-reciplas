@@ -58,7 +58,7 @@ function DetallePedidoPendientePage() {
   });
 
   return (
-    <Layout area="prod">
+    <Layout>
       <div className="cuerpo">
         <Title>Pedido de {cliente.name} </Title>
         <h2>

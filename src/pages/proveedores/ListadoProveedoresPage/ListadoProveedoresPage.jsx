@@ -19,18 +19,18 @@ import Title from "../../../components/Title/Title";
 function LineaProveedor({ id, name, mail, cel, tipo }) {
   const navigate = useNavigate();
   return (
-      <Tr key={id}onClick={() => navigate(`${id}`)}>
-        <Td>{id}</Td>
-        <Td>{name}</Td>
-        <Td>{mail}</Td>
-        <Td>{cel}</Td>
-        <Td>{tipo}</Td>
-        <Td>
-          <button>
-            <EditIcon></EditIcon>
-          </button>
-        </Td>
-      </Tr>
+    <Tr key={id} onClick={() => navigate(`${id}`)}>
+      <Td>{id}</Td>
+      <Td>{name}</Td>
+      <Td>{mail}</Td>
+      <Td>{cel}</Td>
+      <Td>{tipo}</Td>
+      <Td>
+        <button>
+          <EditIcon></EditIcon>
+        </button>
+      </Td>
+    </Tr>
   );
 }
 

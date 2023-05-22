@@ -7,7 +7,7 @@ function DateInput({ ...props }) {
 
   return (
     <DatePicker
-      style={{ opacity: "50%"}}
+      style={{ opacity: "50%" }}
       selected={selectedDate}
       onChange={(date) => setSelectedDate(date)}
       {...props}

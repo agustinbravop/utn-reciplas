@@ -23,6 +23,7 @@ import Title from "../../../components/Title/Title";
 import { findAllPedidosByClientID } from "../../../data/pedidos";
 import { findProductoByID } from "../../../data/productos";
 import EditableText from "../../../components/EditableText/EditableText";
+import Button from "../../../components/Button/Button";
 
 function LineaCompra({ id, date, content }) {
   const navigate = useNavigate();
@@ -105,6 +106,7 @@ export default function DetalleClientePage() {
         </Card>
         <Title variant="subtitle">Historial de Compras:</Title>
         <HistorialCompras compras={compras} />
+        <Button variant="danger">Eliminar cliente</Button>
       </div>
     </Layout>
   );
