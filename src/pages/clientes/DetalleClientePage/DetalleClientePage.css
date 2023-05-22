@@ -1,0 +1,4 @@
+.historial-compras tr:hover {
+  cursor: pointer;
+  color: var(--colorLink);
+}

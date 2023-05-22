@@ -1,0 +1,4 @@
+.link-a-cliente:hover {
+  cursor: pointer;
+  color: var(--colorLink);
+}

@@ -44,7 +44,7 @@ const pedidos = [
     content: [
       {
         idProd: 3,
-        price: 1039.90,
+        price: 1039.9,
         amount: 10,
       },
     ],
@@ -74,8 +74,17 @@ const findAllPedidosPendientes = () => {
   return pedidos.filter((p) => p.state !== "Finalizado");
 };
 
+const findAllPedidosByClientID = (id) => {
+  return pedidos.filter((p) => p.idClient === id);
+};
+
 const findPedidoByID = (id) => {
   return pedidos.find((p) => p.id === id);
 };
 
-export { findAllPedidos, findPedidoByID, findAllPedidosPendientes };
+export {
+  findAllPedidos,
+  findPedidoByID,
+  findAllPedidosPendientes,
+  findAllPedidosByClientID,
+};

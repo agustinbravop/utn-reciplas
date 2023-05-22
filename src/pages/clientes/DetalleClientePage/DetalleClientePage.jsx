@@ -1,6 +1,6 @@
 import React from "react";
 import { findClienteByID } from "../../../data/clientes";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import Layout from "../../../components/Layout/Layout";
 import {
   Card,
@@ -11,18 +11,71 @@ import {
   Stack,
   Text,
   StackDivider,
+  Table,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+  Td,
 } from "@chakra-ui/react";
+import "./DetalleClientePage.css";
+import Title from "../../../components/Title/Title";
+import { findAllPedidosByClientID } from "../../../data/pedidos";
+import { findProductoByID } from "../../../data/productos";
+
+function LineaCompra({ id, date, content }) {
+  const navigate = useNavigate();
+  const precioTotal = content.reduce((acum, c) => acum + c.price * c.amount, 0);
+  const productos = content
+    .map((c) => findProductoByID(c.idProd))
+    .map((prod) => prod.descripcion)
+    .join(", ");
+
+  return (
+    <Tr
+      onClick={() =>
+        navigate(`../../ventas/${id}`, {
+          relative: "path",
+        })
+      }
+      key={id}
+    >
+      <Td>{id}</Td>
+      <Td>{date}</Td>
+      <Td isNumeric>{precioTotal.toFixed(2)} $</Td>
+      <Td inlineSize="350px">{productos}</Td>
+    </Tr>
+  );
+}
+
+function HistorialCompras({ compras }) {
+  const lineasCompra = compras.map((c) => <LineaCompra {...c} />);
+  return (
+    <Table size="sm" className="historial-compras">
+      <Thead>
+        <Tr>
+          <Th>ID</Th>
+          <Th>Fecha</Th>
+          <Th isNumeric>Precio Total</Th>
+          <Th>Productos</Th>
+        </Tr>
+      </Thead>
+      <Tbody>{lineasCompra}</Tbody>
+    </Table>
+  );
+}
 
 export default function DetalleClientePage() {
   const { id } = useParams("id");
-  const m = findClienteByID(parseInt(id));
+  const cliente = findClienteByID(parseInt(id));
+  const compras = findAllPedidosByClientID(cliente.id);
 
   return (
     <Layout>
       <div className="cuerpo">
         <Card>
           <CardHeader>
-            <Heading size="md">Cliente: {m.name}</Heading>
+            <Heading size="md">Cliente: {cliente.name}</Heading>
           </CardHeader>
           <CardBody>
             <Stack divider={<StackDivider />} spacing="3">
@@ -31,7 +84,7 @@ export default function DetalleClientePage() {
                   Correo
                 </Heading>
                 <Text pt="2" fontSize="sm">
-                  {m.mail}
+                  {cliente.mail}
                 </Text>
               </Box>
               <Box>
@@ -39,7 +92,7 @@ export default function DetalleClientePage() {
                   Celular
                 </Heading>
                 <Text pt="2" fontSize="sm">
-                  {m.cel}
+                  {cliente.cel}
                 </Text>
               </Box>
               <Box>
@@ -47,7 +100,7 @@ export default function DetalleClientePage() {
                   Tipo
                 </Heading>
                 <Text pt="2" fontSize="sm">
-                  {m.tipo}
+                  {cliente.tipo}
                 </Text>
               </Box>
               <Box>
@@ -55,7 +108,7 @@ export default function DetalleClientePage() {
                   Fecha de Registro
                 </Heading>
                 <Text pt="2" fontSize="sm">
-                  {m.regDate}
+                  {cliente.regDate}
                 </Text>
               </Box>
               <Box>
@@ -63,14 +116,14 @@ export default function DetalleClientePage() {
                   Deuda Actual
                 </Heading>
                 <Text pt="2" fontSize="sm">
-                  {m.debt}
+                  {cliente.debt}
                 </Text>
               </Box>
             </Stack>
           </CardBody>
         </Card>
-        <h2>Historial de Compras</h2>
-        <h4>10/05/23 | 5 | Mueble | $6700</h4>
+        <Title variant="subtitle">Historial de Compras:</Title>
+        <HistorialCompras compras={compras} />
       </div>
     </Layout>
   );

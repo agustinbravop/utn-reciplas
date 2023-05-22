@@ -3,10 +3,11 @@ import Title from "../../../components/Title/Title";
 import { findPedidoByID } from "../../../data/pedidos";
 import { findProductoByID } from "../../../data/productos";
 import { findClienteByID } from "../../../data/clientes";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import Layout from "../../../components/Layout/Layout";
 import { Thead, Table, Tr, Th, Tbody, Td } from "@chakra-ui/react";
 import { findEmpleadoByID } from "../../../data/empleados";
+import "./DetalleVentaPage.css";
 
 function LineaProductoVendido({
   id,
@@ -37,7 +38,7 @@ function DetalleVentaPage() {
     0
   );
   const vendedor = findEmpleadoByID(pedido.idSeller);
-
+  const navigate = useNavigate();
   const lineasPedido = pedido.content.map((linea) => {
     const prod = findProductoByID(linea.idProd);
 
@@ -56,7 +57,7 @@ function DetalleVentaPage() {
   return (
     <Layout area="prod">
       <div className="cuerpo">
-        <Title>Pedido de {cliente.name} </Title>
+        <Title>Pedido de {cliente.name}</Title>
         <h2>
           <b>ID:</b> {pedido.id}
         </h2>
@@ -68,6 +69,15 @@ function DetalleVentaPage() {
         </h2>
         <h2>
           <b>Fecha de Entrega:</b> {pedido.deadline}
+        </h2>
+        <h2 className="link-a-cliente"
+          onClick={() =>
+            navigate(`../../clientes/${cliente.id}`, {
+              relative: "path",
+            })
+          }
+        >
+          <b>Cliente:</b> {cliente.name}
         </h2>
         <h2>
           <b>Vendedor:</b> {vendedor.nombre}
