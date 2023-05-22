@@ -21,7 +21,7 @@ function LineaEmpleado({ id, nombre, sector, telefono, perfil }) {
     <Tr key={id}>
       <Td>{id}</Td>
       <Td>
-        <Link to={`${id}`} className="link">
+        <Link to={`${id}`}>
           {nombre}
         </Link>
       </Td>

@@ -21,9 +21,7 @@ function LineaProveedor({ id, name, mail, cel, tipo }) {
     <Tr key={id}>
       <Td>{id}</Td>
       <Td>
-        <Link to={`${id}`} className="link">
-          {name}
-        </Link>
+        <Link to={`${id}`}>{name}</Link>
       </Td>
       <Td>{mail}</Td>
       <Td>{cel}</Td>

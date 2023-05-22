@@ -1,6 +1,12 @@
 .ClienteLista {
   padding: 1% 10%;
 }
+
+.ClienteLista tr:hover {
+  cursor: pointer;
+  color: var(--colorLink);
+}
+
 .titulo {
   size: 3%;
 }

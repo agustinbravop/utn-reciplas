@@ -13,19 +13,17 @@ import Button from "../../../components/Button/Button";
 import React from "react";
 import Title from "../../../components/Title/Title";
 import { Link } from "react-router-dom";
-import { findClienteByID } from '../../../data/clientes'
-import {findAllPedidosPendientes} from '../../../data/pedidos'
+import { findClienteByID } from "../../../data/clientes";
+import { findAllPedidosPendientes } from "../../../data/pedidos";
 
-function LineaPedido({ id, idC, estado, fecha}) {
+function LineaPedido({ id, idC, estado, fecha }) {
   const cliente = findClienteByID(idC);
   return (
     <Tr key={id}>
       <Td>
-        <Link to={`${id}`} className="link">{id}</Link>
+        <Link to={`${id}`}>{id}</Link>
       </Td>
-      <Td> 
-          {cliente.name}
-      </Td>
+      <Td>{cliente.name}</Td>
       <Td>{estado}</Td>
       <Td>{fecha}</Td>
     </Tr>
@@ -35,7 +33,14 @@ function LineaPedido({ id, idC, estado, fecha}) {
 export default function ListadoPedidosPendientesPage() {
   const pedidos = findAllPedidosPendientes();
   const lineasPedidos = pedidos.map((p) => {
-    return <LineaPedido id={p.id} idC={p.idClient} estado={p.state} fecha={p.deadline}/>;                  //REVISAR
+    return (
+      <LineaPedido
+        id={p.id}
+        idC={p.idClient}
+        estado={p.state}
+        fecha={p.deadline}
+      />
+    ); //REVISAR
   });
 
   return (

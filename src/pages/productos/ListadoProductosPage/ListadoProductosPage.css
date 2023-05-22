@@ -7,3 +7,8 @@
 .listado-productos {
   padding: 1% 11%;
 }
+
+.listado-productos tr:hover {
+  cursor: pointer;
+  color: var(--colorLink);
+}

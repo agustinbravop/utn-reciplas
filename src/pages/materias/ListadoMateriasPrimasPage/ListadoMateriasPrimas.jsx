@@ -29,7 +29,7 @@ function LineaMateriaPrima({
     <Tr key={id} className={cantidad === 0.0 && "linea-agotado"}>
       <Td>{id}</Td>
       <Td>
-        <Link to={`${id}`} className="link">
+        <Link to={`${id}`}>
           {descripcion}
         </Link>
       </Td>

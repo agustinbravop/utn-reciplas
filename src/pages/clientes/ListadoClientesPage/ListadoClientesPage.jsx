@@ -25,7 +25,7 @@ function LineaCliente({ id, name, mail, cel, debt }) {
     <Tr key={id}>
       <Td>{id}</Td>
       <Td>
-        <Link to={`${id}`} className="link">
+        <Link to={`${id}`}>
           {name}
         </Link>
       </Td>

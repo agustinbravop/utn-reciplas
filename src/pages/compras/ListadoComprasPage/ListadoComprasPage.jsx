@@ -27,7 +27,7 @@ function LineaCompra({ id, idProveedor, materias, fecha, estado }) {
     <Tr key={id}>
       <Td>{id}</Td>
       <Td>
-        <Link to={`${id}`} className="link">
+        <Link to={`${id}`}>
           {proveedor.name}
         </Link>
       </Td>

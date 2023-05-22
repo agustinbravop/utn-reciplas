@@ -1,3 +1,8 @@
 .listado-empleados {
   padding: 1% 11%;
 }
+
+.listado-empleados tr:hover {
+  cursor: pointer;
+  color: var(--colorLink);
+}

@@ -2,6 +2,11 @@
   padding: 1% 11%;
 }
 
+.listado-compras tr:hover {
+  cursor: pointer;
+  color: var(--colorLink);
+}
+
 .search-date {
   display: flex;
   align-items: center;

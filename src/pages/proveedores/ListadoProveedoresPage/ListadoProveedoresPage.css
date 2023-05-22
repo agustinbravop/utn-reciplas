@@ -1,6 +1,12 @@
 .listado-proveedores {
   padding: 1% 11%;
 }
+
+.listado-proveedores tr:hover {
+  cursor: pointer;
+  color: var(--colorLink);
+}
+
 .titulo {
   size: 3%;
 }
