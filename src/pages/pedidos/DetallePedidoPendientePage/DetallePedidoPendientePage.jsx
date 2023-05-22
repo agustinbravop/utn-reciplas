@@ -10,14 +10,17 @@ import Button from "../../../components/Button/Button";
 import { Thead, Table, Tr, Th, Tbody, Td } from "@chakra-ui/react";
 import "./DetallePedidoPendientePage.css";
 
-function FormEstado() {
-  const options = ["En proceso", "En entrega", "Finalizado"];
+const options = ["En proceso", "En entrega", "Finalizado"];
+
+function FormEstado({ state }) {
+  // Evito los estados anteriores al actual para no mostrarlos.
+  const limitedOptions = options.slice(options.indexOf(state));
   return (
     <div className="pedido-pendiente-estado-form">
       <h2>
         <b>Estado:</b>
       </h2>
-      <RadioGroup options={options} />
+      <RadioGroup options={limitedOptions} />
       <Button>Cambiar Estado</Button>
     </div>
   );
@@ -82,7 +85,7 @@ function DetallePedidoPendientePage() {
           </Thead>
           <Tbody>{lineasPedido}</Tbody>
         </Table>
-        <FormEstado />
+        <FormEstado state={pedido.state} />
       </div>
     </Layout>
   );

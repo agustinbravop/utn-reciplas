@@ -32,8 +32,12 @@ const findAllClientes = () => {
   return clientes;
 };
 
+const findAllClientesDeudores = () => {
+  return clientes.filter((c) => c.debt > 0);
+};
+
 const findClienteByID = (id) => {
   return clientes.find((c) => c.id === id);
 };
 
-export { findAllClientes, findClienteByID };
+export { findAllClientes, findClienteByID, findAllClientesDeudores };

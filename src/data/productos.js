@@ -31,7 +31,7 @@ const productos = [
   },
   {
     id: 3,
-    descripcion: "Silla Dura",
+    descripcion: "Silla Mecedora",
     linea: "Mueble",
     deposito: "E5",
     unidades: 15,

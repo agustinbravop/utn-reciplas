@@ -8,12 +8,17 @@ import {
   Th,
   TableContainer,
   Td,
+  Checkbox,
 } from "@chakra-ui/react";
 import { AddIcon, EditIcon } from "@chakra-ui/icons";
 import Button from "../../../components/Button/Button";
 import Input from "../../../components/Input/Input";
-import { findAllClientes } from "../../../data/clientes";
+import {
+  findAllClientes,
+  findAllClientesDeudores,
+} from "../../../data/clientes";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function LineaCliente({ id, name, mail, cel, debt }) {
   return (
@@ -38,10 +43,15 @@ function LineaCliente({ id, name, mail, cel, debt }) {
 }
 
 export default function ListadoClientesPage() {
-  const clientes = findAllClientes();
+  const [soloDeudores, setSoloDeudores] = useState(false);
+  const clientes = soloDeudores ? findAllClientesDeudores() : findAllClientes();
+
   const listadoClientes = clientes.map((c) => {
-    return <LineaCliente {...c} />;
+    return <LineaCliente {...c} key={c.id} />;
   });
+  const onFilterChange = (e) => {
+    setSoloDeudores(e.target.checked);
+  };
 
   return (
     <Layout>
@@ -52,6 +62,12 @@ export default function ListadoClientesPage() {
             Agregar
           </Button>
           <Input name="search" label="" placeholder="Buscar..." width="50%" />
+          <Checkbox
+            width="250px"
+            onChange={onFilterChange}
+          >
+            ¿Sólo Deudores?
+          </Checkbox>
         </div>
 
         <TableContainer>

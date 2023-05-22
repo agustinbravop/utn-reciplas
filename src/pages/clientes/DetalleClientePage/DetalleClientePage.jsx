@@ -22,7 +22,7 @@ export default function DetalleClientePage() {
       <div className="cuerpo">
         <Card>
           <CardHeader>
-            <Heading size="md">{m.name}</Heading>
+            <Heading size="md">Cliente: {m.name}</Heading>
           </CardHeader>
           <CardBody>
             <Stack divider={<StackDivider />} spacing="3">

@@ -45,7 +45,7 @@ const pedidos = [
   {
     id: 4,
     idClient: 2,
-    state: "En proceso",
+    state: "En entrega",
     price: 800.99,
     deadline: "30/12/2022 16:40",
     content: [
@@ -62,7 +62,7 @@ const findAllPedidos = () => {
 };
 
 const findAllPedidosPendientes = () => {
-  return pedidos.filter((p) => p.state === "En proceso");
+  return pedidos.filter((p) => p.state !== "Finalizado");
 };
 
 const findPedidoByID = (id) => {

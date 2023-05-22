@@ -10,7 +10,7 @@ import React from "react";
 function Input({ name, label, placeholder, helper, type = "text", ...props }) {
   return (
     <FormControl className="input-container">
-      <FormLabel className="input-label">{label}</FormLabel>
+      {label && <FormLabel className="input-label">{label}</FormLabel>}
       <ChakraInput
         placeholder={placeholder}
         size="md"
