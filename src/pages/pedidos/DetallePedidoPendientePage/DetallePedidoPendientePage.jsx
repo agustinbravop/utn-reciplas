@@ -10,7 +10,7 @@ import Button from "../../../components/Button/Button";
 import { Thead, Table, Tr, Th, Tbody, Td } from "@chakra-ui/react";
 import "./DetallePedidoPendientePage.css";
 
-const options = ["En proceso", "En entrega", "Finalizado"];
+const options = ["En fabricación", "En entrega", "Finalizado"];
 
 function FormEstado({ state }) {
   // Evito los estados anteriores al actual para no mostrarlos.

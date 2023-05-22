@@ -1,0 +1,11 @@
+.Ventas {
+  padding: 1% 11%;
+}
+
+.Ventas tr:hover {
+  cursor: pointer;
+  color: var(--colorLink);
+}
+.titulo {
+  size: 3%;
+}

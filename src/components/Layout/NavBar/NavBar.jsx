@@ -22,6 +22,7 @@ const areasToNavLinks = {
   },
   admin: {
     Compras: "/admin/compras",
+    Ventas: "/admin/ventas",
     Clientes: "/admin/clientes",
     Proveedores: "/admin/proveedores",
     Empleados: "/admin/empleados",

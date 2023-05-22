@@ -34,8 +34,8 @@ function LineaMateriaPrima({
         </Link>
       </Td>
       <Td>{calidad}</Td>
-      <Td>{deposito}</Td>
       <Td>{cantidad} kg</Td>
+      <Td>{deposito}</Td>
       <Td>{ultimoCambio}</Td>
       <Td>
         <Link to={`${id}`}>
@@ -79,8 +79,8 @@ export default function ListadoMateriasPrimasPage() {
                 <Th>ID</Th>
                 <Th>Descripción</Th>
                 <Th>Calidad</Th>
-                <Th>Depósito</Th>
                 <Th>Cantidad</Th>
+                <Th>Depósito</Th>
                 <Th>Último Cambio</Th>
               </Tr>
             </Thead>

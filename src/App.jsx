@@ -8,7 +8,7 @@ import AdminHomePage from "./pages/AdminHomePage/AdminHomePage";
 import ComprasHomePage from "./pages/ComprasHomePage/ComprasHomePage";
 import VentasHomePage from "./pages/VentasHomePage/VentasHomePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import ListadoVentasPage from "./pages/ventas/ListadoVentasPage/ListadoVentasPage";
+import ListadoVentasPage from "./pages/pedidos/ListadoVentasPage/ListadoVentasPage";
 import ListadoClientesPage from "./pages/clientes/ListadoClientesPage/ListadoClientesPage";
 import ListadoProveedoresPage from "./pages/proveedores/ListadoProveedoresPage/ListadoProveedoresPage";
 import CrearNuevaMateriaPrimaPage from "./pages/materias/NuevaMateriaPage/NuevaMateriaPage";
@@ -28,6 +28,7 @@ import NuevaMateriaPage from "./pages/materias/NuevaMateriaPage/NuevaMateriaPage
 import DetalleCompraPage from "./pages/compras/DetalleCompraPage/DetalleCompraPage";
 import ListadoPedidosPendientesPage from './pages/pedidos/ListadoPedidosPendientesPage/ListadoPedidosPendientesPage'
 import DetallePedidoPendientePage from './pages/pedidos/DetallePedidoPendientePage/DetallePedidoPendientePage'
+import DetalleVentaPage from "./pages/pedidos/DetalleVentaPage/DetalleVentaPage";
 
 const router = createBrowserRouter([
   {
@@ -173,6 +174,10 @@ const router = createBrowserRouter([
   {
     path: "admin/ventas",
     element: <ListadoVentasPage />,
+  },
+  {
+    path: "admin/ventas/:id",
+    element: <DetalleVentaPage />,
   },
   {
     path: "admin/compras",

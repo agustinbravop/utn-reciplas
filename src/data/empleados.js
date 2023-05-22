@@ -23,6 +23,12 @@ const empleados = [
     sector: "Compras",
     telefono: "362346768",
   },
+  {
+    id: 5,
+    nombre: "Valentín Sánchez",
+    sector: "Ventas",
+    telefono: "362795122",
+  },
 ];
 
 const findAllEmpleados = () => {
