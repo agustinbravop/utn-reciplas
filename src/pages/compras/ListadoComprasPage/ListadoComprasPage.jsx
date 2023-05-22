@@ -17,6 +17,7 @@ import Title from "../../../components/Title/Title";
 import { findAllCompras } from "../../../data/compras";
 import { findProveedorByID } from "../../../data/proveedores";
 import { Link } from "react-router-dom";
+import { AddIcon } from "@chakra-ui/icons";
 
 function LineaCompra({ id, idProveedor, materias, fecha, estado }) {
   console.log(id, idProveedor, materias);
@@ -47,6 +48,9 @@ export default function ListadoComprasPage() {
     <Layout>
       <div className="listado-compras">
         <Title>Compras</Title>
+        <Button variant="disabled" rightIcon={<AddIcon color="grey" />}>
+          Crear Nueva
+        </Button>
         <div className="search-date">
           <div>
             Desde:
