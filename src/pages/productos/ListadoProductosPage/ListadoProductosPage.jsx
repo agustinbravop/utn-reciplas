@@ -1,6 +1,6 @@
 import Input from "../../../components/Input/Input";
 import Layout from "../../../components/Layout/Layout";
-import "../ListadoProductosPage/ListadoProductosPage.css";
+import "./ListadoProductosPage.css";
 import {
   Table,
   Thead,

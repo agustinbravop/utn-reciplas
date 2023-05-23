@@ -180,12 +180,20 @@ const router = createBrowserRouter([
     element: <DetalleProveedorPage />,
   },
   {
+    path: "admin/proveedores/crear",
+    element: <NuevoProveedorPage />,
+  },
+  {
     path: "admin/clientes",
     element: <ListadoClientesPage />,
   },
   {
     path: "admin/clientes/:id",
     element: <DetalleClientePage />,
+  },
+  {
+    path: "admin/clientes/crear",
+    element: <NuevoClientePage />,
   },
   {
     path: "admin/ventas",

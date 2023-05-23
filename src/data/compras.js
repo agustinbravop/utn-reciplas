@@ -77,8 +77,12 @@ const findAllCompras = () => {
   return compras;
 };
 
+const findAllComprasByProveedorID = (id) => {
+  return compras.filter((c) => c.idProveedor === id);
+};
+
 const findCompraByID = (id) => {
   return compras.find((c) => c.id === id);
 };
 
-export { findAllCompras, findCompraByID };
+export { findAllCompras, findCompraByID, findAllComprasByProveedorID };
