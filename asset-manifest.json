@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/utn-reciplas/static/css/main.057a14df.css",
+    "main.js": "/utn-reciplas/static/js/main.df0bd3d0.js",
+    "index.html": "/utn-reciplas/index.html",
+    "main.057a14df.css.map": "/utn-reciplas/static/css/main.057a14df.css.map",
+    "main.df0bd3d0.js.map": "/utn-reciplas/static/js/main.df0bd3d0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.057a14df.css",
+    "static/js/main.df0bd3d0.js"
+  ]
+}
