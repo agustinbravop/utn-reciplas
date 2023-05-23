@@ -14,7 +14,6 @@ function FormNuevoCliente() {
       <Input name="name" label="Nombre" placeholder="Nombre..."></Input>
       <Input name="mail" label="Correo" placeholder="correo@example"></Input>
       <Input name="cel" label="Celular" placeholder="..."></Input>
-      <Input name="deuda" label="Deuda" placeholder="$9999"></Input>
       <h4>Tipo de Cliente:</h4>
       <RadioGroup options={options} />
       <Button>Cargar Cliente</Button>

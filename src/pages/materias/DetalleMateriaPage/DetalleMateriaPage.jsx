@@ -21,7 +21,7 @@ function Movimientos({ movimientos }) {
   });
   return (
     <>
-      <Title variant="subtitle">Historial de Movimientos</Title>
+      <Title variant="subtitle">Historial de Movimientos del Stock:</Title>
       {lineas}
     </>
   );

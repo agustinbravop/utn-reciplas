@@ -75,10 +75,14 @@ export default function DetalleProveedorPage() {
       <div className="cuerpo">
         <Card>
           <CardHeader>
-            <Heading size="md">Proveedor: {p.name}</Heading>
+            <Heading size="2xl">Proveedor</Heading>
           </CardHeader>
           <CardBody>
             <Stack divider={<StackDivider />} spacing="3">
+              <Box>
+                <Heading size="xs">Nombre</Heading>
+                <EditableText defaultValue={p.name} />
+              </Box>
               <Box>
                 <Heading size="xs">Correo</Heading>
                 <EditableText defaultValue={p.mail} />

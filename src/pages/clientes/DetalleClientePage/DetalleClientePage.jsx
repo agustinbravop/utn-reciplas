@@ -76,10 +76,14 @@ export default function DetalleClientePage() {
       <div className="cuerpo">
         <Card>
           <CardHeader>
-            <Heading size="md">Cliente: {cliente.name}</Heading>
+            <Heading size="2xl">Cliente</Heading>
           </CardHeader>
           <CardBody>
             <Stack divider={<StackDivider />} spacing="3">
+              <Box>
+                <Heading size="xs">Nombre</Heading>
+                <EditableText defaultValue={cliente.name} />
+              </Box>
               <Box>
                 <Heading size="xs">Correo</Heading>
                 <EditableText defaultValue={cliente.mail} />
