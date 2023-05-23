@@ -9,7 +9,6 @@ import {
   Box,
   Heading,
   Stack,
-  Text,
   StackDivider,
 } from "@chakra-ui/react";
 import EditableText from "../../../components/EditableText/EditableText";

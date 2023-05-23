@@ -14,7 +14,7 @@ import { AddIcon, EditIcon } from "@chakra-ui/icons";
 import Button from "../../../components/Button/Button";
 import { React } from "react";
 import { findAllProductos } from "../../../data/productos";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Title from "../../../components/Title/Title";
 
 function LineaProducto({

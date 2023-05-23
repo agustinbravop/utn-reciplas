@@ -30,7 +30,7 @@ import ListadoPedidosPendientesPage from "./pages/pedidos/ListadoPedidosPendient
 import DetallePedidoPendientePage from "./pages/pedidos/DetallePedidoPendientePage/DetallePedidoPendientePage";
 import DetalleVentaPage from "./pages/pedidos/DetalleVentaPage/DetalleVentaPage";
 
-const router = createBrowserRouter([
+const routes = [
   {
     path: "/",
     element: <LogInPage />,
@@ -239,7 +239,9 @@ const router = createBrowserRouter([
     path: "*",
     element: <NotFoundPage />,
   },
-]);
+];
+
+const router = createBrowserRouter(routes, { basename: "/utn-reciplas" });
 
 export default function App() {
   return (

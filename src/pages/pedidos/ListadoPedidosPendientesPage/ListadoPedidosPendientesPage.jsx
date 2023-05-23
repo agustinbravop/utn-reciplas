@@ -11,8 +11,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import Title from "../../../components/Title/Title";
-import { Link, useNavigate } from "react-router-dom";
-import { findClienteByID } from "../../../data/clientes";
+import { useNavigate } from "react-router-dom";
 import { findAllPedidosPendientes } from "../../../data/pedidos";
 import { findProductoByID } from "../../../data/productos";
 

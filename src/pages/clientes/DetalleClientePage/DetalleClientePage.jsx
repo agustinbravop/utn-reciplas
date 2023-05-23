@@ -9,7 +9,6 @@ import {
   Box,
   Heading,
   Stack,
-  Text,
   StackDivider,
   Table,
   Thead,

@@ -14,7 +14,7 @@ import { AddIcon } from "@chakra-ui/icons";
 import Button from "../../../components/Button/Button";
 import { React } from "react";
 import { findAllEmpleados } from "../../../data/empleados";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function LineaEmpleado({ id, nombre, sector, telefono, perfil }) {
   const navigate = useNavigate();

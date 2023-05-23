@@ -13,7 +13,7 @@ import { AddIcon, EditIcon } from "@chakra-ui/icons";
 import Button from "../../../components/Button/Button";
 import Input from "../../../components/Input/Input";
 import { findAllProveedores } from "../../../data/proveedores";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Title from "../../../components/Title/Title";
 
 function LineaProveedor({ id, name, mail, cel, tipo }) {

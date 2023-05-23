@@ -1,5 +1,5 @@
 import Input from "../../../components/Input/Input";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Layout from "../../../components/Layout/Layout";
 import "./ListadoMateriasPrimas.css";
 import {
