@@ -34,6 +34,10 @@ export default function DetalleEmpleadoPage() {
                 <Heading size="xs">Celular</Heading>
                 <EditableText defaultValue={empl.telefono} />
               </Box>
+              <Box>
+                <Heading size="xs">Nombre y Apellido</Heading>
+                <EditableText defaultValue={empl.nombre} />
+              </Box>
             </Stack>
           </CardBody>
         </Card>
