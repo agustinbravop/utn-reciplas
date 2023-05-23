@@ -41,9 +41,7 @@ function LineaProducto({
       <Td>{deposito}</Td>
       <Td>{unidades}</Td>
       <Td>{ultimoCambio}</Td>
-      <Td>
-        <Link to={`${id}`}>{edit}</Link>
-      </Td>
+      <Td>{edit}</Td>
     </Tr>
   );
 }

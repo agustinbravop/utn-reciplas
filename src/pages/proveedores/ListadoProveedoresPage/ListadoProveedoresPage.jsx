@@ -26,9 +26,7 @@ function LineaProveedor({ id, name, mail, cel, tipo }) {
       <Td>{cel}</Td>
       <Td>{tipo}</Td>
       <Td>
-        <button>
-          <EditIcon></EditIcon>
-        </button>
+        <EditIcon></EditIcon>
       </Td>
     </Tr>
   );

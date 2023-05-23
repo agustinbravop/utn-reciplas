@@ -39,9 +39,7 @@ function LineaMateriaPrima({
       <Td>{deposito}</Td>
       <Td>{ultimoCambio}</Td>
       <Td>
-        <Link to={`${id}`}>
-          <EditIcon></EditIcon>
-        </Link>
+        <EditIcon></EditIcon>
       </Td>
     </Tr>
   );

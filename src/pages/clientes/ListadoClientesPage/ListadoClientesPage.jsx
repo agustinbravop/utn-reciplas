@@ -30,9 +30,7 @@ function LineaCliente({ id, name, mail, cel, debt }) {
       <Td>{cel}</Td>
       <Td>{debt}</Td>
       <Td>
-        <button>
-          <EditIcon></EditIcon>
-        </button>
+        <EditIcon></EditIcon>
       </Td>
     </Tr>
   );

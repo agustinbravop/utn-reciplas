@@ -21,9 +21,7 @@ function LineaEmpleado({ id, nombre, sector, telefono, perfil }) {
   return (
     <Tr key={id} onClick={() => navigate(`${id}`)}>
       <Td>{id}</Td>
-      <Td>
-        <Link to={`${id}`}>{nombre}</Link>
-      </Td>
+      <Td>{nombre}</Td>
       <Td>{sector}</Td>
       <Td>{telefono}</Td>
       <Td>{perfil}</Td>

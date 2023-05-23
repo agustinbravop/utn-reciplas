@@ -3,7 +3,7 @@ import Title from "../../../components/Title/Title";
 import { findPedidoByID } from "../../../data/pedidos";
 import { findProductoByID } from "../../../data/productos";
 import { findClienteByID } from "../../../data/clientes";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import Layout from "../../../components/Layout/Layout";
 import RadioGroup from "../../../components/RadioGroup/RadioGroup";
 import Button from "../../../components/Button/Button";
@@ -27,8 +27,16 @@ function FormEstado({ state }) {
 }
 
 function LineaProducto({ id, descripcion, linea, cantidad, stock }) {
+  const navigate = useNavigate();
   return (
-    <Tr key={id}>
+    <Tr
+      key={id}
+      onClick={() =>
+        navigate(`../../productos/${id}`, {
+          relative: "path",
+        })
+      }
+    >
       <Td>{id}</Td>
       <Td>{descripcion}</Td>
       <Td>{linea}</Td>
@@ -73,7 +81,7 @@ function DetallePedidoPendientePage() {
         <h2>
           <b>Productos:</b>
         </h2>
-        <Table size="sm">
+        <Table size="sm" className="listado-productos-pedidos">
           <Thead>
             <Tr>
               <Th>ID</Th>
