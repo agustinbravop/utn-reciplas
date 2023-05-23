@@ -61,7 +61,6 @@ export default function ListadoEmpleadosPage() {
             <Tbody>{lineasEmpleados}</Tbody>
           </Table>
         </TableContainer>
-        <Button>Imprimir</Button>
       </div>
     </Layout>
   );

@@ -14,6 +14,7 @@ import { findAllPedidos } from "../../../data/pedidos";
 import { findClienteByID } from "../../../data/clientes";
 import { useNavigate } from "react-router-dom";
 import { findEmpleadoByID } from "../../../data/empleados";
+import Button from "../../../components/Button/Button";
 
 function LineaVenta({
   id,
@@ -66,6 +67,9 @@ export default function ListadoVentasPage() {
             <Tbody>{lineasDeVenta}</Tbody>
           </Table>
         </TableContainer>
+        <Button variant="secondary" marginTop="20px">
+          Imprimir Ventas del Mes
+        </Button>
       </div>
     </Layout>
   );

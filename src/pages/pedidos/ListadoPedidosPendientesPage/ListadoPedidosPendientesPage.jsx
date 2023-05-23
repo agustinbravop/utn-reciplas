@@ -9,7 +9,6 @@ import {
   TableContainer,
   Td,
 } from "@chakra-ui/react";
-import Button from "../../../components/Button/Button";
 import React from "react";
 import Title from "../../../components/Title/Title";
 import { Link } from "react-router-dom";
@@ -61,7 +60,6 @@ export default function ListadoPedidosPendientesPage() {
             <Tbody>{lineasPedidos}</Tbody>
           </Table>
         </TableContainer>
-        <Button>Imprimir</Button>
       </div>
     </Layout>
   );

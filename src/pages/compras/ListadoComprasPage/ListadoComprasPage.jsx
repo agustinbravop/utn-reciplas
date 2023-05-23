@@ -74,7 +74,6 @@ export default function ListadoComprasPage() {
             <Tbody>{lineasCompras}</Tbody>
           </Table>
         </TableContainer>
-        <Button>Imprimir</Button>
       </div>
     </Layout>
   );

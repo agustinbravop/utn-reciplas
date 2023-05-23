@@ -89,7 +89,9 @@ export default function ListadoProductosPage() {
             <Tbody>{lineaDeProducto}</Tbody>
           </Table>
         </TableContainer>
-        <Button>Imprimir</Button>
+        <Button variant="secondary" marginTop="20px">
+          Imprimir Agotados
+        </Button>
       </div>
     </Layout>
   );

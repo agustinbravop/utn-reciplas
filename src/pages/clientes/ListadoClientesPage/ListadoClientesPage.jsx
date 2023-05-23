@@ -17,7 +17,7 @@ import {
   findAllClientes,
   findAllClientesDeudores,
 } from "../../../data/clientes";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 function LineaCliente({ id, name, mail, cel, debt }) {
@@ -77,6 +77,9 @@ export default function ListadoClientesPage() {
             <Tbody>{listadoClientes}</Tbody>
           </Table>
         </TableContainer>
+        <Button variant="secondary" marginTop="20px">
+          Imprimir Deudores
+        </Button>
       </div>
     </Layout>
   );

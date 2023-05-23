@@ -88,7 +88,9 @@ export default function ListadoMateriasPrimasPage() {
             <Tbody>{lineasDeMateriaPrima}</Tbody>
           </Table>
         </TableContainer>
-        <Button>Imprimir</Button>
+        <Button variant="secondary" marginTop="20px">
+          Imprimir Agotadas
+        </Button>
       </div>
     </Layout>
   );
