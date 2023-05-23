@@ -55,22 +55,19 @@ export default function ListadoProductosPage() {
   });
 
   const url = useLocation();
-  const a = url.pathname === "/ventas/productos" ? "ventas" : "prod";
-  const agregar =
-    a === "prod" ? (
-      <Button href="crear" rightIcon={<AddIcon color="black" />}>
-        Agregar
-      </Button>
-    ) : (
-      ""
-    );
+  const area = url.pathname.split("/")[1];
+  const btnAgregar = area === "admin" && (
+    <Button href="crear" rightIcon={<AddIcon color="black" />}>
+      Agregar
+    </Button>
+  );
 
   return (
     <Layout>
       <div className="listado-productos">
         <Title>Productos Elaborados</Title>
         <div className="search">
-          {agregar}
+          {btnAgregar}
           <Input name="search" label="" placeholder="Buscar..." width="50%" />
         </div>
 
