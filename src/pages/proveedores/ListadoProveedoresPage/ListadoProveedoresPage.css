@@ -2,7 +2,7 @@
   padding: 1% 11%;
 }
 
-.listado-proveedores tr:hover {
+.listado-proveedores tbody tr:hover {
   cursor: pointer;
   color: var(--colorLink);
 }

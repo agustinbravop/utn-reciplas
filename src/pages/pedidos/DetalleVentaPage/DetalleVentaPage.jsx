@@ -17,8 +17,16 @@ function LineaProductoVendido({
   precioUnitario,
   subtotal,
 }) {
+  const navigate = useNavigate();
   return (
-    <Tr key={id}>
+    <Tr
+      key={id}
+      onClick={() =>
+        navigate(`../../productos/${id}`, {
+          relative: "path",
+        })
+      }
+    >
       <Td>{id}</Td>
       <Td>{descripcion}</Td>
       <Td>{linea}</Td>
@@ -93,7 +101,7 @@ function DetalleVentaPage() {
         <h2>
           <b>Productos vendidos:</b>
         </h2>
-        <Table size="sm">
+        <Table size="sm" className="listado-productos-vendidos">
           <Thead>
             <Tr>
               <Th>ID</Th>

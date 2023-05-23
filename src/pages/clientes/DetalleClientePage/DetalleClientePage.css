@@ -2,7 +2,7 @@
   margin-bottom: 40px;
 }
 
-.historial-compras tr:hover {
+.historial-compras tbody tr:hover {
   cursor: pointer;
   color: var(--colorLink);
 }

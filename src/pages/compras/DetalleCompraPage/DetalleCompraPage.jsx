@@ -1,6 +1,6 @@
 import React from "react";
 import { findCompraByID } from "../../../data/compras";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import Layout from "../../../components/Layout/Layout";
 import {
   Card,
@@ -40,9 +40,17 @@ function FormPago({ precio }) {
 }
 
 function LineaMateriaComprada({ idMateria, precio, cantidad }) {
+  const navigate = useNavigate();
   const descripcion = findMateriaPrimaByID(idMateria).descripcion;
+
   return (
-    <Tr>
+    <Tr
+      onClick={() =>
+        navigate(`../../materias/${idMateria}`, {
+          relative: "path",
+        })
+      }
+    >
       <Td>{idMateria}</Td>
       <Td>{descripcion}</Td>
       <Td>{cantidad}</Td>
@@ -53,7 +61,7 @@ function LineaMateriaComprada({ idMateria, precio, cantidad }) {
 
 function MateriasCompradas({ materias }) {
   return (
-    <Table>
+    <Table className="listado-materias-compradas">
       <Thead>
         <Tr>
           <Th>ID</Th>
@@ -73,6 +81,7 @@ function MateriasCompradas({ materias }) {
 
 export default function DetalleCompraPage() {
   const { id } = useParams("id");
+  const navigate = useNavigate();
   const c = findCompraByID(parseInt(id));
   const proveedor = findProveedorByID(c.idProveedor);
   const precio = c.materias.reduce((acum, m) => acum + m.precio, 0);
@@ -95,33 +104,31 @@ export default function DetalleCompraPage() {
 
         <Card>
           <CardHeader>
-            <Heading size="md">Proveedor: {proveedor.name}</Heading>
+            <Heading
+              size="md"
+              className="atributo-link"
+              onClick={() =>
+                navigate(`../../proveedores/${proveedor.id}`, {
+                  relative: "path",
+                })
+              }
+            >
+              Proveedor: {proveedor.name}
+            </Heading>
           </CardHeader>
           <CardBody>
             <Stack divider={<StackDivider />} spacing="3">
               <Box>
-                <Heading size="xs" textTransform="uppercase">
-                  Correo
-                </Heading>
-                <Text pt="2" fontSize="sm">
-                  {proveedor.mail}
-                </Text>
+                <Heading size="xs">Correo</Heading>
+                <Text pt="2">{proveedor.mail}</Text>
               </Box>
               <Box>
-                <Heading size="xs" textTransform="uppercase">
-                  Celular
-                </Heading>
-                <Text pt="2" fontSize="sm">
-                  {proveedor.cel}
-                </Text>
+                <Heading size="xs">Celular</Heading>
+                <Text pt="2">{proveedor.cel}</Text>
               </Box>
               <Box>
-                <Heading size="xs" textTransform="uppercase">
-                  Tipo
-                </Heading>
-                <Text pt="2" fontSize="sm">
-                  {proveedor.tipo}
-                </Text>
+                <Heading size="xs">Tipo</Heading>
+                <Text pt="2">{proveedor.tipo}</Text>
               </Box>
             </Stack>
           </CardBody>

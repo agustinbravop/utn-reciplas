@@ -1,8 +1,13 @@
-.atributo-link:not(*) {
+.atributo-link {
   text-decoration: underline var(--colorLink);
 }
 
 .atributo-link:hover {
+  cursor: pointer;
+  color: var(--colorLink);
+}
+
+.listado-productos-vendidos tbody tr:hover {
   cursor: pointer;
   color: var(--colorLink);
 }
