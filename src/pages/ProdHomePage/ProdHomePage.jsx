@@ -12,14 +12,14 @@ function ProdHomePage() {
           Bienvenido a Producción
         </Title>
         <div className="botones">
-          <Button size="lg" href="/prod/materias">
-            Materias Primas
+          <Button size="lg" href="/prod/pedidos">
+            Pedidos Pendientes
           </Button>
           <Button size="lg" href="/prod/productos">
             Productos
           </Button>
-          <Button size="lg" href="/prod/pedidos">
-            Pedidos Pendientes
+          <Button size="lg" href="/prod/materias">
+            Materias Primas
           </Button>
         </div>
       </div>

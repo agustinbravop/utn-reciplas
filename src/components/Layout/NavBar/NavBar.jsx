@@ -4,14 +4,14 @@ import "./NavBar.css";
 
 const areasToNavLinks = {
   prod: {
-    Pedidos: "/prod/pedidos",
+    "Pedidos Pendientes": "/prod/pedidos",
     Productos: "/prod/productos",
     "Materias Primas": "/prod/materias",
   },
   compras: {
     Compras: "/compras/compras",
-    Productos: "/compras/productos",
     Proveedores: "/compras/proveedores",
+    Productos: "/compras/productos",
     "Materias Primas": "/compras/materias",
   },
   ventas: {
