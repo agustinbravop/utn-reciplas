@@ -116,6 +116,14 @@ const routes = [
     element: <VentasHomePage />,
   },
   {
+    path: "ventas/ventas",
+    element: <ListadoVentasPage />,
+  },
+  {
+    path: "ventas/ventas/:id",
+    element: <DetalleVentaPage />,
+  },
+  {
     path: "ventas/clientes",
     element: <ListadoClientesPage />,
   },

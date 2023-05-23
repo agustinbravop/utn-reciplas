@@ -15,6 +15,8 @@ import { findClienteByID } from "../../../data/clientes";
 import { useNavigate } from "react-router-dom";
 import { findEmpleadoByID } from "../../../data/empleados";
 import Button from "../../../components/Button/Button";
+import { AddIcon } from "@chakra-ui/icons";
+import Input from "../../../components/Input/Input";
 
 function LineaVenta({
   id,
@@ -52,6 +54,22 @@ export default function ListadoVentasPage() {
     <Layout>
       <div className="Ventas">
         <Title>Ventas Realizadas</Title>
+
+        <Button variant="disabled" rightIcon={<AddIcon color="grey" />}>
+          Crear Nueva
+        </Button>
+        <div className="search-date">
+          <div>
+            Desde:
+            <input type="date" />
+          </div>
+          <div>
+            Hasta:
+            <input type="date" />
+          </div>
+          <Input name="search" placeholder="Buscar..." width="50%" />
+        </div>
+
         <TableContainer>
           <Table variant="striped" colorScheme="gray" size="md">
             <Thead>

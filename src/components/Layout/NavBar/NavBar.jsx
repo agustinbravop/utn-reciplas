@@ -15,7 +15,7 @@ const areasToNavLinks = {
     "Materias Primas": "/compras/materias",
   },
   ventas: {
-    Pedidos: "/ventas/pedidos",
+    Ventas: "/ventas/ventas",
     Clientes: "/ventas/clientes",
     Proveedores: "/ventas/proveedores",
     Productos: "/ventas/productos",

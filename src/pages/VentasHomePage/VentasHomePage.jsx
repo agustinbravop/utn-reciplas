@@ -9,8 +9,8 @@ function VentasHomePage() {
       <div className="cuerpo">
         <Title>Bienvenido a Ventas</Title>
         <div className="botones">
-          <Button size="lg" variant="disabled" href="/ventas/pedidos">
-            Pedidos
+          <Button size="lg" href="/ventas/ventas">
+            Ventas
           </Button>
           <Button size="lg" href="/ventas/clientes">
             Clientes

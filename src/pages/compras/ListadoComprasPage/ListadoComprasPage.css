@@ -10,6 +10,7 @@
 .search-date {
   display: flex;
   align-items: center;
+  font-size: 14px;
   gap: 10px;
 }
 

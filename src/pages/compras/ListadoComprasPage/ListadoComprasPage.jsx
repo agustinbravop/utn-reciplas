@@ -44,7 +44,7 @@ export default function ListadoComprasPage() {
   return (
     <Layout>
       <div className="listado-compras">
-        <Title>Compras</Title>
+        <Title>Compras Realizadas</Title>
         <Button variant="disabled" rightIcon={<AddIcon color="grey" />}>
           Crear Nueva
         </Button>
