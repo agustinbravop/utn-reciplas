@@ -84,8 +84,16 @@ const router = createBrowserRouter([
     element: <ListadoMateriasPrimasPage />,
   },
   {
+    path: "compras/materias/:id",
+    element: <DetalleMateriaPage />,
+  },
+  {
     path: "compras/productos",
     element: <ListadoProductosPage />,
+  },
+  {
+    path: "compras/productos/:id",
+    element: <DetalleProductoPage />,
   },
   {
     path: "compras/compras",
@@ -136,8 +144,16 @@ const router = createBrowserRouter([
     element: <ListadoProductosPage />,
   },
   {
+    path: "ventas/productos/:id",
+    element: <DetalleProductoPage />,
+  },
+  {
     path: "ventas/materias",
     element: <ListadoMateriasPrimasPage />,
+  },
+  {
+    path: "ventas/materias/:id",
+    element: <DetalleMateriaPage />,
   },
   {
     path: "admin",
@@ -184,8 +200,16 @@ const router = createBrowserRouter([
     element: <ListadoComprasPage />,
   },
   {
+    path: "admin/compras/:id",
+    element: <DetalleCompraPage />,
+  },
+  {
     path: "admin/materias",
     element: <ListadoMateriasPrimasPage />,
+  },
+  {
+    path: "admin/materias/:id",
+    element: <DetalleMateriaPage />,
   },
   {
     path: "admin/materias/crear",
@@ -194,6 +218,10 @@ const router = createBrowserRouter([
   {
     path: "admin/productos",
     element: <ListadoProductosPage />,
+  },
+  {
+    path: "admin/productos/:id",
+    element: <DetalleProductoPage />,
   },
   {
     path: "admin/productos/crear",

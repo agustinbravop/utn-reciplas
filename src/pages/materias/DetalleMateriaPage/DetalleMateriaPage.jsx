@@ -1,12 +1,31 @@
 import React from "react";
 import Title from "../../../components/Title/Title";
 import { findMateriaPrimaByID } from "../../../data/materias";
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 import Layout from "../../../components/Layout/Layout";
 import Input from "../../../components/Input/Input";
 import RadioGroup from "../../../components/RadioGroup/RadioGroup";
 import Button from "../../../components/Button/Button";
 import "./DetalleMateriaPage.css";
+import User from "../../../components/User/User";
+
+function Movimientos({ movimientos }) {
+  const lineas = movimientos?.map((m) => {
+    const verbo = m.cantidad > 0 ? "agregó" : "quitó";
+    return (
+      <p style={{ marginBottom: "5px" }}>
+        {m.fecha}:<User userName={m.usuario}></User>
+        {verbo} {Math.abs(m.cantidad)} kg.
+      </p>
+    );
+  });
+  return (
+    <>
+      <Title variant="subtitle">Historial de Movimientos</Title>
+      {lineas}
+    </>
+  );
+}
 
 function FormMovimientos() {
   const options = ["Ingreso", "Egreso"];
@@ -26,6 +45,12 @@ function FormMovimientos() {
 function DetalleMateriaPage() {
   const { id } = useParams("id");
   const m = findMateriaPrimaByID(parseInt(id));
+  const url = useLocation();
+  const area = url.pathname.split("/")[1];
+  const formMovimientos = ["prod", "compras"].includes(area) && (
+    <FormMovimientos />
+  );
+
   return (
     <Layout>
       <div className="cuerpo">
@@ -39,10 +64,9 @@ function DetalleMateriaPage() {
         <h2>
           <b>Cantidad Actual:</b> {m.cantidad} kg
         </h2>
-        <FormMovimientos />
+        {formMovimientos}
         <br></br>
-        <Title variant="subtitle">Historial de Movimientos</Title>
-        <p>Sr. Ventas/Compras agregó 22.14kg. Total: 125,1kg</p>
+        <Movimientos movimientos={m.movimientos} />
       </div>
     </Layout>
   );

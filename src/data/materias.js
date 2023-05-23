@@ -6,6 +6,18 @@ const materiasPrimas = [
     deposito: "A2",
     cantidad: 125.1,
     ultimoCambio: "30/12/2022 16:40",
+    movimientos: [
+      {
+        usuario: "Sr. Producción",
+        cantidad: -10.4,
+        fecha: "14/10/2022",
+      },
+      {
+        usuario: "Sr. Comptas",
+        cantidad: 22.9,
+        fecha: "10/10/2022",
+      },
+    ],
   },
   {
     id: 2,

@@ -11,6 +11,7 @@ const areasToNavLinks = {
   compras: {
     Compras: "/compras/compras",
     Productos: "/compras/productos",
+    Proveedores: "/compras/proveedores",
     "Materias Primas": "/compras/materias",
   },
   ventas: {

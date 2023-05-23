@@ -27,9 +27,7 @@ function LineaCompra({ id, idProveedor, materias, fecha, estado }) {
   return (
     <Tr onClick={() => navigate(`${id}`)} key={id}>
       <Td>{id}</Td>
-      <Td>
-        {proveedor.name}
-      </Td>
+      <Td>{proveedor.name}</Td>
       <Td>$ {precio}</Td>
       <Td>{fecha}</Td>
       <Td>{estado}</Td>
