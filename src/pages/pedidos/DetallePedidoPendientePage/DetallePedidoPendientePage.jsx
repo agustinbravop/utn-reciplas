@@ -26,7 +26,7 @@ function FormEstado({ state }) {
   );
 }
 
-function LineaProducto({ id, descripcion, linea, cantidad, stock }) {
+function LineaProducto({ id, descripcion, linea, deposito, cantidad, stock }) {
   const navigate = useNavigate();
   return (
     <Tr
@@ -40,6 +40,7 @@ function LineaProducto({ id, descripcion, linea, cantidad, stock }) {
       <Td>{id}</Td>
       <Td>{descripcion}</Td>
       <Td>{linea}</Td>
+      <Td>{deposito}</Td>
       <Td>{cantidad}</Td>
       <Td>{stock}</Td>
     </Tr>
@@ -60,6 +61,7 @@ function DetallePedidoPendientePage() {
         descripcion={producto.descripcion}
         linea={producto.linea}
         cantidad={linea.amount}
+        deposito={producto.deposito}
         stock={producto.unidades}
       />
     );
@@ -87,6 +89,7 @@ function DetallePedidoPendientePage() {
               <Th>ID</Th>
               <Th>Producto</Th>
               <Th>Tipo</Th>
+              <Th>Sector de Depósito</Th>
               <Th>Cant. Solicitada</Th>
               <Th>En Stock</Th>
             </Tr>
