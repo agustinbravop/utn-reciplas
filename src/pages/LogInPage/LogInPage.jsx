@@ -5,10 +5,11 @@ import Title from "../../components/Title/Title";
 import Button from "../../components/Button/Button";
 import "./LogInPage.css";
 import { useNavigate } from "react-router-dom";
+import { Text } from "@chakra-ui/react";
 
 function LogInPage() {
   const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const [isError, setIsError] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -22,7 +23,7 @@ function LogInPage() {
     } else if (userType === "compras") {
       navigate("/compras");
     } else {
-      navigate("/404");
+      setIsError(true);
     }
   };
 
@@ -36,18 +37,20 @@ function LogInPage() {
           name="email"
           helper="Solo 'admin', 'prod', 'compras' o 'ventas'."
           value={email}
+          borderColor={isError ? "red" : "lightGrey"}
           onChange={(e) => setEmail(e.target.value)}
         ></Input>
         <Input
           placeholder="Contraseña"
           label="Contraseña"
           name="password"
-          value={pass}
-          onChange={(e) => setPass(e.target.value)}
         ></Input>
-        <Button onClick={handleSubmit} type="submit">
-          Ingresar
-        </Button>
+        {isError && (
+          <Text fontSize="sm" color="red">
+            Correo inválido.
+          </Text>
+        )}
+        <Button onClick={handleSubmit}>Ingresar</Button>
       </form>
     </Layout>
   );
