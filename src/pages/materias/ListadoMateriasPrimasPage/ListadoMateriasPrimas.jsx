@@ -26,6 +26,9 @@ function LineaMateriaPrima({
   ultimoCambio,
 }) {
   const navigate = useNavigate();
+  const url = useLocation();
+  const area = url.pathname.split("/")[1];
+  const edit = ["prod", "compras"].includes(area) ? <EditIcon></EditIcon> : "";
   return (
     <Tr
       onClick={() => navigate(`${id}`)}
@@ -38,9 +41,7 @@ function LineaMateriaPrima({
       <Td>{cantidad} kg</Td>
       <Td>{deposito}</Td>
       <Td>{ultimoCambio}</Td>
-      <Td>
-        <EditIcon></EditIcon>
-      </Td>
+      <Td>{edit}</Td>
     </Tr>
   );
 }

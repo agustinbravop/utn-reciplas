@@ -25,8 +25,8 @@ function LineaProducto({
   unidades,
   ultimoCambio,
 }) {
-  const url = useLocation();
   const navigate = useNavigate();
+  const url = useLocation();
   const edit = url.pathname === "/prod/productos" ? <EditIcon></EditIcon> : "";
 
   return (

@@ -9,6 +9,9 @@
   padding: 5px 10px;
   border-radius: 2px;
 }
+.nav-bar a:hover {
+  background-color: #ebeff0;
+}
 
 .nav-bar .current a {
   background-color: #ebeff0;

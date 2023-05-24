@@ -13,6 +13,7 @@ function LogInPage() {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     const userType = email.split("@")[0];
     if (userType === "prod") {
       navigate("/prod");
@@ -50,7 +51,9 @@ function LogInPage() {
             Correo inválido.
           </Text>
         )}
-        <Button onClick={handleSubmit}>Ingresar</Button>
+        <Button onClick={handleSubmit} type="submit">
+          Ingresar
+        </Button>
       </form>
     </Layout>
   );
