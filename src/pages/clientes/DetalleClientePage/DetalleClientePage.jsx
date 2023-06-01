@@ -16,6 +16,7 @@ import {
   Th,
   Tbody,
   Td,
+  Text,
 } from "@chakra-ui/react";
 import "./DetalleClientePage.css";
 import Title from "../../../components/Title/Title";
@@ -103,11 +104,11 @@ export default function DetalleClientePage() {
               </Box>
               <Box>
                 <Heading size="xs">Fecha de Registro</Heading>
-                <EditableText defaultValue={cliente.regDate} />
+                <Text>{cliente.regDate}</Text>
               </Box>
               <Box>
                 <Heading size="xs">Deuda Actual</Heading>
-                <EditableText defaultValue={cliente.debt} />
+                <Text>{cliente.debt}</Text>
               </Box>
             </Stack>
           </CardBody>

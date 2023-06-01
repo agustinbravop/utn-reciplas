@@ -10,6 +10,7 @@ import {
   Heading,
   Stack,
   StackDivider,
+  Text,
 } from "@chakra-ui/react";
 import EditableText from "../../../components/EditableText/EditableText";
 
@@ -30,8 +31,16 @@ export default function DetalleEmpleadoPage() {
                 <EditableText defaultValue={empl.nombre} />
               </Box>
               <Box>
+                <Heading size="xs">Correo</Heading>
+                <EditableText defaultValue={empl.correo} />
+              </Box>
+              <Box>
+                <Heading size="xs">Contraseña</Heading>
+                <EditableText defaultValue={empl.password} />
+              </Box>
+              <Box>
                 <Heading size="xs">Sector</Heading>
-                <EditableText defaultValue={empl.sector} />
+                <Text>{empl.sector}</Text>
               </Box>
               <Box>
                 <Heading size="xs">Celular</Heading>

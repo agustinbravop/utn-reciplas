@@ -13,11 +13,13 @@ const productos = [
         usuario: "Sr. Ventas",
         unidades: -10,
         fecha: "14/10/2022",
+        motivo: "Venta realizada"
       },
       {
         usuario: "Sr. Producción",
         unidades: 22,
         fecha: "10/10/2022",
+        motivo: "Producido"
       },
     ],
   },

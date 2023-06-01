@@ -1,6 +1,6 @@
 import React from "react";
 import { findProveedorByID } from "../../../data/proveedores";
-import { useNavigate, useParams } from "react-router";
+import { useLocation, useNavigate, useParams } from "react-router";
 import Layout from "../../../components/Layout/Layout";
 import {
   Card,
@@ -16,6 +16,7 @@ import {
   Th,
   Tbody,
   Td,
+  Text,
 } from "@chakra-ui/react";
 import EditableText from "../../../components/EditableText/EditableText";
 import Button from "../../../components/Button/Button";
@@ -51,7 +52,12 @@ function LineaCompra({ id, fecha, materias }) {
 function HistorialCompras({ compras }) {
   const lineasCompra = compras.map((c) => <LineaCompra {...c} />);
   return (
-    <Table variant="striped" colorScheme="gray" size="sm" className="historial-compras">
+    <Table
+      variant="striped"
+      colorScheme="gray"
+      size="sm"
+      className="historial-compras"
+    >
       <Thead>
         <Tr>
           <Th>ID</Th>
@@ -69,6 +75,8 @@ export default function DetalleProveedorPage() {
   const { id } = useParams("id");
   const p = findProveedorByID(parseInt(id));
   const compras = findAllComprasByProveedorID(p.id);
+  const url = useLocation();
+  const area = url.pathname.split("/")[1];
 
   return (
     <Layout>
@@ -81,19 +89,39 @@ export default function DetalleProveedorPage() {
             <Stack divider={<StackDivider />} spacing="3">
               <Box>
                 <Heading size="xs">Nombre</Heading>
-                <EditableText defaultValue={p.name} />
+                {area === "admin" ? (
+                  <EditableText defaultValue={p.name} />
+                ) : (
+                  <Text>{p.name}</Text>
+                )}
               </Box>
               <Box>
                 <Heading size="xs">Correo</Heading>
-                <EditableText defaultValue={p.mail} />
+                {area === "admin" ? (
+                  <EditableText defaultValue={p.mail} />
+                ) : (
+                  <Text>{p.mail}</Text>
+                )}
               </Box>
               <Box>
                 <Heading size="xs">Celular</Heading>
-                <EditableText defaultValue={p.cel} />
+                {area === "admin" ? (
+                  <EditableText defaultValue={p.cel} />
+                ) : (
+                  <Text>{p.cel}</Text>
+                )}
+              </Box>
+              <Box>
+                <Heading size="xs">CUIT</Heading>
+                {area === "admin" ? (
+                  <EditableText defaultValue={p.cuit} />
+                ) : (
+                  <Text>{p.cuit}</Text>
+                )}
               </Box>
               <Box>
                 <Heading size="xs">Tipo</Heading>
-                <EditableText defaultValue={p.tipo} />
+                <Text>{p.tipo}</Text>
               </Box>
             </Stack>
           </CardBody>

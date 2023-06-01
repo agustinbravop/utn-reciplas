@@ -8,6 +8,7 @@ import Layout from "../../../components/Layout/Layout";
 import { Thead, Table, Tr, Th, Tbody, Td } from "@chakra-ui/react";
 import { findEmpleadoByID } from "../../../data/empleados";
 import "./DetalleVentaPage.css";
+import { BiLinkExternal } from "react-icons/bi";
 
 function LineaProductoVendido({
   id,
@@ -78,30 +79,39 @@ function DetalleVentaPage() {
         <h2>
           <b>Fecha de Entrega:</b> {pedido.deadline}
         </h2>
-        <h2
-          className="atributo-link"
-          onClick={() =>
-            navigate(`../../clientes/${cliente.id}`, {
-              relative: "path",
-            })
-          }
-        >
-          <b>Cliente:</b> {cliente.name}
+        <h2 className="atributo-link">
+          <b>Cliente:</b> {cliente.name}{" "}
+          <BiLinkExternal
+            onClick={() =>
+              navigate(`../../clientes/${cliente.id}`, {
+                relative: "path",
+              })
+            }
+            color="blue"
+            display="inline"
+          />
         </h2>
-        <h2
-          className="atributo-link"
-          onClick={() =>
-            navigate(`../../empleados/${vendedor.id}`, {
-              relative: "path",
-            })
-          }
-        >
+        <h2 className="atributo-link">
           <b>Vendedor:</b> {vendedor.nombre}
+          <BiLinkExternal
+            onClick={() =>
+              navigate(`../../empleados/${cliente.id}`, {
+                relative: "path",
+              })
+            }
+            color="blue"
+            display="inline"
+          />
         </h2>
         <h2>
           <b>Productos vendidos:</b>
         </h2>
-        <Table variant="striped" colorScheme="gray" size="sm" className="listado-productos-vendidos">
+        <Table
+          variant="striped"
+          colorScheme="gray"
+          size="sm"
+          className="listado-productos-vendidos"
+        >
           <Thead>
             <Tr>
               <Th>ID</Th>

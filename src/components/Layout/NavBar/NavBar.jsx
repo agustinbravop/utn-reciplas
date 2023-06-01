@@ -39,7 +39,7 @@ function NavBar({ area }) {
   if (!area) {
     return null;
   }
-  if (location.pathname.split(area)[1].length <= 1) {
+  if (location.pathname.split(area).at(-1).length <= 1) {
     return null;
   }
 

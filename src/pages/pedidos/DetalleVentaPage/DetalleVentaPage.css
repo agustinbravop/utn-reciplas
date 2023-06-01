@@ -1,8 +1,9 @@
 .atributo-link {
-  text-decoration: underline var(--colorLink);
+  display: flex;
+  align-items: center;
 }
 
-.atributo-link:hover {
+.atributo-link svg:hover {
   cursor: pointer;
   color: var(--colorLink);
 }

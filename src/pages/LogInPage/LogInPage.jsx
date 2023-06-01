@@ -45,6 +45,7 @@ function LogInPage() {
           placeholder="Contraseña"
           label="Contraseña"
           name="password"
+          helper="Cualquier contraseña funciona."
         ></Input>
         {isError && (
           <Text fontSize="sm" color="red">

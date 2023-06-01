@@ -15,7 +15,7 @@ function Movimientos({ movimientos }) {
     return (
       <p style={{ marginBottom: "5px" }}>
         {m.fecha}:<User userName={m.usuario}></User>
-        {verbo} {Math.abs(m.unidades)} unidades.
+        {verbo} {Math.abs(m.unidades)} unidades. Motivo: {m.motivo}.
       </p>
     );
   });
@@ -32,10 +32,11 @@ function FormMovimientos() {
   return (
     <div className="producto-movimiento-form">
       <Input
-        name="InputCantidad"
+        name="unidades"
         label="Unidades a Mover"
         placeholder="0..."
       ></Input>
+      <Input name="motivo" label="Motivo" placeholder="..."></Input>
       <RadioGroup options={options} />
       <Button>Guardar Movimiento</Button>
     </div>

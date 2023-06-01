@@ -15,7 +15,7 @@ function Movimientos({ movimientos }) {
     return (
       <p style={{ marginBottom: "5px" }}>
         {m.fecha}:<User userName={m.usuario}></User>
-        {verbo} {Math.abs(m.cantidad)} kg.
+        {verbo} {Math.abs(m.cantidad)} kg. Motivo: {m.motivo}.
       </p>
     );
   });
@@ -32,10 +32,11 @@ function FormMovimientos() {
   return (
     <div className="materia-movimiento-form">
       <Input
-        name="InputCantidad"
+        name="cantidad"
         label="Cantidad a mover (kg)"
         placeholder="0"
       ></Input>
+      <Input name="motivo" label="Motivo" placeholder="..."></Input>
       <RadioGroup options={options} />
       <Button>Guardar Movimiento</Button>
     </div>
@@ -47,9 +48,7 @@ function DetalleMateriaPage() {
   const m = findMateriaPrimaByID(parseInt(id));
   const url = useLocation();
   const area = url.pathname.split("/")[1];
-  const formMovimientos = ["prod", "compras"].includes(area) && (
-    <FormMovimientos />
-  );
+  const formMovimientos = area === "prod" && <FormMovimientos />;
 
   return (
     <Layout>

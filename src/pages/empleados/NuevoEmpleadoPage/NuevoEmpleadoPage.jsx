@@ -15,6 +15,10 @@ function NuevoEmpleado() {
         <Input name="name" label="Nombre" placeholder="Nombre..."></Input>
         <Input name="telefono" label="Telefono" placeholder="..."></Input>
       </div>
+      <div className="input-doble">
+        <Input name="email" label="Correo" placeholder="example@reciplas.com"></Input>
+        <Input name="password" label="Contraseña" type="password"></Input>
+      </div>
       <h4>Área en la que trabaja:</h4>
       <RadioGroup options={options} />
       <Button marginLeft="25%" width="50%">

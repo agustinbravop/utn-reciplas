@@ -28,7 +28,7 @@ function LineaCliente({ id, name, mail, cel, debt }) {
       <Td>{name}</Td>
       <Td>{mail}</Td>
       <Td>{cel}</Td>
-      <Td>{debt}</Td>
+      <Td>{debt} $</Td>
       <Td>
         <EditIcon></EditIcon>
       </Td>

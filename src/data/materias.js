@@ -11,11 +11,7 @@ const materiasPrimas = [
         usuario: "Sr. Producción",
         cantidad: -10.4,
         fecha: "14/10/2022",
-      },
-      {
-        usuario: "Sr. Comptas",
-        cantidad: 22.9,
-        fecha: "10/10/2022",
+        motivo: "Pérdida de material por error en producción",
       },
     ],
   },

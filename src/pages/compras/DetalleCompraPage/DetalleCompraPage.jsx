@@ -24,6 +24,7 @@ import Title from "../../../components/Title/Title";
 import Input from "../../../components/Input/Input";
 import Button from "../../../components/Button/Button";
 import "./DetalleCompraPage.css";
+import { BiLinkExternal } from "react-icons/bi";
 
 function FormPago({ precio }) {
   return (
@@ -54,20 +55,25 @@ function LineaMateriaComprada({ idMateria, precio, cantidad }) {
       <Td>{idMateria}</Td>
       <Td>{descripcion}</Td>
       <Td>{cantidad}</Td>
-      <Td>{precio}</Td>
+      <Td>{precio} $</Td>
     </Tr>
   );
 }
 
 function MateriasCompradas({ materias }) {
   return (
-    <Table variant="striped" colorScheme="gray" className="listado-materias-compradas" size="sm">
+    <Table
+      variant="striped"
+      colorScheme="gray"
+      className="listado-materias-compradas"
+      size="sm"
+    >
       <Thead>
         <Tr>
           <Th>ID</Th>
           <Th>Nombre</Th>
-          <Th>Precio Total</Th>
           <Th>Cantidad (kg)</Th>
+          <Th>Precio Total</Th>
         </Tr>
       </Thead>
       <Tbody>
@@ -104,16 +110,17 @@ export default function DetalleCompraPage() {
 
         <Card>
           <CardHeader>
-            <Heading
-              size="md"
-              className="atributo-link"
-              onClick={() =>
-                navigate(`../../proveedores/${proveedor.id}`, {
-                  relative: "path",
-                })
-              }
-            >
+            <Heading size="md" className="atributo-link">
               Proveedor: {proveedor.name}
+              <BiLinkExternal
+                onClick={() =>
+                  navigate(`../../proveedores/${proveedor.id}`, {
+                    relative: "path",
+                  })
+                }
+                color="blue"
+                display="inline"
+              />
             </Heading>
           </CardHeader>
           <CardBody>
