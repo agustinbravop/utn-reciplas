@@ -52,7 +52,12 @@ function LineaCompra({ id, date, content }) {
 function HistorialCompras({ compras }) {
   const lineasCompra = compras.map((c) => <LineaCompra {...c} />);
   return (
-    <Table size="sm" className="historial-compras">
+    <Table
+      size="sm"
+      className="historial-compras"
+      variant="striped"
+      colorScheme="gray"
+    >
       <Thead>
         <Tr>
           <Th>ID</Th>

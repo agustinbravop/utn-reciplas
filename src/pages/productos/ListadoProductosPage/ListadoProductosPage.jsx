@@ -55,7 +55,7 @@ export default function ListadoProductosPage() {
   const url = useLocation();
   const area = url.pathname.split("/")[1];
   const btnAgregar = area === "admin" && (
-    <Button href="crear" rightIcon={<AddIcon color="black" />}>
+    <Button to="crear" rightIcon={<AddIcon color="black" />}>
       Agregar
     </Button>
   );

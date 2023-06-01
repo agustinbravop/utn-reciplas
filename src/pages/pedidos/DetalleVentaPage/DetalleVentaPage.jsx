@@ -101,7 +101,7 @@ function DetalleVentaPage() {
         <h2>
           <b>Productos vendidos:</b>
         </h2>
-        <Table size="sm" className="listado-productos-vendidos">
+        <Table variant="striped" colorScheme="gray" size="sm" className="listado-productos-vendidos">
           <Thead>
             <Tr>
               <Th>ID</Th>

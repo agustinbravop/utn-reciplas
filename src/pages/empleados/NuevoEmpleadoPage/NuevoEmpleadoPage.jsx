@@ -11,11 +11,18 @@ function NuevoEmpleado() {
 
   return (
     <div className="cuerpo nuevo-empleado-form">
-      <Input name="name" label="Nombre" placeholder="Nombre..."></Input>
-      <Input name="telefono" label="Telefono" placeholder="..."></Input>
+      <div className="input-doble">
+        <Input name="name" label="Nombre" placeholder="Nombre..."></Input>
+        <Input name="telefono" label="Telefono" placeholder="..."></Input>
+      </div>
       <h4>Área en la que trabaja:</h4>
       <RadioGroup options={options} />
-      <Button>Cargar</Button>
+      <Button marginLeft="25%" width="50%">
+        Cargar
+      </Button>
+      <Button marginLeft="25%" width="50%" variant="secondary" to="./..">
+        Cancelar
+      </Button>
     </div>
   );
 }

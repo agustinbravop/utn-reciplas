@@ -39,6 +39,9 @@ function NavBar({ area }) {
   if (!area) {
     return null;
   }
+  if (location.pathname.split(area)[1].length <= 1) {
+    return null;
+  }
 
   const navItems = Object.entries(areasToNavLinks[area])?.map((link) => {
     return (

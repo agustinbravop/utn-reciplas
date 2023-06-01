@@ -9,19 +9,19 @@ function VentasHomePage() {
       <div className="cuerpo">
         <Title>Bienvenido a Ventas</Title>
         <div className="botones">
-          <Button size="lg" href="/ventas/ventas">
+          <Button size="lg" to="/ventas/ventas">
             Ventas
           </Button>
-          <Button size="lg" href="/ventas/clientes">
+          <Button size="lg" to="/ventas/clientes">
             Clientes
           </Button>
-          <Button size="lg" href="/ventas/proveedores">
+          <Button size="lg" to="/ventas/proveedores">
             Proveedores
           </Button>
-          <Button size="lg" href="/ventas/productos">
+          <Button size="lg" to="/ventas/productos">
             Productos
           </Button>
-          <Button size="lg" href="/ventas/materias">
+          <Button size="lg" to="/ventas/materias">
             Materias Primas
           </Button>
         </div>

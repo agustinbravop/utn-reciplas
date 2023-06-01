@@ -61,7 +61,7 @@ function LineaMateriaComprada({ idMateria, precio, cantidad }) {
 
 function MateriasCompradas({ materias }) {
   return (
-    <Table className="listado-materias-compradas">
+    <Table variant="striped" colorScheme="gray" className="listado-materias-compradas" size="sm">
       <Thead>
         <Tr>
           <Th>ID</Th>

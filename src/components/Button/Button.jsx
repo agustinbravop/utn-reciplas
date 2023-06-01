@@ -3,15 +3,15 @@ import React from "react";
 import "./Button.css";
 import { Link } from "react-router-dom";
 
-function ButtonContent({ href, children }) {
-  if (href) {
-    return <Link to={href}>{children}</Link>;
+function ButtonContent({ to, children }) {
+  if (to) {
+    return <Link to={to}>{children}</Link>;
   } else {
     return children;
   }
 }
 
-function Button({ variant, href, size, children, ...props }) {
+function Button({ variant, to, size, children, ...props }) {
   const sizeStyles =
     size === "lg"
       ? {
@@ -22,7 +22,7 @@ function Button({ variant, href, size, children, ...props }) {
       : {};
   if (variant === "secondary") {
     return (
-      <ButtonContent href={href}>
+      <ButtonContent to={to}>
         <ChakraButton
           variant="outlined"
           className={`btn-secundario`}
@@ -66,7 +66,7 @@ function Button({ variant, href, size, children, ...props }) {
   }
 
   return (
-    <ButtonContent href={href}>
+    <ButtonContent to={to}>
       <ChakraButton
         variant="contained"
         className={`btn-primario`}

@@ -40,7 +40,7 @@ export default function ListadoProveedoresPage() {
   const location = useLocation();
   const area = location.pathname.split("/")[1];
   const buttonAgregar = ["admin", "ventas"].includes(area) && (
-    <Button href="crear" rightIcon={<AddIcon color="black" />}>
+    <Button to="crear" rightIcon={<AddIcon color="black" />}>
       Agregar
     </Button>
   );

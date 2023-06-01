@@ -40,7 +40,7 @@ export default function ListadoEmpleadosPage() {
       <div className="listado-empleados">
         <h1 className="titulo">Empleados</h1>
         <div className="search">
-          <Button href="crear" rightIcon={<AddIcon color="black" />}>
+          <Button to="crear" rightIcon={<AddIcon color="black" />}>
             Agregar
           </Button>
           <Input name="search" label="" placeholder="Buscar..." width="50%" />

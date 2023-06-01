@@ -52,7 +52,7 @@ export default function ListadoClientesPage() {
       <div className="ClienteLista">
         <h1 className="titulo">Listado de Clientes</h1>
         <div className="search">
-          <Button href="crear" rightIcon={<AddIcon color="black" />}>
+          <Button to="crear" rightIcon={<AddIcon color="black" />}>
             Agregar
           </Button>
           <Input name="search" label="" placeholder="Buscar..." width="50%" />

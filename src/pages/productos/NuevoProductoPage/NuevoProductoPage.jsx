@@ -11,12 +11,21 @@ function FormCrearMateriaPrima() {
 
   return (
     <form className="nuevo-producto-form">
-      <Input name="nombre" label="Nombre" placeholder="Nombre..."></Input>
-      <Input name="deposito" label="Depósito" placeholder="Sector..."></Input>
+      <div className="input-doble">
+        <Input name="nombre" label="Nombre" placeholder="Nombre..."></Input>
+        <Input name="deposito" label="Depósito" placeholder="Sector..."></Input>
+      </div>
       <p>Línea</p>
       <RadioGroup options={options} />
-      <Button variant="secondary">Subir imágen +</Button>
-      <Button>Crear</Button>
+      <Button width="45%" variant="secondary">
+        Subir imágen +
+      </Button>
+      <Button marginLeft="25%" width="50%">
+        Crear
+      </Button>
+      <Button marginLeft="25%" width="50%" variant="secondary" to="./..">
+        Cancelar
+      </Button>
     </form>
   );
 }

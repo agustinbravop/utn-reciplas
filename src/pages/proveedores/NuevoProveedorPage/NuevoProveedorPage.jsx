@@ -4,19 +4,29 @@ import Title from "../../../components/Title/Title";
 import "./NuevoProveedorPage.css";
 import Input from "../../../components/Input/Input";
 import Button from "../../../components/Button/Button";
-import RadioGroup from "../../../components/RadioGroup/RadioGroup";
+import CheckboxGroup from "../../../components/CheckboxGroup/CheckboxGroup";
 
 function NuevoProveedor() {
   const options = ["Maderas", "Plasticos", "Insumos varios", "Otros"];
 
   return (
     <div className="cuerpo nuevo-proveedor-form">
-      <Input name="name" label="Nombre" placeholder="Nombre..."></Input>
-      <Input name="mail" label="Correo" placeholder="correo@example"></Input>
-      <Input name="cel" label="Celular" placeholder="122..."></Input>
-      <h4>Tipo de Proveedor:</h4>
-      <RadioGroup options={options} />
-      <Button>Cargar Proveedor</Button>
+      <div className="input-doble">
+        <Input name="name" label="Nombre" placeholder="Nombre..."></Input>
+        <Input name="mail" label="Correo" placeholder="correo@example"></Input>
+      </div>
+      <div className="input-doble">
+        <Input name="cel" label="Celular" placeholder="..."></Input>
+        <Input name="cuit" label="CUIT" placeholder="..."></Input>
+      </div>
+      <h4>Provee:</h4>
+      <CheckboxGroup options={options} />
+      <Button width="50%" marginLeft="25%">
+        Cargar Proveedor
+      </Button>
+      <Button width="50%" marginLeft="25%" to="./.." variant="secondary">
+        Cancelar
+      </Button>
     </div>
   );
 }

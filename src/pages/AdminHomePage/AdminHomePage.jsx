@@ -9,25 +9,25 @@ function AdminHomePage() {
       <div className="cuerpo">
         <Title>Bienvenido a Administración</Title>
         <div className="botones">
-          <Button size="lg" href="/admin/compras">
+          <Button size="lg" to="/admin/compras">
             Compras
           </Button>
-          <Button size="lg" href="/admin/ventas">
+          <Button size="lg" to="/admin/ventas">
             Ventas
           </Button>
-          <Button size="lg" href="/admin/clientes">
+          <Button size="lg" to="/admin/clientes">
             Clientes
           </Button>
-          <Button size="lg" href="/admin/proveedores">
+          <Button size="lg" to="/admin/proveedores">
             Proveedores
           </Button>
-          <Button size="lg" href="/admin/empleados">
+          <Button size="lg" to="/admin/empleados">
             Empleados
           </Button>
-          <Button size="lg" href="/admin/productos">
+          <Button size="lg" to="/admin/productos">
             Productos
           </Button>
-          <Button size="lg" href="/admin/materias">
+          <Button size="lg" to="/admin/materias">
             Materias Primas
           </Button>
         </div>

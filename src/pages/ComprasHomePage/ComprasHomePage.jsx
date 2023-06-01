@@ -9,16 +9,16 @@ function ComprasHomePage() {
       <div className="cuerpo">
         <Title>Bienvenido a Compras</Title>
         <div className="botones">
-          <Button size="lg" href="/compras/compras">
+          <Button size="lg" to="/compras/compras">
             Compras
           </Button>
-          <Button size="lg" href="/compras/proveedores">
+          <Button size="lg" to="/compras/proveedores">
             Proveedores
           </Button>
-          <Button size="lg" href="/compras/productos">
+          <Button size="lg" to="/compras/productos">
             Productos
           </Button>
-          <Button size="lg" href="/compras/materias">
+          <Button size="lg" to="/compras/materias">
             Materias Primas
           </Button>
         </div>

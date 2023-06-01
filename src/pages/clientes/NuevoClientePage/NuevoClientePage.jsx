@@ -11,12 +11,19 @@ function FormNuevoCliente() {
 
   return (
     <div className="cuerpo nuevo-cliente-form">
-      <Input name="name" label="Nombre" placeholder="Nombre..."></Input>
-      <Input name="mail" label="Correo" placeholder="correo@example"></Input>
-      <Input name="cel" label="Celular" placeholder="..."></Input>
-      <h4>Tipo de Cliente:</h4>
-      <RadioGroup options={options} />
-      <Button>Cargar Cliente</Button>
+      <div className="input-doble">
+        <Input name="name" label="Nombre" placeholder="Nombre..."></Input>
+        <Input name="mail" label="Correo" placeholder="correo@example"></Input>
+      </div>
+      <div className="input-doble">
+        <Input name="cel" label="Celular" placeholder="..."></Input>
+        <div>
+          <h4>Tipo de Cliente:</h4>
+          <RadioGroup marginTop="15px" options={options} />
+        </div>
+      </div>
+      <Button width="50%" marginLeft="25%">Cargar Cliente</Button>
+      <Button width="50%" marginLeft="25%" variant="secondary" to="./..">Cancelar</Button>
     </div>
   );
 }
