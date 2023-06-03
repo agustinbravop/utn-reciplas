@@ -16,7 +16,11 @@ function NuevoEmpleado() {
         <Input name="telefono" label="Telefono" placeholder="..."></Input>
       </div>
       <div className="input-doble">
-        <Input name="email" label="Correo" placeholder="example@reciplas.com"></Input>
+        <Input
+          name="email"
+          label="Correo"
+          placeholder="example@reciplas.com"
+        ></Input>
         <Input name="password" label="Contraseña" type="password"></Input>
       </div>
       <h4>Área en la que trabaja:</h4>

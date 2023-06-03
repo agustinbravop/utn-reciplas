@@ -89,7 +89,7 @@ export default function DetalleProveedorPage() {
             <Stack divider={<StackDivider />} spacing="3">
               <Box>
                 <Heading size="xs">Nombre</Heading>
-                {area === "admin" ? (
+                {["admin", "ventas"].includes(area) ? (
                   <EditableText defaultValue={p.name} />
                 ) : (
                   <Text>{p.name}</Text>
@@ -97,7 +97,7 @@ export default function DetalleProveedorPage() {
               </Box>
               <Box>
                 <Heading size="xs">Correo</Heading>
-                {area === "admin" ? (
+                {["admin", "ventas"].includes(area) ? (
                   <EditableText defaultValue={p.mail} />
                 ) : (
                   <Text>{p.mail}</Text>
@@ -105,7 +105,7 @@ export default function DetalleProveedorPage() {
               </Box>
               <Box>
                 <Heading size="xs">Celular</Heading>
-                {area === "admin" ? (
+                {["admin", "ventas"].includes(area) ? (
                   <EditableText defaultValue={p.cel} />
                 ) : (
                   <Text>{p.cel}</Text>
@@ -113,7 +113,7 @@ export default function DetalleProveedorPage() {
               </Box>
               <Box>
                 <Heading size="xs">CUIT</Heading>
-                {area === "admin" ? (
+                {["admin", "ventas"].includes(area) ? (
                   <EditableText defaultValue={p.cuit} />
                 ) : (
                   <Text>{p.cuit}</Text>

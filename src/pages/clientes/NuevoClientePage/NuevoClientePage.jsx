@@ -22,8 +22,12 @@ function FormNuevoCliente() {
           <RadioGroup marginTop="15px" options={options} />
         </div>
       </div>
-      <Button width="50%" marginLeft="25%">Cargar Cliente</Button>
-      <Button width="50%" marginLeft="25%" variant="secondary" to="./..">Cancelar</Button>
+      <Button width="50%" marginLeft="25%">
+        Cargar Cliente
+      </Button>
+      <Button width="50%" marginLeft="25%" variant="secondary" to="./..">
+        Cancelar
+      </Button>
     </div>
   );
 }

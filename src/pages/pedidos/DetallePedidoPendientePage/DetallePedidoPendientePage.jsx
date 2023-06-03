@@ -83,7 +83,12 @@ function DetallePedidoPendientePage() {
         <h2>
           <b>Productos:</b>
         </h2>
-        <Table size="sm" className="listado-productos-pedidos"variant="striped" colorScheme="gray">
+        <Table
+          size="sm"
+          className="listado-productos-pedidos"
+          variant="striped"
+          colorScheme="gray"
+        >
           <Thead>
             <Tr>
               <Th>ID</Th>

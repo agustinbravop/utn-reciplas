@@ -1,4 +1,8 @@
-import { Checkbox, CheckboxGroup as ChakraCheckboxGroup, Stack } from "@chakra-ui/react";
+import {
+  Checkbox,
+  CheckboxGroup as ChakraCheckboxGroup,
+  Stack,
+} from "@chakra-ui/react";
 import { useState } from "react";
 
 function CheckboxGroup({ options, ...props }) {
