@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/utn-reciplas/static/css/main.db14bb21.css",
-    "main.js": "/utn-reciplas/static/js/main.fd873dfb.js",
+    "main.css": "/utn-reciplas/static/css/main.6f81c583.css",
+    "main.js": "/utn-reciplas/static/js/main.0a9de43c.js",
     "index.html": "/utn-reciplas/index.html",
-    "main.db14bb21.css.map": "/utn-reciplas/static/css/main.db14bb21.css.map",
-    "main.fd873dfb.js.map": "/utn-reciplas/static/js/main.fd873dfb.js.map"
+    "main.6f81c583.css.map": "/utn-reciplas/static/css/main.6f81c583.css.map",
+    "main.0a9de43c.js.map": "/utn-reciplas/static/js/main.0a9de43c.js.map"
   },
   "entrypoints": [
-    "static/css/main.db14bb21.css",
-    "static/js/main.fd873dfb.js"
+    "static/css/main.6f81c583.css",
+    "static/js/main.0a9de43c.js"
   ]
 }
