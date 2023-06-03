@@ -1,6 +1,7 @@
 .atributo-link {
   display: flex;
   align-items: center;
+  gap: 3px;
 }
 
 .atributo-link svg:hover {

@@ -80,7 +80,7 @@ function DetalleVentaPage() {
           <b>Fecha de Entrega:</b> {pedido.deadline}
         </h2>
         <h2 className="atributo-link">
-          <b>Cliente:</b> {cliente.name}{" "}
+          <b>Cliente:</b> {cliente.name}
           <BiLinkExternal
             onClick={() =>
               navigate(`../../clientes/${cliente.id}`, {
@@ -92,10 +92,10 @@ function DetalleVentaPage() {
           />
         </h2>
         <h2 className="atributo-link">
-          <b>Vendedor:</b> {vendedor.nombre}
+          <b>Vendedor: </b> {vendedor.nombre}
           <BiLinkExternal
             onClick={() =>
-              navigate(`../../empleados/${cliente.id}`, {
+              navigate(`../../empleados/${vendedor.id}`, {
                 relative: "path",
               })
             }
