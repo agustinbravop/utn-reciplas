@@ -75,7 +75,7 @@ export default function ListadoProductosPage() {
               <Tr>
                 <Th>ID</Th>
                 <Th>Descripción</Th>
-                <Th>Calidad</Th>
+                <Th>Línea</Th>
                 <Th>Depósito</Th>
                 <Th>Unidades</Th>
                 <Th>Último Cambio</Th>
