@@ -17,6 +17,14 @@ import {
   Th,
   Tbody,
   Td,
+  Modal,
+  ModalOverlay,
+  ModalHeader,
+  ModalContent,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
+  ModalCloseButton,
 } from "@chakra-ui/react";
 import { findProveedorByID } from "../../../data/proveedores";
 import { findMateriaPrimaByID } from "../../../data/materias";
@@ -35,7 +43,6 @@ function FormPago({ precio }) {
         value={precio}
         isReadOnly
       ></Input>
-      <Button>Pagar Compra</Button>
     </div>
   );
 }
@@ -85,6 +92,30 @@ function MateriasCompradas({ materias }) {
   );
 }
 
+function FormPagoModal({ precio, id }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  return (
+    <>
+      <Button onClick={onOpen} margin="15px">Pagar</Button>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Pago de la compra N° {id}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <FormPago precio={precio} />
+          </ModalBody>
+
+          <ModalFooter justifyContent="center">
+            <Button variant="secondary">Cancelar</Button>
+            <Button marginLeft="10px">Pagar</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+  );
+}
+
 export default function DetalleCompraPage() {
   const { id } = useParams("id");
   const navigate = useNavigate();
@@ -105,8 +136,13 @@ export default function DetalleCompraPage() {
         <h2>
           <b>Estado actual:</b> {c.estado}
         </h2>
+        <h2>
+          <b>Costo total:</b> {precio}
+        </h2>
 
-        {c.estado !== "Recibida y pagada" && <FormPago precio={precio} />}
+        {c.estado !== "Recibida y pagada" && (
+          <FormPagoModal precio={precio} id={id} />
+        )}
 
         <Card>
           <CardHeader>
