@@ -8,6 +8,16 @@ import RadioGroup from "../../../components/RadioGroup/RadioGroup";
 import Button from "../../../components/Button/Button";
 import "./DetalleMateriaPage.css";
 import User from "../../../components/User/User";
+import {
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
+} from "@chakra-ui/react";
 
 function Movimientos({ movimientos }) {
   const lineas = movimientos?.map((m) => {
@@ -38,8 +48,33 @@ function FormMovimientos() {
       ></Input>
       <Input name="motivo" label="Motivo" placeholder="..."></Input>
       <RadioGroup options={options} />
-      <Button>Guardar Movimiento</Button>
     </div>
+  );
+}
+
+function FormMovimientosModal({ descripcion }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  return (
+    <>
+      <Button onClick={onOpen} margin="15px" variant="secondary">
+        Nuevo Movimiento
+      </Button>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Movimiento de '{descripcion}'</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <FormMovimientos />
+          </ModalBody>
+
+          <ModalFooter justifyContent="center">
+            <Button variant="secondary">Cancelar</Button>
+            <Button marginLeft="10px">Guardar</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
   );
 }
 
@@ -48,7 +83,9 @@ function DetalleMateriaPage() {
   const m = findMateriaPrimaByID(parseInt(id));
   const url = useLocation();
   const area = url.pathname.split("/")[1];
-  const formMovimientos = area === "prod" && <FormMovimientos />;
+  const formMovimientos = area === "prod" && (
+    <FormMovimientosModal descripcion={m.descripcion} />
+  );
 
   return (
     <Layout>
