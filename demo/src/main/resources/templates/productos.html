@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+          integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/common.css}">
+    <title>Productos</title>
+    <script crossorigin="anonymous" defer
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+<header>
+    <nav class="navbar navbar-light bg-light">
+        <a class="btn btn-secondary" href="#"><i>Productos</i></a>
+    </nav>
+</header>
+
+<main>
+    <div class="forms">
+            <h2>Agregar un producto nuevo</h2>
+            <button class="btn btn-secondary"><a href="/productos/agregar">Agregar</a></button>
+        <form id="odontologoModify">
+            <h2>Sobreescribir un producto existente</h2>
+            <label for="modifyId">ID a modificar:</label>
+            <select class="form-select form-control" id="modifyId" required>
+                <option selected>Elija...</option>
+                <option th:each="prod : ${productos}" th:name="${prod.id}" th:text="${prod.id}"
+                        th:value="${prod.id}"></option>
+            </select>
+            <div class="form-group">
+                <label for="modifyNombre">Nombre</label>
+                <input class="form-control" id="modifyNombre" name="nombre" required type="text">
+            </div>
+            <div class="form-group">
+                <label for="modifyApellido">Apellido</label>
+                <input class="form-control" id="modifyApellido" name="apellido" required type="text">
+            </div>
+            <div class="form-group">
+                <label for="modifyMatricula">Matrícula</label>
+                <input class="form-control" id="modifyMatricula" name="matricula" required type="text">
+            </div>
+            <button class="btn btn-warning" type="submit">Modificar</button>
+        </form>
+    </div>
+
+    <h2>Productos registrados</h2>
+    <table class="table table-striped table-bordered" style="max-width: 50vw;">
+        <thead>
+        <th scope="col">Nombre</th>
+        <th scope="col">Linea</th>
+        <th scope="col">Depósito</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Unidades</th>
+        <th scope="col"><i>Borrar</i></th>
+        </thead>
+        <tbody>
+        <tr th:each="prod : ${productos}">
+            <th scope="row" th:text="${prod.nombre}"></th>
+            <td th:text="${prod.descripcion}"></td>
+            <td th:text="${prod.linea}"></td>
+            <td th:text="${prod.deposito}"></td>
+            <td th:text="${prod.precio}"></td>
+            <td th:text="${prod.unidades}"></td>
+            <td>
+                <button class="btn btn-danger"
+                        onclick="handleRemoveProducto(this)"
+                        th:id="${prod.id}">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>
