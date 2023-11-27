@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+          integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/common.css}">
+    <title>Reciplas</title>
+    <script crossorigin="anonymous" defer
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+<header>
+    <h2>RECIPLAS</h2>
+    <nav>
+    </nav>
+    <div class="header__user">
+    </div>
+</header>
+
+<main>
+
+    <h1>Iniciar Sesión</h1>
+    <form id="login" method="POST" th:action="@{/login}" th:object="${login}">
+        <div class="form-group grid--wide">
+            <label for="correo">Correo electrónico</label>
+            <input class="form-control" id="correo" name="correo" required type="text">
+            <p class="helper">Tip: usar 'usuario@example.com'</p>
+        </div>
+        <div class="grid--wide">
+            <label for="clave">Contraseña</label>
+            <input class="form-control" id="clave" name="clave" required type="password">
+            <p class="helper">Tip: usar 'usuario'</p>
+        </div>
+        <div class="button-list grid--wide">
+            <button class="btn btn-primario" type="submit">Iniciar Sesión</button>
+        </div>
+    </form>
+</main>
+</body>
+<script>
+    function buildFormDataFromLogin(form) {
+        const formData = new FormData(form);
+        const object = {};
+        object.correo = formData.get("correo")
+        object.clave = formData.get("clave")
+        return JSON.stringify(object);
+    }
+
+    function submitAgregarProducto(e, form) {
+        e.preventDefault();
+        const formData = buildFormDataFromLogin(form)
+
+        console.log("Hola")
+        fetch("http://localhost:8080/login", {
+            method: "POST",
+            body: formData,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(res => {
+                if (res.ok) {
+                    location.assign("/productos");
+                } else {
+                    res.text().then(msg => alert(msg));
+                }
+            })
+            .catch(error => alert(error))
+    }
+
+    const loginForm = document.getElementById("login");
+    loginForm.addEventListener("submit", e => {
+        submitAgregarProducto(e, loginForm);
+    })
+</script>
+</html>

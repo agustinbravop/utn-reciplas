@@ -23,13 +23,17 @@
         <a class="btn btn-secundario" href="/productos">Productos</a>
     </nav>
     <div class="header__user">
-        <div class="user-icon">SR</div>
+        <span class="user-icon">SR</span>
+        <span>Usuario</span>
+        <a href="/">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
     </div>
 </header>
 
 
 <main>
-    <h2>Agregar un producto nuevo</h2>
+    <h1>Agregar un producto nuevo</h1>
     <form id="agregarProducto">
         <div class="form-group">
             <label for="nombre">Nombre</label>
@@ -61,10 +65,12 @@
         </div>
         <div class="form-group">
             <label for="imagen">Imagen</label>
-            <input class="form-control" id="imagen" name="imagen" accept="image/*" required type="file">
+            <input accept="image/*" class="form-control" id="imagen" name="imagen" required type="file">
         </div>
         <div class="button-list grid--wide">
-            <button class="btn btn-secundario"><a href="/productos">Cancelar</a></button>
+            <a class="btn btn-secundario" href="/productos">
+                Cancelar
+            </a>
             <button class="btn btn-primario" type="submit">Agregar</button>
         </div>
     </form>
@@ -91,7 +97,6 @@
         e.preventDefault();
         const formData = buildFormDataFromAgregarProducto(form)
 
-        console.log("Hola")
         fetch("http://localhost:8080/productos/agregar", {
             method: "POST",
             body: formData

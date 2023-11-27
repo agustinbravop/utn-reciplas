@@ -20,16 +20,20 @@
 <header>
     <h2>RECIPLAS</h2>
     <nav>
-        <a class="btn btn-secundario" href="#"><i>Productos</i></a>
+        <a class="btn btn-secundario nav--active" href="#">Productos</a>
     </nav>
     <div class="header__user">
-        <div class="user-icon">SR</div>
+        <span class="user-icon">SR</span>
+        <span>Usuario</span>
+        <a href="/">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
     </div>
 </header>
 
 <main>
 
-    <h2>Catálogo de Productos</h2>
+    <h1>Catálogo de Productos</h1>
     <div class="menu-acciones">
         <a href="/productos/agregar">
             <button class="btn btn-primario">Agregar</button>
@@ -54,10 +58,8 @@
             <td th:text="${prod.precio}"></td>
             <td th:text="${prod.unidades}"></td>
             <td>
-                <a th:href="@{/productos/modificar/{idProducto}(idProducto=${prod.id})}">
-                    <button class="btn btn-secundario" th:id="${prod.id}">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                    </button>
+                <a class="btn btn-secundario" th:href="@{/productos/modificar/{idProducto}(idProducto=${prod.id})}">
+                    <i class="fa-solid fa-pen-to-square"></i>
                 </a>
                 <button class="btn btn-danger" onclick="handleRemoveProducto(this)" th:id="${prod.id}">
                     <i class="fas fa-trash-alt"></i>

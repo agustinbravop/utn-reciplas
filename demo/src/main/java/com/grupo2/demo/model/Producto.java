@@ -2,14 +2,31 @@ package com.grupo2.demo.model;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
-
 @Entity
 @Table
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String nombre;
+    private String descripcion;
+    private String linea;
+    private String deposito;
+    private Long unidades;
+    private Float precio;
+    private String urlImagen;
+    public Producto() {
+    }
+    public Producto(Long id, String nombre, String descripcion, String linea, String deposito, Long unidades, Float precio, String urlImagen) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.linea = linea;
+        this.deposito = deposito;
+        this.unidades = unidades;
+        this.precio = precio;
+        this.urlImagen = urlImagen;
+    }
 
     public String getNombre() {
         return nombre;
@@ -18,14 +35,6 @@ public class Producto {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    private String nombre;
-    private String descripcion;
-    private String linea;
-    private String deposito;
-    private Long unidades;
-    private Float precio;
-    private String urlImagen;
 
     public Long getId() {
         return id;

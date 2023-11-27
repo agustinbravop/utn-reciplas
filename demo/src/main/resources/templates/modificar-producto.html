@@ -23,21 +23,28 @@
         <a class="btn btn-secundario" href="/productos">Productos</a>
     </nav>
     <div class="header__user">
-        <div class="user-icon">SR</div>
+        <span class="user-icon">SR</span>
+        <span>Usuario</span>
+        <a href="/">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
     </div>
 </header>
 
 <main>
-    <h2>Modificar Producto: <span th:text="${#ctx.producto.nombre}"></span></h2>
+    <div class="heading-list">
+        <h1>Modificar Producto: <span th:text="${#ctx.producto.nombre}"></span></h1>
+        <img th:alt="${#ctx.producto.nombre}" th:src="${#ctx.producto.urlImagen}" width="100px">
+    </div>
     <form th:id="${#ctx.producto.id}">
         <div class="form-group">
             <label for="nombre">Nombre</label>
-            <input class="form-control" id="nombre" th:value="${#ctx.producto.nombre}" name="nombre" required
+            <input class="form-control" id="nombre" name="nombre" required th:value="${#ctx.producto.nombre}"
                    type="text">
         </div>
         <div class="form-group">
             <label for="linea">Línea</label>
-            <select class="form-select" id="linea" th:value="${#ctx.producto.linea}" name="linea" required>
+            <select class="form-select" id="linea" name="linea" required th:value="${#ctx.producto.linea}">
                 <option value="Muebles">Muebles</option>
                 <option value="Envases">Envases</option>
                 <option value="Pellets">Pellets</option>
@@ -50,22 +57,21 @@
         </div>
         <div class="form-group">
             <label for="unidades">Unidades</label>
-            <input class="form-control" id="unidades" th:value="${#ctx.producto.unidades}" name="unidades" required
-                   th:default="0" type="number">
+            <input class="form-control" id="unidades" name="unidades" required th:default="0"
+                   th:value="${#ctx.producto.unidades}" type="number">
         </div>
         <div class="form-group">
             <label for="deposito">Depósito</label>
-            <input class="form-control" id="deposito" th:value="${#ctx.producto.deposito}" name="deposito" type="text">
+            <input class="form-control" id="deposito" name="deposito" th:value="${#ctx.producto.deposito}" type="text">
         </div>
         <div class="form-group">
             <label for="precio">Precio</label>
-            <input class="form-control" id="precio" th:value="${#ctx.producto.precio}" name="precio" required
+            <input class="form-control" id="precio" name="precio" required th:value="${#ctx.producto.precio}"
                    type="number">
         </div>
         <div class="form-group">
-            <label for="imagen">Imagen</label>
-            <input class="form-control" id="imagen" name="imagen" accept="image/*" type="file">
-            <img th:src="${#ctx.producto.urlImagen}" th:alt="${#ctx.producto.nombre}" width="100%">
+            <label for="imagen">Imagen (opcional)</label>
+            <input accept="image/*" class="form-control" id="imagen" name="imagen" type="file">
         </div>
         <div class="button-list grid--wide">
             <a href="/productos">
