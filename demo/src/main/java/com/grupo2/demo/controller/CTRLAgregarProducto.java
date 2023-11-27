@@ -29,20 +29,16 @@ public class CTRLAgregarProducto {
 
     @GetMapping("")
     public ModelAndView mostrarFormulario() {
-        ctrlSesion.validarSecretarioDeAdmin();
+        ctrlSesion.validarUsuario();
         return new ModelAndView("agregar-producto");
     }
 
-    @PostMapping(path = "", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
-    public ResponseEntity<Producto> agregarProducto(@RequestPart MultipartFile imagen, @RequestPart Producto producto) throws IOException {
-
-        String urlImagen = uiArchivos.cargarImagen(imagen);
+    @PostMapping(path = "", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+    public ResponseEntity<Producto> agregarProducto(@RequestPart MultipartFile imagen, @RequestPart Producto producto) {
+        String urlImagen = uiArchivos.subirImagen(imagen);
         producto.setUrlImagen(urlImagen);
 
         producto = sistema.agregarProducto(producto);
-
         return ResponseEntity.ok(producto);
     }
-
-
 }

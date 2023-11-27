@@ -27,17 +27,17 @@
     </div>
 </header>
 
-
 <main>
-    <h2>Agregar un producto nuevo</h2>
-    <form id="agregarProducto">
+    <h2>Modificar Producto: <span th:text="${#ctx.producto.nombre}"></span></h2>
+    <form th:id="${#ctx.producto.id}">
         <div class="form-group">
             <label for="nombre">Nombre</label>
-            <input class="form-control" id="nombre" name="nombre" required type="text">
+            <input class="form-control" id="nombre" th:value="${#ctx.producto.nombre}" name="nombre" required
+                   type="text">
         </div>
         <div class="form-group">
             <label for="linea">Línea</label>
-            <select class="form-select" id="linea" name="linea" required>
+            <select class="form-select" id="linea" th:value="${#ctx.producto.linea}" name="linea" required>
                 <option value="Muebles">Muebles</option>
                 <option value="Envases">Envases</option>
                 <option value="Pellets">Pellets</option>
@@ -45,33 +45,39 @@
         </div>
         <div class="grid--wide">
             <label for="descripcion">Descripción</label>
-            <textarea class="form-control" id="descripcion" name="descripcion" required rows="4" style></textarea>
+            <textarea class="form-control" id="descripcion" name="descripcion"
+                      required rows="4" th:inline="text">[[${#ctx.producto.descripcion}]]</textarea>
         </div>
         <div class="form-group">
             <label for="unidades">Unidades</label>
-            <input class="form-control" id="unidades" name="unidades" required th:default="0" type="number">
+            <input class="form-control" id="unidades" th:value="${#ctx.producto.unidades}" name="unidades" required
+                   th:default="0" type="number">
         </div>
         <div class="form-group">
             <label for="deposito">Depósito</label>
-            <input class="form-control" id="deposito" name="deposito" type="text">
+            <input class="form-control" id="deposito" th:value="${#ctx.producto.deposito}" name="deposito" type="text">
         </div>
         <div class="form-group">
             <label for="precio">Precio</label>
-            <input class="form-control" id="precio" name="precio" required type="number">
+            <input class="form-control" id="precio" th:value="${#ctx.producto.precio}" name="precio" required
+                   type="number">
         </div>
         <div class="form-group">
             <label for="imagen">Imagen</label>
-            <input class="form-control" id="imagen" name="imagen" accept="image/*" required type="file">
+            <input class="form-control" id="imagen" name="imagen" accept="image/*" type="file">
+            <img th:src="${#ctx.producto.urlImagen}" th:alt="${#ctx.producto.nombre}" width="100%">
         </div>
         <div class="button-list grid--wide">
-            <button class="btn btn-secundario"><a href="/productos">Cancelar</a></button>
-            <button class="btn btn-primario" type="submit">Agregar</button>
+            <a href="/productos">
+                <button class="btn btn-secundario">Cancelar</button>
+            </a>
+            <button class="btn btn-primario" type="submit">Modificar</button>
         </div>
     </form>
 </main>
 
 <script>
-    function buildFormDataFromAgregarProducto(form) {
+    function buildFormDataFromModificarProducto(form) {
         const object = {};
         const formData = new FormData(form);
 
@@ -87,13 +93,14 @@
         return formData;
     }
 
-    function submitAgregarProducto(e, form) {
+    function submitModificarProducto(e) {
         e.preventDefault();
-        const formData = buildFormDataFromAgregarProducto(form)
+        const form = e.target;
+        const formData = buildFormDataFromModificarProducto(form);
+        const id = form.id;
 
-        console.log("Hola")
-        fetch("http://localhost:8080/productos/agregar", {
-            method: "POST",
+        fetch(`http://localhost:8080/productos/modificar/${id}`, {
+            method: "PUT",
             body: formData
         })
             .then(res => {
@@ -106,10 +113,8 @@
             .catch(error => alert(error))
     }
 
-    const agregarProductoForm = document.getElementById("agregarProducto");
-    agregarProductoForm.addEventListener("submit", e => {
-        submitAgregarProducto(e, agregarProductoForm);
-    })
+    const modificarProductoForm = document.getElementsByTagName("form")[0];
+    modificarProductoForm.addEventListener("submit", e => submitModificarProducto(e))
 </script>
 </body>
 </html>

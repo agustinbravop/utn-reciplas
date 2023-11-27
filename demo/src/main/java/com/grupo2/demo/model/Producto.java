@@ -25,7 +25,6 @@ public class Producto {
     private String deposito;
     private Long unidades;
     private Float precio;
-    private Date ultimoCambio;
     private String urlImagen;
 
     public Long getId() {
@@ -74,14 +73,6 @@ public class Producto {
 
     public void setPrecio(Float precio) {
         this.precio = precio;
-    }
-
-    public Date getUltimoCambio() {
-        return ultimoCambio;
-    }
-
-    public void setUltimoCambio(Date ultimoCambio) {
-        this.ultimoCambio = ultimoCambio;
     }
 
     public String getUrlImagen() {

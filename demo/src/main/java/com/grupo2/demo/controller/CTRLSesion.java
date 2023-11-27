@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CTRLSesion {
-    public Usuario validarSecretarioDeAdmin() {
+    public Usuario validarUsuario() {
         return null;
     }
 }

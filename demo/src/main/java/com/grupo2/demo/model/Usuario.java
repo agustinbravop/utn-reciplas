@@ -1,9 +1,9 @@
 package com.grupo2.demo.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+@Entity
+@Table
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
