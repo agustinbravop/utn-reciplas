@@ -8,9 +8,20 @@ la realización de caso de uso diseño.
 
 ## Levantar el servidor en local
 
-Para levantar el servidor en `http://localhost:8080/` es preferible utilizar un IDE como **IntelliJ**, por su facilidad
-de uso. Si se desea hacerlo por línea de comandos, lo que requiere tener **Maven** instalado, se puede ejecutar el
-comando:
+1. A nivel root del proyecto (a la par del `pom.xml`), se debe crear un archivo `.env` con las siguientes variables de
+   entorno:
+
+```
+DATABASE_NAME=dds-reciplas
+DATABASE_HOST=localhost
+DATABASE_USER=root
+DATABASE_PASSWORD=root
+```
+
+2. Para levantar el servidor en `http://localhost:8080/` es preferible utilizar un IDE como **IntelliJ**, por su
+   facilidad de uso. Si se desea hacerlo por línea de comandos, lo que requiere tener **Maven** instalado, se puede
+   ejecutar el
+   comando:
 
 ```
 mvn spring-boot:run
