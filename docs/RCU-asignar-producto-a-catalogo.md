@@ -74,13 +74,13 @@ Casos alternativos:
 
 | Sistema           | Contiene al resto de clases y las hace interactuar entre ellas para proveer funcionalidades.      |
 | ----------------- | ------------------------------------------------------------------------------------------------- |
-| Responsabilidades | Conocer a las personas. Conocer al catálogo de productos. Permitir agregar productos al catálogo. |
-| Colaboraciones    | Persona. Catálogo. Producto.                                                                      |                                                     |
+| Responsabilidades | Conocer a los usuarios. Conocer al catálogo de productos. Permitir agregar productos al catálogo. |
+| Colaboraciones    | Catálogo. Producto. Secretario.                                                                   |
 
-| Secretario        | Representa a una persona que gestiona el catálogo de productos.                                                                         |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Responsabilidades | Almacenar información de los secretarios de administración. |
-| Colaboraciones    | -                                                                                                                     |
+| Secretario        | Representa a un usuario del sistema, empleado de la empresa que gestiona el catálogo de productos. |
+| ----------------- | -------------------------------------------------------------------------------------------------- |
+| Responsabilidades | Almacenar información de los secretarios de administración.                                        |
+| Colaboraciones    | -                                                                                                  |
 
 | Catálogo          | Representa el conjunto de productos que el sistema muestra para que los clientes compren. |
 | ----------------- | ----------------------------------------------------------------------------------------- |
@@ -90,27 +90,27 @@ Casos alternativos:
 | Producto          | Representa un producto manufacturado por la empresa a partir de materia prima reciclada y vendido a clientes. |
 | ----------------- | ------------------------------------------------------------------------------------------------------------- |
 | Responsabilidades | Almacenar la información del producto.                                                                        |
-| Colaboraciones    | Catálogo.                                                                                                     |
+| Colaboraciones    | -                                                                                                             |
 
-| CTRLAgregarProducto | Realiza las acciones necesarias para agregar un producto al catálogo.                                                       |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Responsabilidades   | Crear la UI. Enviar mensajes al sistema sobre las acciones del actor. Recibir resultados del sistema y enviárselos a la UI. |
-| Colaboraciones      | UIAgregarProducto. Sistema. CTRLSesion. UIServidorArchivos.                                                                 |
+| CTRLAgregarProducto | Realiza las acciones necesarias para agregar un producto al catálogo.                                                                                                                                                  |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Responsabilidades   | Crear la UI que interactuará con el actor. Enviar mensajes a la UIArchivos para subir imágenes. Interactuar con el sistema para agregar un producto al catálogo. Recibir resultados del sistema y enviárselos a la UI. |
+| Colaboraciones      | UIAgregarProducto. Sistema. CTRLSesion. UIArchivos. Producto. Secretario.                                                                                                                                              |
 
-| UIAgregarProducto | Posibilita la interacción entre el actor y el sistema para permitir agregar productos al catálogo. |
-| ----------------- | -------------------------------------------------------------------------------------------------- |
-| Responsabilidades | Permitir al usuario seleccionar el agregar un producto nuevo. Recibir del actor los datos del producto a agregar. Enviar al actor la información del producto recién creado.   |
-| Colaboraciones    | CTRLAgregarProducto.                                                                               |
+| UIAgregarProducto | Posibilita la interacción entre el actor y el sistema para permitir agregar productos al catálogo.                                                                                     |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Responsabilidades | Permitir al usuario seleccionar la opción de agregar un producto nuevo. Recibir del actor los datos del producto a agregar. Enviar al actor la información del producto recién creado. |
+| Colaboraciones    | Producto.                                                                                                                                                                              |
 
 | CTRLSesion        | Realiza las acciones necesarias para identificar la sesión del usuario actual. |
 | ----------------- | ------------------------------------------------------------------------------ |
-| Responsabilidades | Identificar al usuario autenticado.                                            |
-| Colaboraciones    | -                                                           |
+| Responsabilidades | Identificar al usuario autenticado y validar sus permisos.                     |
+| Colaboraciones    | Secretario.                                                                    |
 
-| UIServidorArchivos | Permite interactuar con el servidor de archivos, que se usa para almacenar imágenes.                      |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------- |
-| Responsabilidades  | Enviar imágenes al servidor de archivos para ser guardadas. Recibir del servidor de archivos las urls de las imágenes guardadas. |
-| Colaboraciones     | -                                                                                           |
+| UIArchivos        | Permite interactuar con el servidor de archivos, que se usa para almacenar imágenes.                                             |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Responsabilidades | Enviar imágenes al servidor de archivos para ser guardadas. Recibir del servidor de archivos las urls de las imágenes guardadas. |
+| Colaboraciones    | -                                                                                                                                |
 
 ## Diagrama de Clases
 
@@ -152,14 +152,14 @@ classDiagram
         + mostrarFormulario()
         + informarProductoAgregado(p: Producto)
     }
-    class UIServidorArchivos {
+    class UIArchivos {
         + subirImagen(img: Imagen) string
     }
     class CTRLSesion {
         + validarSecretario() Secretario
     }
     CTRLAgregarProducto "1" -- "1" UIAgregarProducto
-    CTRLAgregarProducto "1" -- "1" UIServidorArchivos
+    CTRLAgregarProducto "1" -- "1" UIArchivos
     CTRLAgregarProducto "1" -- "1" CTRLSesion
 
 ```
@@ -207,8 +207,8 @@ sequenceDiagram;
     S ->> +C: agregar(producto)
     participant LTP as productos: Producto[]
     C ->> +LTP: add(producto)
-    LTP -->> -C: 
-    C -->> -S: 
+    LTP -->> -C: producto
+    C -->> -S: producto
     S -->> -CTRL: producto
 
     CTRL ->> +UI: informarProductoAgregado(producto)
@@ -224,19 +224,20 @@ sequenceDiagram;
 
 ## Diagrama de Secuencia de Implementación
 
-Se decidió implementar una demo de esta realización de caso de uso en Java, que además permita al secretario de administración listar, modificar y eliminar productos, para que sea un conjunto completo de funcionalidades.
+Decidimos implementar una demo de esta realización de caso de uso en Java, que además permita al secretario de administración listar, modificar y eliminar productos, para que sea un conjunto completo de funcionalidades.
 
-Se usó el framework Spring Boot con Maven como herramienta de build y Thymeleaf para las plantillas HTML, con la
+Usamos el framework Spring Boot con Maven como herramienta de build y Thymeleaf para las plantillas HTML, con la
 intención de que el diagrama de secuencia de esta implementación sea lo más similar posible al diagrama de secuencia de
 la realización de caso de uso diseño. Persistimos los datos en una base de datos MySQL.
 
-Características:
+**Características:**
+
 - La clase `UIAgregarProducto` presenta al usuario las vistas generadas e interpretadas mediante Thymeleaf. Además, luego de que el usuario rellene el formulario para cargar el producto nuevo, instancia implícitamente a un objeto `Producto` con esos datos.
-- El usuario ya está previamente autenticado, y el framework se encarga de controlar los permisos, por lo que no se necesita interactuar con `CTRLSesion` en el diagrama.
-- Otro controlador, `CTRLProductos`, es el que le muestra al usuario el listado de productos, y el que le permite elegir la opción de agregar producto al catálogo. Por esto, el diagrama de secuencia con `CTRLAgregarProducto` comienza después el paso `mostrarOpciones()`.
+- El usuario ya está previamente autenticado, y el framework Spring Boot está configurado para encargarse de controlar los permisos, por lo que no se necesita interactuar con `CTRLSesion` en el diagrama.
+- Otro controlador, `CTRLProductos`, es el que le muestra al usuario el listado de productos, y el que le permite elegir la opción de agregar un producto al catálogo. Por esto, este diagrama de secuencia con `CTRLAgregarProducto` comienza después del paso `mostrarOpciones()` que el diagrama anterior tenía.
 - El actor `Servidor de Archivos` es el sistema de archivos local del servidor.
-- En lugar de que el `Catalogo` tenga una lista de todos los productos, tiene un `ProductoRepository` que busca gestiona en una base de datos.
-- Al agregarse correctamente el producto nuevo, se redirige al usuario al listado de productos.
+- En lugar de que el `Catalogo` tenga una lista de todos los productos, tiene un `ProductoRepository` que accede a los productos persistidos en una base de datos MySQL.
+- Al agregarse correctamente el producto nuevo, en lugar de un mensaje de éxito, se redirige al usuario al listado de productos, donde se puede ver el producto nuevo agregado a la lista.
 
 ```mermaid
 sequenceDiagram;
@@ -306,4 +307,3 @@ Que nos permite ver los productos existentes,modificar o eliminar alguno de ello
 Sino, si elegimos modificar un producto, se nos muestra el mismo formulario pero con los datos actuales ya guardados del producto en cuestión:
 
 ![Modificar un producto existente](images/modificar-producto.png)
-
