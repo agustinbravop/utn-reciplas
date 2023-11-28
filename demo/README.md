@@ -1,12 +1,14 @@
 # Demo de la Realización de Caso de Uso 'Asignar Producto a Catálogo'
 
-Esta demo desarrollada en Java permite al usuario agregar, modificar y eliminar productos del catálogo de Reciplas.
+Esta demo desarrollada en Java permite al secretario agregar, modificar y eliminar productos del catálogo de Reciplas.
 
 Se usó el framework Spring Boot con Maven como herramienta de build y Thymeleaf para las plantillas HTML, con la
 intención de que el diagrama de secuencia de esta implementación sea lo más similar posible al diagrama de secuencia de
 la realización de caso de uso diseño.
 
 ## Levantar el servidor en local
+
+Es necesaria una base de datos MySQL.
 
 1. A nivel root del proyecto (a la par del `pom.xml`), se debe crear un archivo `.env` con las siguientes variables de
    entorno:

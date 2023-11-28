@@ -35,7 +35,7 @@ public class CTRLModificarProducto {
 
     @PutMapping(path = "/{id}", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     public ResponseEntity<Producto> modificarProducto(@RequestPart MultipartFile imagen, @RequestPart Producto producto, @PathVariable Long id) {
-        producto.setId(id);
+        producto.setCodigo(id);
 
         System.out.println("!!!!!" + imagen.getSize() + imagen.getName() + imagen.getResource());
         if (imagen.getSize() > 0) {

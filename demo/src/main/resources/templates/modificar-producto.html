@@ -36,7 +36,7 @@
         <h1>Modificar Producto: <span th:text="${#ctx.producto.nombre}"></span></h1>
         <img th:alt="${#ctx.producto.nombre}" th:src="${#ctx.producto.urlImagen}" width="100px">
     </div>
-    <form th:id="${#ctx.producto.id}">
+    <form th:id="${#ctx.producto.codigo}">
         <div class="form-group">
             <label for="nombre">Nombre</label>
             <input class="form-control" id="nombre" name="nombre" required th:value="${#ctx.producto.nombre}"

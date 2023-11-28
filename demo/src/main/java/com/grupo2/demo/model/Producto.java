@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long codigo;
     private String nombre;
     private String descripcion;
     private String linea;
@@ -15,10 +15,12 @@ public class Producto {
     private Long unidades;
     private Float precio;
     private String urlImagen;
+
     public Producto() {
     }
-    public Producto(Long id, String nombre, String descripcion, String linea, String deposito, Long unidades, Float precio, String urlImagen) {
-        this.id = id;
+
+    public Producto(Long codigo, String nombre, String descripcion, String linea, String deposito, Long unidades, Float precio, String urlImagen) {
+        this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.linea = linea;
@@ -36,12 +38,12 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public Long getId() {
-        return id;
+    public Long getCodigo() {
+        return codigo;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
     }
 
     public String getDescripcion() {
