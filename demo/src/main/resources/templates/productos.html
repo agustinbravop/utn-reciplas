@@ -43,6 +43,7 @@
         <thead>
         <tr>
             <th>Nombre</th>
+            <th>Imagen</th>
             <th>Linea</th>
             <th>Depósito</th>
             <th>Precio</th>
@@ -53,6 +54,7 @@
         <tbody>
         <tr th:each="prod : ${productos}">
             <th scope="row" th:text="${prod.nombre}"></th>
+            <td><img th:src="${prod.urlImagen}" th:alt="${prod.nombre}" width="75px"/></td>
             <td th:text="${prod.linea}"></td>
             <td th:text="${prod.deposito}"></td>
             <td th:text="${prod.precio}"></td>

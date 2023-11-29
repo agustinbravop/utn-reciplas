@@ -36,7 +36,7 @@ Casos alternativos:
 
 ## Reformulación del Caso de Uso
 
-Reformulado por nuestro equipo, para que sea más coherente. Se eliminó la parte de buscar un producto, dado que para agregar un producto consideramos no es necesario buscar nada.
+Reformulado por nuestro equipo para que sea más coherente. Se eliminó la parte de buscar un producto dado que para agregar un producto consideramos no es necesario buscar nada.
 
 | Nombre          | Agregar producto al catálogo.                                                                                                          |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -294,16 +294,16 @@ sequenceDiagram;
 
 La demo por defecto levanta el servidor en `http://localhost:8080`. En el path `/` se debería ver la siguiente página:
 
-![Iniciar sesión](images/iniciar-sesion.png)
+![Iniciar sesión](images/captura-iniciar-sesion.png)
 
 Luego de iniciar sesión como un empleado de administración, la aplicación nos muestra el catálogo de productos:
 
-![Catálogo de productos](images/catalogo-productos.png)
+![Catálogo de productos](images/captura-catalogo-productos.png)
 
 Que nos permite ver los productos existentes,modificar o eliminar alguno de ellos, y agregar productos nuevos. Si seleccionamos agregar un producto nuevo, podemos ingresar sus datos en el siguiente formulario que es mostrado:
 
-![Agregar un producto nuevo](images/agregar-producto.png)
+![Agregar un producto nuevo](images/captura-agregar-producto.png)
 
 Sino, si elegimos modificar un producto, se nos muestra el mismo formulario pero con los datos actuales ya guardados del producto en cuestión:
 
-![Modificar un producto existente](images/modificar-producto.png)
+![Modificar un producto existente](images/captura-modificar-producto.png)
