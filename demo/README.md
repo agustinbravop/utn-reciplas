@@ -31,14 +31,14 @@ mvn spring-boot:run
 
 En el puerto `8080` se debería ver la siguiente página:
 
-![Iniciar sesión](iniciar-sesion.png)
+![Iniciar sesión](captura-iniciar-sesion.png)
 
 ## Funcionalidades
 
 Luego de iniciar sesión como un empleado de administración, la aplicación nos muestra el catálogo de productos:
 
-![Catálogo de productos](catalogo-productos.png)
+![Catálogo de productos](captura-catalogo-productos.png)
 
 Y si seleccionamos agregar un producto nuevo, podemos ingresar sus datos en el siguiente formulario:
 
-![Agregar un producto nuevo](agregar-producto.png)
+![Agregar un producto nuevo](captura-agregar-producto.png)
